@@ -12,7 +12,7 @@ package Capa3_Dominio;
 public class AFP {
     private float nombre;
     private String descuento;
-    private Contrato contrato;
+
 
     public AFP() {
     }
@@ -33,12 +33,5 @@ public class AFP {
         this.descuento = descuento;
     }
 
-    public Contrato getContrato() {
-        return contrato;
-    }
-
-    public void setContrato(Contrato contrato) {
-        this.contrato = contrato;
-    }
     
 }
