@@ -75,7 +75,7 @@ public class FormGestionarContratoController implements Initializable {
                     lbDireccion.setText(empleado.getDireccion());
                     lbTelefono.setText("+51"+empleado.getTelefono());
                     lbFechaDeNacimiento.setText(""+empleado.getFechaNacimiento());
-                    lbEstadoCivil.setText(""+empleado.getEstadoCivil());
+                    lbEstadoCivil.setText(formatEstadoCivilEmpleado(empleado));
                     lbGradoAcadameico.setText(empleado.getGradoAcademico());
                     btnCrearContrato.setDisable(false);
                     btnEditarContrato.setDisable(false);
@@ -143,6 +143,19 @@ public class FormGestionarContratoController implements Initializable {
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
         }
+    }
+    
+    private String formatEstadoCivilEmpleado(Empleado empleado){
+        if(empleado.getEstadoCivil()=='C'){
+            return "Casado";
+        }else if(empleado.getEstadoCivil()=='S'){
+            return "Soltero";
+        }else if(empleado.getEstadoCivil()=='D'){
+            return "divorciado";
+        }else if(empleado.getEstadoCivil()=='V'){
+            return "Viudo";
+        }
+        return "";
     }
 
     /**
