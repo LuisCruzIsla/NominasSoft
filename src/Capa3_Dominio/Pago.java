@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dominio;
+package Capa3_Dominio;
 
 import java.util.Date;
 
@@ -12,6 +12,7 @@ import java.util.Date;
  * @author Ronald Alva
  */
 public class Pago {
+
     private Date fecha;
     private int totalHoras;
     private int valorHoras;
@@ -19,19 +20,9 @@ public class Pago {
     private double porcentajeAFP;
     private Contrato contrato;
     private Concepto concepto;
-  
+    private Periodo periodo;
 
     public Pago() {
-    }
-
-    public Pago(Date fecha, int totalHoras, int valorHoras, double asignacionFamiliar, double porcentajeAFP,Contrato contrato,Concepto concepto) {
-        this.fecha = fecha;
-        this.totalHoras = totalHoras;
-        this.valorHoras = valorHoras;
-        this.asignacionFamiliar = asignacionFamiliar;
-        this.porcentajeAFP = porcentajeAFP;
-        this.contrato = contrato;
-        this.concepto = concepto;
     }
 
     public Date getFecha() {
@@ -89,26 +80,32 @@ public class Pago {
     public void setConcepto(Concepto concepto) {
         this.concepto = concepto;
     }
-   
-        
-    
-    private double calcularSueldoBasico(){
-       return totalHoras*valorHoras;
+
+    public Periodo getPeriodo() {
+        return periodo;
     }
-    
-    private double calcularTotalIngreso(){
-        return calcularSueldoBasico()+concepto.calcularIngreso();
+
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
     }
-    
-    private double calcularDescuento(){
-        return calcularSueldoBasico()*porcentajeAFP;
+
+    private double calcularSueldoBasico() {
+        return totalHoras * valorHoras;
     }
-    
-    private double calcularTotalDescuento(){
-        return calcularDescuento()+concepto.calcularDescuento();
+
+    private double calcularTotalIngreso() {
+        return calcularSueldoBasico() + contrato.calcularAsignacionFamiliar() + concepto.calcularIngreso();
     }
-    
-    private double calcularSueldoNeto(){
-        return calcularTotalIngreso()+calcularTotalDescuento();
+
+    private double calcularDescuento() {
+        return calcularSueldoBasico() * porcentajeAFP;
+    }
+
+    private double calcularTotalDescuento() {
+        return calcularDescuento() + concepto.calcularDescuento();
+    }
+
+    private double calcularSueldoNeto() {
+        return calcularTotalIngreso() + calcularTotalDescuento();
     }
 }
