@@ -5,7 +5,6 @@
  */
 package Capa3_Dominio;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -160,8 +159,18 @@ public class Contrato {
         return sueldoMinimo * 0.1;
     }
 
-    public double calcularTotalHora() {
-        return 0;
-    }
-
+    public boolean calcularTotalHora(){
+        if((empleado.getGradoAcademico().equals("Primaria") || empleado.getGradoAcademico().equals("Secundaria")) && (valorPorHora>5 && valorPorHora<10)){
+                return true;
+             } else if(empleado.getGradoAcademico().equals("Bachiller") && (valorPorHora>11 && valorPorHora<20)){
+                return true;
+            } else if(empleado.getGradoAcademico().equals("Profesional") && (valorPorHora>21 && valorPorHora<30)){
+                return true;
+            } else if(empleado.getGradoAcademico().equals("Magister") && (valorPorHora>31 && valorPorHora<40)){
+                return true;
+            } else if(empleado.getGradoAcademico().equals("Doctor") && (valorPorHora>41 && valorPorHora<60)){
+	return true;        
+}
+        return false;
+ }       
 }
