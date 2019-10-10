@@ -5,6 +5,7 @@
  */
 package Capa3_Dominio;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -12,23 +13,13 @@ import java.util.Date;
  * @author Ronald Alva
  */
 public class Periodo {
+
     private String periodo;
     private Date fechaInicio;
     private Date fechaFin;
     private char estado;
-    private Pago pago;
 
     public Periodo() {
-    }
-
-    
-    
-    public Periodo(String periodo, Date fechaInicio, Date fechaFin, char estado, Pago pago) {
-        this.periodo = periodo;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.estado = estado;
-        this.pago = pago;
     }
 
     public String getPeriodo() {
@@ -63,14 +54,23 @@ public class Periodo {
         this.estado = estado;
     }
 
-    public Pago getPago() {
-        return pago;
+    public boolean esActivo() {
+        boolean activo = false;
+        if (fechaFin.compareTo(new Date()) >= 0) {
+            activo = true;
+        }
+        return activo;
     }
 
-    public void setPago(Pago pago) {
-        this.pago = pago;
+    public int calcularTotalSemanas() {
+
+        Calendar inicio = Calendar.getInstance();
+        Calendar fin = Calendar.getInstance();
+        inicio.setTime(fechaInicio);
+        fin.setTime(fechaFin);
+        int monthDiff = fin.get(Calendar.MONTH) - inicio.get(Calendar.MONTH);
+        return monthDiff * 4;
+
     }
-    
-    
-    
+
 }

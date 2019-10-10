@@ -17,6 +17,7 @@ public class Concepto {
     private double montoAdelantado;
     private double montoOtroDescuentos;
     private Contrato contrato;
+    private Periodo periodo;
 
     public Concepto() {
     }
@@ -27,6 +28,14 @@ public class Concepto {
 
     public void setContrato(Contrato contrato) {
         this.contrato = contrato;
+    }
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
     }
 
     
