@@ -97,7 +97,7 @@ public class Pago {
     }
     
     private double calcularTotalIngreso(){
-        return calcularSueldoBasico()+concepto.calcularIngreso();
+        return calcularSueldoBasico()+contrato.calcularAsignacionFamiliar()+concepto.calcularIngreso();
     }
     
     private double calcularDescuento(){

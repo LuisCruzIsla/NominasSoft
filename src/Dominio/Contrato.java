@@ -92,23 +92,23 @@ public class Contrato {
 
    
     public boolean esVigente( ){
-        
+        return true;
     }
     
     public boolean esRenovable(){
-       
+       return true;
     }
     
     public boolean esFechaValida(){
-        
+        return true;
     }
     
     public boolean esHoraValidaPorSemana(){
-        
+        return true;
     }
     
     public boolean esValorizacionAceptada(){
-        
+        return true;
     }
     
     public double calcularAsignacionFamiliar(){
@@ -117,7 +117,7 @@ public class Contrato {
     }
     
     public double calcularTotalHora(){
-        
+        return 0;
     }
     
     
