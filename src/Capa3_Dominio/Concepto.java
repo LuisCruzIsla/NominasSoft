@@ -16,18 +16,20 @@ public class Concepto {
     private double montoHoraAusente;
     private double montoAdelantado;
     private double montoOtroDescuentos;
+    private Contrato contrato;
 
     public Concepto() {
     }
 
-    public Concepto(double montoHoras, double montoReIngresos, double montoOtrosIngresos, double montoHoraAusente, double montoAdelantado, double montoOtroDescuentos) {
-        this.montoHoras = montoHoras;
-        this.montoReIngresos = montoReIngresos;
-        this.montoOtrosIngresos = montoOtrosIngresos;
-        this.montoHoraAusente = montoHoraAusente;
-        this.montoAdelantado = montoAdelantado;
-        this.montoOtroDescuentos = montoOtroDescuentos;
+    public Contrato getContrato() {
+        return contrato;
     }
+
+    public void setContrato(Contrato contrato) {
+        this.contrato = contrato;
+    }
+
+    
 
     public double getMontoHoras() {
         return montoHoras;

@@ -6,6 +6,7 @@
 package Capa3_Dominio;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -13,25 +14,27 @@ import java.util.Date;
  * @author Ronald Alva
  */
 public class Contrato {
+
+    private int contratoId;
     private Date fechaInicio;
     private Date fechaFin;
     private boolean asignacionFamiliar;
     private int totalHorasSemanal;
     private double valorPorHora;
     private String cargo;
+    private char tipo;
     private Empleado empleado;
+    private AFP afp;
 
     public Contrato() {
     }
 
-    public Contrato(Date fechaInicio, Date fechaFin, boolean asignacionFamiliar, int totalHorasSemanal, double valorPorHora, String cargo,Empleado empleado) {
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.asignacionFamiliar = asignacionFamiliar;
-        this.totalHorasSemanal = totalHorasSemanal;
-        this.valorPorHora = valorPorHora;
-        this.cargo = cargo;
-        this.empleado = empleado;
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
     }
 
     public Date getFechaInicio() {
@@ -90,35 +93,75 @@ public class Contrato {
         this.empleado = empleado;
     }
 
-   
-    public boolean esVigente( ){
-        return false;
+    public int getContratoId() {
+        return contratoId;
     }
-    
-    public boolean esRenovable(){
-        return false;
+
+    public void setContratoId(int contratoId) {
+        this.contratoId = contratoId;
     }
-    
-    public boolean esFechaValida(){
-        return false;
+
+    public AFP getAfp() {
+        return afp;
     }
-    
-    public boolean esHoraValidaPorSemana(){
-        return false;
+
+    public void setAfp(AFP afp) {
+        this.afp = afp;
     }
-    
-    public boolean esValorizacionAceptada(){
-        return false;
+
+    public boolean esVigente() {
+        boolean vigencia = false;
+        if (fechaFin.compareTo(new Date()) >= 0 && tipo != 'A') {
+            vigencia = true;
+        }
+        return vigencia;
     }
-    
-    public double calcularAsignacionFamiliar(){
+
+    public boolean esRenovable(Date FechaFinContratoAnterior) {
+        boolean renovable = false;
+        if (fechaFin.compareTo(FechaFinContratoAnterior) > 0) {
+            renovable = true;
+        }
+        return renovable;
+    }
+
+    public boolean esFechaValida() {
+        boolean fechaValida = false;
+        if (fechaFin.compareTo(fechaInicio) > 0) {
+            Calendar inicio = Calendar.getInstance();
+            Calendar fin = Calendar.getInstance();
+            inicio.setTime(fechaInicio);
+            fin.setTime(fechaFin);
+
+            int monthDiff = fin.get(Calendar.MONTH) - inicio.get(Calendar.MONTH);
+            if (monthDiff >= 3) {
+                fechaValida = true;
+            }
+        }
+
+        return fechaValida;
+    }
+
+    public boolean esHoraValidaPorSemana() {
+        boolean horaValida = false;
+        if (totalHorasSemanal >= 8 && totalHorasSemanal <= 40) {
+            horaValida = true;
+        }
+        return horaValida;
+    }
+
+    public boolean esValorizacionAceptada() {
+        return false;
+ 
+    }
+
+    public double calcularAsignacionFamiliar() {
         double sueldoMinimo = 0;
-        return sueldoMinimo*0.1;
+        return sueldoMinimo * 0.1;
     }
-    
-    public double calcularTotalHora(){
+
+    public double calcularTotalHora() {
         return 0;
     }
-    
-    
+
 }

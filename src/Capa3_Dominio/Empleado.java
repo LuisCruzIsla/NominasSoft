@@ -24,16 +24,6 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(int id, int dni, String nombre, String direccion, int telefono, Date fechaNacimiento, char estadoCivil, String gradoAcademico) {
-        this.id = id;
-        this.dni = dni;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
-        this.estadoCivil = estadoCivil;
-        this.gradoAcademico = gradoAcademico;
-    }
 
     public int getId() {
         return id;

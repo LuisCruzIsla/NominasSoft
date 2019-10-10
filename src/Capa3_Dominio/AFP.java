@@ -10,27 +10,11 @@ package Capa3_Dominio;
  * @author Ronald Alva
  */
 public class AFP {
-    private int dni;
     private float nombre;
     private String descuento;
     private Contrato contrato;
 
     public AFP() {
-    }
-
-    public AFP(int dni, float nombre, String descuento, Contrato contrato) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.descuento = descuento;
-        this.contrato = contrato;
-    }
-
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
     }
 
     public float getNombre() {
