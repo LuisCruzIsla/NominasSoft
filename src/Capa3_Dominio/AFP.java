@@ -12,7 +12,11 @@ package Capa3_Dominio;
 public class AFP {
     private float nombre;
     private String descuento;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> DevelopRonald
 
     public AFP() {
     }
@@ -33,5 +37,9 @@ public class AFP {
         this.descuento = descuento;
     }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> DevelopRonald
     
 }
