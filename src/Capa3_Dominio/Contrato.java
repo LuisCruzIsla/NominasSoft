@@ -159,7 +159,10 @@ public class Contrato {
         return sueldoMinimo * 0.1;
     }
 
-    public boolean calcularTotalHora(){
+    public int calcularTotalHora(){
+        return 0;
+    }
+    public boolean calcularValorHora(){
         if((empleado.getGradoAcademico().equals("Primaria") || empleado.getGradoAcademico().equals("Secundaria")) && (valorPorHora>5 && valorPorHora<10)){
                 return true;
              } else if(empleado.getGradoAcademico().equals("Bachiller") && (valorPorHora>11 && valorPorHora<20)){
