@@ -57,6 +57,4 @@ public class AFP {
         this.contrato = contrato;
     }
     
-    
-    
 }
