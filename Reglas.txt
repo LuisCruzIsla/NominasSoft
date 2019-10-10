@@ -1,0 +1,8 @@
+1.- Toda persona ingresante a este proyecto tiene su propia rama, si por error utiliza una rama sin consentimiento – perderá sus cambios para salvar las otras ramas.
+2.-Todo push que realice los integrantes debe estar descrita, con su fecha y estado de tiempo (Mañana, Tarde o noche) correctamente 
+Ejem:
+M = Mañana
+N = Noche
+T = Tarde
+22/10/2019 M1 – (Contenido /Descripción) modifique la clase dominio porque generaba un bug por x motivo(si son merge esta parte se puede omitir).
+3.- El scrum master o creador del repositorio puede hacer merge (caso extremo que necesite a otra persona para realizar esta acción)
