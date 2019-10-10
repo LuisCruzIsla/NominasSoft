@@ -32,6 +32,7 @@ public class SistemaDePlanilla extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        System.out.println("Hola mundo");
     }
     
 }
