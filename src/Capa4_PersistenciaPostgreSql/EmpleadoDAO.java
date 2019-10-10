@@ -26,8 +26,36 @@ public class EmpleadoDAO implements IEmpleadoDAO{
     }
 
     @Override
-    public Empleado buscarPorDNI(String dni) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Empleado buscarPorDNI(int dni) throws SQLException {
+        Empleado empleado = null;
+            ResultSet resultadoEmpleado;
+        String sentenciaSQL;
+
+        sentenciaSQL = "SELECT "
+                + "empleadocodigo, "
+                + "empleadonombre, "
+                + "empleadodni, "
+                + "empleadodireccion, "
+                + "empleadotelefono, "
+                + "empleadofechanacimiento, "
+                + "empleadoestadocivil, "
+                + "empleadogradoacademico "
+                + "FROM empleados "
+                + "WHERE empleadodni = '"+dni+"'";
+        
+        resultadoEmpleado = gestorJDBC.ejecutarConsulta(sentenciaSQL);
+        if(resultadoEmpleado.next()){            
+            empleado = new Empleado();
+            empleado.setNombre(resultadoEmpleado.getString("empleadonombre"));
+            empleado.setDni(resultadoEmpleado.getInt("empleadodni"));
+            empleado.setDireccion(resultadoEmpleado.getString("empleadodireccion"));
+            empleado.setTelefono(resultadoEmpleado.getInt("empleadotelefono"));
+            empleado.setFechaNacimiento(resultadoEmpleado.getDate("empleadofechanacimiento"));
+            empleado.setEstadoCivil(resultadoEmpleado.getString("empleadoestadocivil").charAt(0));
+            empleado.setGradoAcademico(resultadoEmpleado.getString("empleadogradoacademico"));
+        }        
+        resultadoEmpleado.close();
+        return empleado; 
     }
     
 }

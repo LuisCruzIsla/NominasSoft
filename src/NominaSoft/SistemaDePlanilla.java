@@ -19,7 +19,7 @@ public class SistemaDePlanilla extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Presentacion/FormGestionarContrato.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Capa1_Presentacion/FormGestionarContrato.fxml"));
         
         Scene scene = new Scene(root);
         

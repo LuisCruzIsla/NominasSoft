@@ -8,8 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="NominaSoft.jar" size="2580681" download="eager" />
+    <jar href="NominaSoft.jar" size="3424661" download="eager" />
     <jar href="lib\jfoenix-8.0.8.jar" size="2708772" download="eager" />
+    <jar href="lib\postgresql-42.2.8.jar" size="900064" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="NominaSoft.SistemaDePlanilla"  name="NominaSoft" />
   <update check="always"/>

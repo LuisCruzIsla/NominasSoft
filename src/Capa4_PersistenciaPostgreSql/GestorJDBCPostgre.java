@@ -20,13 +20,12 @@ public class GestorJDBCPostgre extends GestorJDBC {
    
     public void abrirConexion() {
         try {
-            Class.forName("org.sqlserver.Driver");
-            String url = "jdbc:sqlserver://localhost:?/?";
-            conexion = DriverManager.getConnection(url, "?", "?");
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost:5432/IDPLAC";
+            conexion = DriverManager.getConnection(url, "postgres", "godofwar1");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } 
     }
-        
      
 }
