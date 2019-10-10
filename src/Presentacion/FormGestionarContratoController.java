@@ -12,9 +12,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -25,9 +32,70 @@ public class FormGestionarContratoController implements Initializable {
     
     @FXML
     private JFXButton btnBuscar;
+    @FXML
+    private JFXButton btnCrearContrato;
+    @FXML
+    private JFXButton btnEditarContrato;
+    @FXML
+    private JFXButton btnAnularContrato;
     
     @FXML
     private JFXTextField txtDNI;
+    
+    @FXML
+    private void buscarEmpleado(ActionEvent event){
+        String dni = txtDNI.getText();
+        if(!dni.isEmpty()){
+            btnCrearContrato.setDisable(false);
+            btnEditarContrato.setDisable(false);
+            btnAnularContrato.setDisable(false);
+        }
+    }
+    
+    @FXML
+    private void crearContrato(ActionEvent event){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Presentacion/FormCrearContrato.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Crear Contrato");
+            stage.setScene(new Scene(root1));  
+            stage.show();
+        }catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+    }
+    
+    @FXML
+    private void editarContrato(ActionEvent event){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Presentacion/FormEditarContrato.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Editar Contrato");
+            stage.setScene(new Scene(root1));  
+            stage.show();
+        }catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+    }
+    
+    @FXML
+    private void anularContrato(ActionEvent event){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Presentacion/FormAnularContrato.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Anular Contrato");
+            stage.setScene(new Scene(root1));  
+            stage.show();
+        }catch(Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+    }
 
     /**
      * Initializes the controller class.
@@ -52,6 +120,6 @@ public class FormGestionarContratoController implements Initializable {
                 txtDNI.setText(s);
             }
         });
-    }    
+    }
     
 }
