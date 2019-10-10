@@ -18,64 +18,40 @@ import java.sql.Statement;
  */
 
 public abstract class GestorJDBC {
-       protected Connection conexion; 
-       
-
-    public void iniciarTransaccion() {
-        try {
-            conexion.setAutoCommit(false);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    public void cerrarConexion(){
-        try {
-            conexion.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+       protected Connection conexion;
+    
+    public abstract void abrirConexion() throws Exception;
+    
+    public void cerrarConexion() throws SQLException{
+        conexion.close();
     }
     
-       public void terminarTransaccion() {
-        try {
-            conexion.commit();
-            conexion.setAutoCommit(true);
-            conexion.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-        public void cancelarTransaccion() {
-        try {
-            conexion.rollback();
-            conexion.setAutoCommit(true);
-            conexion.close();
-        } catch (SQLException e) {
-             e.printStackTrace();
-        }
-    }
-           
-        public PreparedStatement prepararSentencia(String sql)  {
-        try {
-            return conexion.prepareStatement(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
-              return null;
-        }
-    }
-        public ResultSet ejecutarConsulta(String sql) {
-        try {
-            Statement sentencia;
-            ResultSet resultado;
-            sentencia = conexion.createStatement();
-            resultado = sentencia.executeQuery(sql);
-            return resultado;
-        } catch (SQLException e) {
-            e.printStackTrace(); 
-             return null;
-        }
-    
+    public void iniciarTransaccion() throws SQLException{
+        conexion.setAutoCommit(false);
     }
     
+    public void terminarTransaccion() throws SQLException{
+        conexion.commit();
+        conexion.setAutoCommit(true);
+        conexion.close();
+    }
+    
+    public void cancelarTransaccion() throws SQLException{
+        conexion.rollback();
+        conexion.setAutoCommit(true);
+        conexion.close();
+    }
+    
+    public PreparedStatement prepararSentencia(String sql) throws SQLException{
+        return conexion.prepareStatement(sql);
+    }
+    
+    public ResultSet ejecutarConsulta(String sql) throws SQLException{
+        Statement sentencia;
+        ResultSet resultado;
+        sentencia = conexion.createStatement();
+        resultado = sentencia.executeQuery(sql);
+        return resultado;
+    }
 }
 

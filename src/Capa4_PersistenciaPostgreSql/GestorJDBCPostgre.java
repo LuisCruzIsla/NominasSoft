@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Capa4_Persistencia;
+package Capa4_PersistenciaPostgreSql;
 
+import Capa4_Persistencia.GestorJDBC;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
