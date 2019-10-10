@@ -24,6 +24,12 @@ public class Contrato {
     private char tipo;
     private Empleado empleado;
     private AFP afp;
+    
+    public static final String GRADOPRIMARIA_SECUNDARIA = "PRIMARIA Y SECUNDARIA";
+    public static final String GRADOBACHILLER = "BACHILLER";
+    public static final String GRADOPROFESIONAL = "PROFESIONAL";
+    public static final String GRADOMAGISTER = "MAGISTER";
+    public static final String GRADODOCTOR = "DOCTOR";
 
     public Contrato() {
     }
@@ -163,15 +169,15 @@ public class Contrato {
         return 0;
     }
     public boolean calcularValorHora(){
-        if((empleado.getGradoAcademico().equals("Primaria") || empleado.getGradoAcademico().equals("Secundaria")) && (valorPorHora>5 && valorPorHora<10)){
+        if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>5 && valorPorHora<10)){
                 return true;
-             } else if(empleado.getGradoAcademico().equals("Bachiller") && (valorPorHora>11 && valorPorHora<20)){
+             } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>11 && valorPorHora<20)){
                 return true;
-            } else if(empleado.getGradoAcademico().equals("Profesional") && (valorPorHora>21 && valorPorHora<30)){
+            } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>21 && valorPorHora<30)){
                 return true;
-            } else if(empleado.getGradoAcademico().equals("Magister") && (valorPorHora>31 && valorPorHora<40)){
+            } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>31 && valorPorHora<40)){
                 return true;
-            } else if(empleado.getGradoAcademico().equals("Doctor") && (valorPorHora>41 && valorPorHora<60)){
+            } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>41 && valorPorHora<60)){
 	return true;        
 }
         return false;
