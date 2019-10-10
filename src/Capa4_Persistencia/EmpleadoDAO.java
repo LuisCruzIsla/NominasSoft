@@ -5,10 +5,21 @@
  */
 package Capa4_Persistencia;
 
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author user
  */
+
 public class EmpleadoDAO {
+        GestorJDBC gestorJDBC;
+
+    public EmpleadoDAO(GestorJDBC gestorJDBC) {
+        this.gestorJDBC = gestorJDBC;
+    }
     
 }
