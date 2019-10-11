@@ -8,8 +8,6 @@ package Capa4_PersistenciaPostgreSql;
 import Capa4_Persistencia.GestorJDBC;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -21,11 +19,10 @@ public class GestorJDBCPostgre extends GestorJDBC {
     public void abrirConexion() {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/IDPLAC";
-            conexion = DriverManager.getConnection(url, "postgres", "godofwar1");
+            String url = "jdbc:postgresql://localhost:5432/BDNomina";
+            conexion = DriverManager.getConnection(url, "postgres", "123");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } 
     }
-     
 }
