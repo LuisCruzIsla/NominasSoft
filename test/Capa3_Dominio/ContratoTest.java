@@ -76,7 +76,7 @@ public class ContratoTest {
 
     @Test
     public void testEsVigente() throws ParseException {
-        System.out.println("getContrado");
+        System.out.println("testEsVigente");
         //Empleado empleado = new Empleado();
         //AFP afp = new AFP();
         SimpleDateFormat dateformat2 = new SimpleDateFormat("dd-M-yyyy");
@@ -86,7 +86,7 @@ public class ContratoTest {
 
         contrato.setFechaInicio(java.sql.Date.valueOf(LocalDate.now()));
         contrato.setFechaFin(java.sql.Date.valueOf(LocalDate.now()));
-        contrato.setTipo('A');
+        contrato.setEstado('A');
 
         boolean expResult = false;
         System.out.println("Fecha: "+contrato.esVigente());
@@ -94,13 +94,27 @@ public class ContratoTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-
+    @Test
+    public void testEsRenovable() throws ParseException {
+        System.out.println("testEsRenovable");
+        SimpleDateFormat dateformat2 = new SimpleDateFormat("dd-M-yyyy");
+        Contrato contrato = new Contrato();
+        contrato.setFechaFin(java.sql.Date.valueOf(LocalDate.now()));
+        boolean result = contrato.esRenovable(java.sql.Date.valueOf(LocalDate.now()));
+       
+        boolean expResult = false;
+        System.out.println("Fecha: "+result);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     @Test
     public void testEsHoraValidaPorSemana() throws ParseException {
         System.out.println("getContrado");
+        
         Contrato contrato = new Contrato();
 
-        contrato.calcularTotalHora();
+        //contrato.calcularTotalHora();
         contrato.setTotalHorasSemanal(8);
         
         boolean expResult = true;

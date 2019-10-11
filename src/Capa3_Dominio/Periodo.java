@@ -54,6 +54,7 @@ public class Periodo {
         this.estado = estado;
     }
 
+    //R1 - Procesar Pagos
     public boolean esActivo() {
         boolean activo = false;
         if (fechaFin.compareTo(new Date()) >= 0) {
@@ -63,7 +64,6 @@ public class Periodo {
     }
 
     public int calcularTotalSemanas() {
-
         Calendar inicio = Calendar.getInstance();
         Calendar fin = Calendar.getInstance();
         inicio.setTime(fechaInicio);

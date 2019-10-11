@@ -5,6 +5,8 @@
  */
 package NominaSoft;
 
+import java.time.LocalDate;
+import java.util.Date;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +21,9 @@ public class SistemaDePlanilla extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        System.out.println(new Date());
+        System.out.println(java.sql.Date.valueOf(LocalDate.now()));
+        System.out.println(LocalDate.now());
         Parent root = FXMLLoader.load(getClass().getResource("/Capa1_Presentacion/FormGestionarContrato.fxml"));
         
         Scene scene = new Scene(root);
@@ -32,7 +37,7 @@ public class SistemaDePlanilla extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        System.out.println("Hola mundo");
+        System.out.println(new Date());
     }
     
 }

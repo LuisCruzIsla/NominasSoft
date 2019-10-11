@@ -88,10 +88,12 @@ public class Concepto {
         this.montoOtroDescuentos = montoOtroDescuentos;
     }
     
+    //R9 - Procesar Pagos
     public double calcularIngreso(){
         return montoHoras+montoReIngresos+montoOtrosIngresos;
     }
     
+    //R10 - Procesar Pagos
     public double calcularDescuento(){
         return montoHoraAusente+montoAdelantado+montoOtroDescuentos;
     }

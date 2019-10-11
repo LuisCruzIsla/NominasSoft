@@ -21,25 +21,27 @@ public class Contrato {
     private int totalHorasSemanal;
     private double valorPorHora;
     private String cargo;
-    private char tipo;
     private Empleado empleado;
     private AFP afp;
+    private char estado;
     
     public static final String GRADOPRIMARIA_SECUNDARIA = "PRIMARIA Y SECUNDARIA";
     public static final String GRADOBACHILLER = "BACHILLER";
     public static final String GRADOPROFESIONAL = "PROFESIONAL";
     public static final String GRADOMAGISTER = "MAGISTER";
     public static final String GRADODOCTOR = "DOCTOR";
+    
+    private static final double SUELDO_MINIMO = 930D;
 
     public Contrato() {
     }
 
-    public char getTipo() {
-        return tipo;
+    public char getEstado() {
+        return estado;
     }
 
-    public void setTipo(char tipo) {
-        this.tipo = tipo;
+    public void setEstado(char estado) {
+        this.estado = estado;
     }
 
     public Date getFechaInicio() {
@@ -114,14 +116,16 @@ public class Contrato {
         this.afp = afp;
     }
 
+    //R1 - Gestionar Contrato
     public boolean esVigente() {
         boolean vigencia = false;
-        if (fechaFin.compareTo(new Date()) >= 0 && tipo != 'A') {
+        if (fechaFin.compareTo(new Date()) >= 0 && estado != 'A') {
             vigencia = true;
         }
         return vigencia;
     }
 
+    //R2 -  Gestionar Contrato
     public boolean esRenovable(Date FechaFinContratoAnterior) {
         boolean renovable = false;
         if (fechaFin.compareTo(FechaFinContratoAnterior) > 0) {
@@ -130,6 +134,7 @@ public class Contrato {
         return renovable;
     }
 
+    //R3 -  Gestionar Contrato
     public boolean esFechaValida() {
         boolean fechaValida = false;
         if (fechaFin.compareTo(fechaInicio) > 0) {
@@ -147,6 +152,7 @@ public class Contrato {
         return fechaValida;
     }
 
+    //R4 -  Gestionar Contrato
     public boolean esHoraValidaPorSemana() {
         boolean horaValida = false;
         if (totalHorasSemanal >= 8 && totalHorasSemanal <= 40) {
@@ -154,32 +160,30 @@ public class Contrato {
         }
         return horaValida;
     }
-
-    public boolean esValorizacionAceptada() {
-        return false;
- 
-    }
-
-    public double calcularAsignacionFamiliar() {
-        double sueldoMinimo = 0;
-        return sueldoMinimo * 0.1;
-    }
-
-    public int calcularTotalHora(){
-        return 0;
-    }
-    public boolean calcularValorHora(){
+    
+    //R5 -  Gestionar Contrato
+    public boolean esValorizacionAceptada(){
         if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>5 && valorPorHora<10)){
-                return true;
-             } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>11 && valorPorHora<20)){
-                return true;
-            } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>21 && valorPorHora<30)){
-                return true;
-            } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>31 && valorPorHora<40)){
-                return true;
-            } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>41 && valorPorHora<60)){
-	return true;        
-}
+            return true;
+        } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>11 && valorPorHora<20)){
+            return true;
+        } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>21 && valorPorHora<30)){
+            return true;
+        } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>31 && valorPorHora<40)){
+            return true;
+        } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>41 && valorPorHora<60)){
+            return true;        
+        }
         return false;
- }       
+    }
+
+    //R3 - Procesar Pagos
+    public double calcularAsignacionFamiliar(){
+        double resultadoAsignacionFamiliar = 0;
+        if(asignacionFamiliar){
+            resultadoAsignacionFamiliar = SUELDO_MINIMO * 0.1; 
+        }
+        return resultadoAsignacionFamiliar;
+    }
+    
 }

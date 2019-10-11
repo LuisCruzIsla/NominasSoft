@@ -89,23 +89,34 @@ public class Pago {
         this.periodo = periodo;
     }
 
-    private double calcularSueldoBasico() {
+    //R2 - Procesar Pagos
+    public double calcularSueldoBasico() {
         return totalHoras * valorHoras;
     }
 
-    private double calcularTotalIngreso() {
+    //R4 - Procesar Pagos
+    public double calcularTotalIngreso() {
         return calcularSueldoBasico() + contrato.calcularAsignacionFamiliar() + concepto.calcularIngreso();
     }
 
-    private double calcularDescuento() {
+    //R5 - Procesar Pagos
+    public double calcularDescuento() {
         return calcularSueldoBasico() * porcentajeAFP;
     }
 
-    private double calcularTotalDescuento() {
+    //R6 - Procesar Pagos
+    public double calcularTotalDescuento() {
         return calcularDescuento() + concepto.calcularDescuento();
     }
 
-    private double calcularSueldoNeto() {
+    //R7 - Procesar Pagos
+    public double calcularSueldoNeto() {
         return calcularTotalIngreso() + calcularTotalDescuento();
     }
+    
+    //R8 - Procesar Pagos
+    public int calcularTotalHoras(){
+        return periodo.calcularTotalSemanas() * contrato.getTotalHorasSemanal();
+    }
+    
 }
