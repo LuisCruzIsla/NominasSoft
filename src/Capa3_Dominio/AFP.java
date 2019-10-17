@@ -10,25 +10,35 @@ package Capa3_Dominio;
  * @author Ronald Alva
  */
 public class AFP {
-    private float nombre;
-    private String descuento;
+    
+    private int id;
+    private String nombre;
+    private double descuento;
 
     public AFP() {
     }
 
-    public float getNombre() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(float nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getDescuento() {
+    public double getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(String descuento) {
+    public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
 

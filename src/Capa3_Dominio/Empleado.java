@@ -12,7 +12,8 @@ import java.util.Date;
  * @author user
  */
 public class Empleado {
-    private int id;
+    
+    private String id;
     private int dni;
     private String nombre;
     private String direccion;
@@ -25,11 +26,11 @@ public class Empleado {
     }
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

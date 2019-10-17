@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Controlador.FormCrearContratoController">
+    <stylesheets>
+        <URL value="@/Capa1_Presentacion/Estilos/formcrearcontrato.css" />
+    </stylesheets>
+    <children>
+      <StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="600.0" prefWidth="600.0">
+                <children>
+                  <VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" maxWidth="500.0" prefHeight="600.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                      <Label text="Crear Contrato">
+                                         <font>
+                                            <Font name="System Bold" size="20.0" />
+                                         </font>
+                                      </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                      <DatePicker fx:id="dpFechaInicio" editable="false" promptText="Fecha Inicio">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </DatePicker>
+                                      <DatePicker fx:id="dpFechaFin" editable="false" promptText="Fecha Fin">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </DatePicker>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox spacing="25.0">
+                                 <children>
+                                      <JFXTextField fx:id="txtCargo" labelFloat="true" promptText="Cargo" style="-fx-prompt-text-fill: gray;">
+                                      </JFXTextField>
+                                      <JFXComboBox fx:id="cmbAFP" promptText="AFP">
+                                      </JFXComboBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                      <JFXCheckBox fx:id="cbAsignacionFamiliar" text="Asignacion Familiar">
+                                </JFXCheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox spacing="25.0">
+                                 <children>
+                                      <JFXTextField fx:id="txtHorasSemana" labelFloat="true" prefHeight="25.0" prefWidth="230.0" promptText="Total de horas contratadas por semana" style="-fx-prompt-text-fill: gray;">
+                                    </JFXTextField>
+                                      <JFXTextField fx:id="txtValorPorHora" labelFloat="true" promptText="Valor por hora" style="-fx-prompt-text-fill: gray;">
+                                      </JFXTextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="25.0">
+                                 <children>
+                                      <JFXButton fx:id="btnBuscar11" buttonType="RAISED" onAction="#atras" style="-fx-background-color: #F44336;" text="Atras" textFill="WHITE">
+                                         <font>
+                                            <Font size="14.0" />
+                                         </font>
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Imagenes/back.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                      </JFXButton>
+                                    <JFXButton fx:id="btnBuscar111" buttonType="RAISED" layoutX="215.0" layoutY="10.0" onAction="#crearContrato" style="-fx-background-color: #4CAF50;" text="Guardar" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Imagenes/guardar.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

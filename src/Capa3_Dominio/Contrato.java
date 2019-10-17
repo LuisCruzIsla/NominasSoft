@@ -21,9 +21,9 @@ public class Contrato {
     private int totalHorasSemanal;
     private double valorPorHora;
     private String cargo;
+    private char estado;
     private Empleado empleado;
     private AFP afp;
-    private char estado;
     
     public static final String GRADOPRIMARIA_SECUNDARIA = "PRIMARIA Y SECUNDARIA";
     public static final String GRADOBACHILLER = "BACHILLER";

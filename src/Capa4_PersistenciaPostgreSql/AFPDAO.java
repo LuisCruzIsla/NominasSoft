@@ -5,10 +5,45 @@
  */
 package Capa4_PersistenciaPostgreSql;
 
+import Capa3_Dominio.AFP;
+import Capa3_Dominio.Interfaces.IAFPDAO;
+import Capa4_Persistencia.GestorJDBC;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author LuisCriz
  */
-public class AFPDAO {
+public class AFPDAO implements IAFPDAO{
+    
+    private GestorJDBC gestorJDBC;
+
+    public AFPDAO(GestorJDBC gestorJDBC) {
+        this.gestorJDBC = gestorJDBC;
+    }
+
+    @Override
+    public List<AFP> obtenerTodosLosAFP() throws SQLException {
+        List<AFP> listaAFP = new ArrayList();
+        AFP afp;
+        ResultSet resultado;
+        String sentenciaSQL;
+
+        sentenciaSQL = "SELECT * FROM afp";
+
+        resultado = gestorJDBC.ejecutarConsulta(sentenciaSQL);
+        while(resultado.next()){            
+            afp = new AFP();
+            afp.setId(resultado.getInt("afpid"));
+            afp.setNombre(resultado.getString("afpnombre"));
+            afp.setDescuento(resultado.getDouble("afpdescuento"));
+            listaAFP.add(afp);
+        }
+        resultado.close();
+        return listaAFP;    
+    }
     
 }

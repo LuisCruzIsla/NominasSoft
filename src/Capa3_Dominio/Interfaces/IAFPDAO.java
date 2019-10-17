@@ -5,10 +5,16 @@
  */
 package Capa3_Dominio.Interfaces;
 
+import Capa3_Dominio.AFP;
+import java.sql.SQLException;
+import java.util.List;
+
 /**
  *
  * @author LuisCriz
  */
 public interface IAFPDAO {
+    
+    public List<AFP> obtenerTodosLosAFP() throws SQLException;
     
 }

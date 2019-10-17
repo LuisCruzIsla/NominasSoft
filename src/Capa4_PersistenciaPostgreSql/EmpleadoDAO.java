@@ -19,7 +19,8 @@ import java.util.List;
  */
 
 public class EmpleadoDAO implements IEmpleadoDAO{
-        GestorJDBC gestorJDBC;
+        
+    private GestorJDBC gestorJDBC;
 
     public EmpleadoDAO(GestorJDBC gestorJDBC) {
         this.gestorJDBC = gestorJDBC;
@@ -28,7 +29,7 @@ public class EmpleadoDAO implements IEmpleadoDAO{
     @Override
     public Empleado buscarPorDNI(int dni) throws SQLException {
         Empleado empleado = null;
-            ResultSet resultadoEmpleado;
+        ResultSet resultadoEmpleado;
         String sentenciaSQL;
 
         sentenciaSQL = "SELECT "
@@ -46,6 +47,7 @@ public class EmpleadoDAO implements IEmpleadoDAO{
         resultadoEmpleado = gestorJDBC.ejecutarConsulta(sentenciaSQL);
         if(resultadoEmpleado.next()){            
             empleado = new Empleado();
+            empleado.setId(resultadoEmpleado.getString("empleadocodigo"));
             empleado.setNombre(resultadoEmpleado.getString("empleadonombre"));
             empleado.setDni(resultadoEmpleado.getInt("empleadodni"));
             empleado.setDireccion(resultadoEmpleado.getString("empleadodireccion"));
