@@ -16,5 +16,6 @@ import java.util.List;
 public interface IAFPDAO {
     
     public List<AFP> obtenerTodosLosAFP() throws SQLException;
+    public AFP buscar(int id) throws SQLException;
     
 }

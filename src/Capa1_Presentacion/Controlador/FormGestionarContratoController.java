@@ -6,6 +6,7 @@
 package Capa1_Presentacion.Controlador;
 
 import Capa2_Aplicacion.GestionarContratoServicio;
+import Capa3_Dominio.Contrato;
 import Capa3_Dominio.Empleado;
 import Utils.AlertMaker;
 import Utils.Constantes;
@@ -74,6 +75,7 @@ public class FormGestionarContratoController implements Initializable {
     
     //Data
     private Empleado empleado;
+    private Contrato contrato;
         
     @FXML
     private void buscarEmpleado(ActionEvent event){
@@ -84,6 +86,7 @@ public class FormGestionarContratoController implements Initializable {
                 GestionarContratoServicio gestionarContratoServicio = new GestionarContratoServicio();
                 empleado = gestionarContratoServicio.buscarEmpleadoPorDNI(dni);
                 if(empleado!=null){
+                    contrato = gestionarContratoServicio.buscarContratoPorEmpleado(empleado);
                     lbNombre.setText(empleado.getNombre());
                     lbDireccion.setText(empleado.getDireccion());
                     lbTelefono.setText("+51"+empleado.getTelefono());
@@ -109,6 +112,10 @@ public class FormGestionarContratoController implements Initializable {
     
     @FXML
     private void editarContrato(ActionEvent event){
+        if(contrato== null || !contrato.esVigente()){
+            AlertMaker.showError(stackPane,"No hay contrato vigente.");
+            return;
+        }
         openViewGestionarContrato(View.EDITAR_CONTRATO);
     }
     
@@ -123,6 +130,7 @@ public class FormGestionarContratoController implements Initializable {
             Parent parent = loader.load();
             GestionarContrato controller = loader.getController();
             controller.setEmpleado(empleado);
+            controller.setContratoAntiguo(contrato);
             controller.setiBtnAtras(() -> {
                 rootMain.getChildren().clear();
                 rootMain.getChildren().add(stackPane);

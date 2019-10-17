@@ -6,6 +6,7 @@
 package Capa3_Dominio.Interfaces;
 
 import Capa3_Dominio.Contrato;
+import Capa3_Dominio.Empleado;
 import java.sql.SQLException;
 
 /**
@@ -14,4 +15,5 @@ import java.sql.SQLException;
  */
 public interface IContratoDAO {
     int ingresar(Contrato contrato) throws SQLException ;
+    Contrato buscarPorEmpleado(Empleado empleado) throws SQLException;
 }

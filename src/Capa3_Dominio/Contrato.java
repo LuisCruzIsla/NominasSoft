@@ -5,6 +5,9 @@
  */
 package Capa3_Dominio;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -14,7 +17,7 @@ import java.util.Date;
  */
 public class Contrato {
 
-    private int contratoId;
+    private String contratoId;
     private Date fechaInicio;
     private Date fechaFin;
     private boolean asignacionFamiliar;
@@ -100,11 +103,11 @@ public class Contrato {
         this.empleado = empleado;
     }
 
-    public int getContratoId() {
+    public String getContratoId() {
         return contratoId;
     }
 
-    public void setContratoId(int contratoId) {
+    public void setContratoId(String contratoId) {
         this.contratoId = contratoId;
     }
 
@@ -126,9 +129,9 @@ public class Contrato {
     }
 
     //R2 -  Gestionar Contrato
-    public boolean esRenovable(Date FechaFinContratoAnterior) {
+    public boolean esRenovable(Contrato contrato) {
         boolean renovable = false;
-        if (fechaFin.compareTo(FechaFinContratoAnterior) > 0) {
+        if (contrato==null || fechaFin.compareTo(contrato.getFechaFin()) > 0) {
             renovable = true;
         }
         return renovable;
@@ -138,13 +141,10 @@ public class Contrato {
     public boolean esFechaValida() {
         boolean fechaValida = false;
         if (fechaFin.compareTo(fechaInicio) > 0) {
-            Calendar inicio = Calendar.getInstance();
-            Calendar fin = Calendar.getInstance();
-            inicio.setTime(fechaInicio);
-            fin.setTime(fechaFin);
-
-            int monthDiff = fin.get(Calendar.MONTH) - inicio.get(Calendar.MONTH);
-            if (monthDiff >= 3) {
+            long monthsBetween = ChronoUnit.MONTHS.between(
+            fechaInicio.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1),
+            fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1));
+            if (monthsBetween >= 3) {
                 fechaValida = true;
             }
         }
@@ -163,15 +163,15 @@ public class Contrato {
     
     //R5 -  Gestionar Contrato
     public boolean esValorizacionAceptada(){
-        if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>5 && valorPorHora<10)){
+        if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>=5 && valorPorHora<=10)){
             return true;
-        } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>11 && valorPorHora<20)){
+        } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>=11 && valorPorHora<=20)){
             return true;
-        } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>21 && valorPorHora<30)){
+        } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>=21 && valorPorHora<=30)){
             return true;
-        } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>31 && valorPorHora<40)){
+        } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>=31 && valorPorHora<=40)){
             return true;
-        } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>41 && valorPorHora<60)){
+        } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>=41 && valorPorHora<=60)){
             return true;        
         }
         return false;

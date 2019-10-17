@@ -8,13 +8,9 @@ package Capa1_Presentacion.Controlador;
 import Capa2_Aplicacion.GestionarContratoServicio;
 import Capa3_Dominio.AFP;
 import Capa3_Dominio.Contrato;
-import Capa3_Dominio.Empleado;
 import Utils.AlertMaker;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.time.LocalDate;
@@ -26,10 +22,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 
 /**
@@ -106,7 +99,7 @@ public class FormCrearContratoController extends GestionarContrato implements In
         
         try{
             GestionarContratoServicio gestionarContratoServicio = new GestionarContratoServicio();
-            int registros_afectados = gestionarContratoServicio.crearContrato(contrato);
+            int registros_afectados = gestionarContratoServicio.crearContrato(contrato,contratoAntiguo);
             if(registros_afectados == 1){
                  AlertMaker.showOK(stackPane,"Se guardó el nuevo contrato.",iBtnAtras);
             }else{
@@ -145,6 +138,16 @@ public class FormCrearContratoController extends GestionarContrato implements In
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
         }
+        txtHorasSemana.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                txtHorasSemana.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+        txtValorPorHora.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                txtValorPorHora.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        }); 
     }    
     
 }

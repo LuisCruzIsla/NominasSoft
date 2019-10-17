@@ -19,6 +19,25 @@ values('TR-00000',
 	   'Profesional'
 );
 
+insert into empleados(
+	empleadocodigo,
+	empleadonombre,
+	empleadodni,
+	empleadodireccion,
+	empleadotelefono,
+	empleadofechanacimiento,
+	empleadoestadocivil,
+	empleadogradoacademico)
+values('TR-00001',
+	   'Kayra Oriana Espinoza Garcia',
+	   '73698921',
+	   'Las Flores Mz. G Lt. 15',
+	   '974287283',
+	   '02/01/1998',
+	   'S',
+	   'BACHILLER'
+);
+
 SELECT empleadocodigo,
 	empleadonombre,
 	empleadodni,

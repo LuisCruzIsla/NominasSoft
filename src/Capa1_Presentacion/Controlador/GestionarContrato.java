@@ -5,6 +5,7 @@
  */
 package Capa1_Presentacion.Controlador;
 
+import Capa3_Dominio.Contrato;
 import Capa3_Dominio.Empleado;
 
 /**
@@ -12,10 +13,11 @@ import Capa3_Dominio.Empleado;
  * @author user
  */
 public class GestionarContrato {
-    
+        
     //Data
     protected IBtnAtras iBtnAtras;
     protected Empleado empleado;
+    protected Contrato contratoAntiguo;
 
     public IBtnAtras getiBtnAtras() {
         return iBtnAtras;
@@ -31,6 +33,14 @@ public class GestionarContrato {
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
+    }
+
+    public Contrato getContratoAntiguo() {
+        return contratoAntiguo;
+    }
+
+    public void setContratoAntiguo(Contrato contratoAntiguo) {
+        this.contratoAntiguo = contratoAntiguo;
     }
     
 }

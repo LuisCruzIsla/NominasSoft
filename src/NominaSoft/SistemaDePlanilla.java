@@ -5,13 +5,10 @@
  */
 package NominaSoft;
 
-<<<<<<< Updated upstream
-import java.time.LocalDate;
-import java.util.Date;
-=======
 import Utils.Constantes;
 import Utils.View;
->>>>>>> Stashed changes
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,7 +34,6 @@ public class SistemaDePlanilla extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        System.out.println(new Date());
     }
     
 }

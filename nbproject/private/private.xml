@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa3_Dominio/AFP.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa4_PersistenciaPostgreSql/EmpleadoDAO.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa1_Presentacion/Controlador/FormCrearContratoController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa4_Persistencia/GestorJDBC.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa1_Presentacion/Controlador/FormEditarContratoController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa3_Dominio/Interfaces/IAFPDAO.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa4_PersistenciaPostgreSql/ContratoDAO.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa4_PersistenciaPostgreSql/AFPDAO.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa1_Presentacion/Controlador/FormGestionarContratoController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="rootMain" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Controlador.FormGestionarContratoController">
+    <stylesheets>
+        <URL value="@/Capa1_Presentacion/Estilos/formgestionarcontrato.css" />
+    </stylesheets>
+   <children>
+      <StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <AnchorPane fx:id="mainContainer" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" maxWidth="500.0">
+                           <children>
+                             <Label text="Gestionar Contrato">
+                                <font>
+                                   <Font name="System Bold" size="20.0" />
+                                </font>
+                             </Label>
+                              <HBox alignment="BOTTOM_CENTER">
+                                 <children>
+                                   <JFXTextField fx:id="txtDNI" labelFloat="true" prefWidth="400.0" promptText="DNI" style="-fx-prompt-text-fill: gray;">
+                                       <padding>
+                                          <Insets right="25.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                   <JFXButton fx:id="btnBuscar" buttonType="RAISED" onAction="#buscarEmpleado" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Imagenes/search.png&quot;);" text="Buscar" textFill="WHITE">
+                                      <font>
+                                         <Font size="14.0" />
+                                      </font>
+                                   </JFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                         <Image url="@../../Imagenes/empleado_card.png" />
+                                      </image>
+                                   </ImageView>
+                                   <Label text="Información del empleado">
+                                      <font>
+                                         <Font name="System Bold" size="12.0" />
+                                      </font>
+                                   </Label>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                               <Image url="@../../Imagenes/nombre.png" />
+                                            </image>
+                                          </ImageView>
+                                         <Label text="Nombre" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                   <Label fx:id="lbNombre">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                   </Label>
+                                    <HBox>
+                                       <children>
+                                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                               <Image url="@../../Imagenes/direccion.png" />
+                                            </image>
+                                         </ImageView>
+                                         <Label text="Dirección" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                   <Label fx:id="lbDireccion">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                   </Label>
+                                    <HBox>
+                                       <children>
+                                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                               <Image url="@../../Imagenes/telefono.png" />
+                                            </image>
+                                         </ImageView>
+                                         <Label text="Teléfono" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                   <Label fx:id="lbTelefono">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                   </Label>
+                                    <HBox>
+                                       <children>
+                                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                               <Image url="@../../Imagenes/fecha_de_nacimiento.png" />
+                                            </image>
+                                         </ImageView>
+                                         <Label text="Fecha de nacimiento" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                   <Label fx:id="lbFechaDeNacimiento">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                   </Label>
+                                    <HBox>
+                                       <children>
+                                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                               <Image url="@../../Imagenes/estado_civil.png" />
+                                            </image>
+                                         </ImageView>
+                                         <Label text="Estado Civil" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                   <Label fx:id="lbEstadoCivil">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                   </Label>
+                                    <HBox>
+                                       <children>
+                                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                               <Image url="@../../Imagenes/grado_academico.png" />
+                                            </image>
+                                         </ImageView>
+                                         <Label text="Grado Academico" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                   <Label fx:id="lbGradoAcadameico">
+                                       <VBox.margin>
+                                          <Insets left="25.0" />
+                                       </VBox.margin>
+                                   </Label>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                   <JFXButton fx:id="btnCrearContrato" buttonType="RAISED" disable="true" onAction="#crearContrato" style="-fx-background-color: #4CAF50;" text="Crear Contrato" textFill="WHITE">
+                                      <font>
+                                         <Font size="14.0" />
+                                      </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Imagenes/crear.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                   </JFXButton>
+                                   <JFXButton fx:id="btnEditarContrato" buttonType="RAISED" disable="true" onAction="#editarContrato" style="-fx-background-color: #FFC107; -fx-graphic: url(&quot;Imagenes/actualizar.png&quot;);" text="Editar Contrato" textFill="WHITE">
+                                      <font>
+                                         <Font size="14.0" />
+                                      </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Imagenes/actualizar.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                   </JFXButton>
+                                   <JFXButton fx:id="btnAnularContrato" buttonType="RAISED" disable="true" onAction="#anularContrato" style="-fx-background-color: #F44336; -fx-graphic: url(&quot;Imagenes/cancelar.png&quot;);" text="Anular Contrato" textFill="WHITE">
+                                      <font>
+                                         <Font size="14.0" />
+                                      </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Imagenes/eliminar.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                   </JFXButton>
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

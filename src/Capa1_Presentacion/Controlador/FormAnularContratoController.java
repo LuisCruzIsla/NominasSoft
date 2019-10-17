@@ -57,5 +57,4 @@ public class FormAnularContratoController extends GestionarContrato implements I
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
 }
