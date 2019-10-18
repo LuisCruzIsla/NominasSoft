@@ -18,4 +18,5 @@ public interface IContratoDAO {
     int actualizar(Contrato contrato) throws SQLException ;
     Contrato obtenerUltimoPorEmpleado(Empleado empleado) throws SQLException;
     Contrato obtenerAntepenultimoPorEmpleado(Empleado empleado) throws SQLException;
+    int anular(Contrato contrato) throws SQLException ;
 }

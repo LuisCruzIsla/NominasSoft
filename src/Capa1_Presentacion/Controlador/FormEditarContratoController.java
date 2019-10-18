@@ -10,11 +10,8 @@ import Capa2_Aplicacion.GestionarContratoServicio;
 import Capa3_Dominio.AFP;
 import Capa3_Dominio.Contrato;
 import Capa1_Presentacion.Utils.Constantes;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.time.LocalDate;
@@ -27,7 +24,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.util.StringConverter;
 
 /**
@@ -105,7 +101,7 @@ public class FormEditarContratoController extends GestionarContrato implements I
             GestionarContratoServicio gestionarContratoServicio = new GestionarContratoServicio();
             int registros_afectados = gestionarContratoServicio.actualizarContrato(contrato);
             if (registros_afectados == 1) {
-                AlertMaker.showOK(stackPane, "Se guardó el nuevo contrato.", iBtnAtras);
+                AlertMaker.showOK(stackPane, "Se guardó las modificaciones del contrato.", iBtnAtras);
             } else {
                 AlertMaker.showError(stackPane, "Error al editar.");
             }

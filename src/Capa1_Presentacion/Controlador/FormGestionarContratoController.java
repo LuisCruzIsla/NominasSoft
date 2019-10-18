@@ -107,7 +107,7 @@ public class FormGestionarContratoController implements Initializable {
         try {
             GestionarContratoServicio gestionarContratoServicio = new GestionarContratoServicio();
             contrato = gestionarContratoServicio.buscarContratoPorEmpleado(empleado);
-            if (contrato == null || contrato.esVigente()) {
+            if (contrato == null || !contrato.esVigente()) {
                 AlertMaker.showError(stackPane, "No existe ningun contrato vigente.");
                 return;
             }
@@ -119,7 +119,18 @@ public class FormGestionarContratoController implements Initializable {
 
     @FXML
     private void anularContrato(ActionEvent event) {
-        openViewGestionarContrato(View.ANULAR_CONTRATO);
+        try {
+            GestionarContratoServicio gestionarContratoServicio = new GestionarContratoServicio();
+            contrato = gestionarContratoServicio.buscarContratoPorEmpleado(empleado);
+            System.out.println(contrato);
+            if (contrato == null || !contrato.esVigente()) {
+                AlertMaker.showError(stackPane, "No existe ningun contrato vigente.");
+                return;
+            }
+            openViewGestionarContrato(View.ANULAR_CONTRATO);
+        } catch (Exception e) {
+            AlertMaker.showError(stackPane, "Error: " + e.getMessage());
+        }
     }
 
     private void openViewGestionarContrato(String view) {

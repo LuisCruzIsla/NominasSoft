@@ -8,11 +8,11 @@ package Capa2_Aplicacion;
 import Capa3_Dominio.AFP;
 import Capa3_Dominio.Contrato;
 import Capa3_Dominio.Empleado;
-import Capa4_Persistencia.GestorJDBC;
-import Capa4_PersistenciaPostgreSql.AFPDAO;
-import Capa4_PersistenciaPostgreSql.ContratoDAO;
-import Capa4_PersistenciaPostgreSql.EmpleadoDAO;
-import Capa4_PersistenciaPostgreSql.GestorJDBCPostgre;
+import Capa4_Persistencia.Gestores.GestorJDBC;
+import Capa4_Persistencia.AFPDAO;
+import Capa4_Persistencia.ContratoDAO;
+import Capa4_Persistencia.EmpleadoDAO;
+import Capa4_Persistencia.Gestores.GestorGlobal;
 import java.util.List;
 
 /**
@@ -27,7 +27,7 @@ public class GestionarContratoServicio {
     private AFPDAO afpDAO;
     
     public GestionarContratoServicio(){
-        gestorJDBC = new GestorJDBCPostgre();
+        gestorJDBC = GestorGlobal.getInstance().getGestor();
         empleadoDAO = new EmpleadoDAO(gestorJDBC);
         contratoDAO = new ContratoDAO(gestorJDBC);
         afpDAO = new AFPDAO(gestorJDBC);
@@ -114,6 +114,13 @@ public class GestionarContratoServicio {
         Contrato contrato = contratoDAO.obtenerUltimoPorEmpleado(empleado);
         gestorJDBC.cerrarConexion();
         return contrato;
+    }
+
+    public int anularContrato(Contrato contrato) throws Exception {
+        gestorJDBC.abrirConexion();
+        int registros_afectados = contratoDAO.anular(contrato);
+        gestorJDBC.cerrarConexion();
+        return registros_afectados;
     }
     
 }
