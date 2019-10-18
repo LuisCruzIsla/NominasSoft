@@ -5,8 +5,8 @@
  */
 package NominaSoft;
 
-import Utils.Constantes;
-import Utils.View;
+import Capa1_Presentacion.Utils.Constantes;
+import Capa1_Presentacion.Utils.View;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import javafx.application.Application;

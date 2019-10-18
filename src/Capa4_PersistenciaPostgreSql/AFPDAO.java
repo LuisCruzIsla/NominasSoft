@@ -7,7 +7,7 @@ package Capa4_PersistenciaPostgreSql;
 
 import Capa3_Dominio.AFP;
 import Capa3_Dominio.Contrato;
-import Capa3_Dominio.Interfaces.IAFPDAO;
+import Capa4_Persistencia.Interfaces.IAFPDAO;
 import Capa4_Persistencia.GestorJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;

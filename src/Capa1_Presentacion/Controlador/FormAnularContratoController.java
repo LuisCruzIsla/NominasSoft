@@ -38,7 +38,7 @@ public class FormAnularContratoController extends GestionarContrato implements I
             dialog.close();
         });
         dialog.setOnDialogClosed(closeEvent -> {
-            iBtnAtras.atras();
+            iBtnAtras.onAtras();
        });
         content.setActions(btnOK);
         dialog.show();
@@ -47,7 +47,7 @@ public class FormAnularContratoController extends GestionarContrato implements I
     
     @FXML
     private void atras(ActionEvent event){
-        iBtnAtras.atras();
+        iBtnAtras.onAtras();
     }
 
     /**

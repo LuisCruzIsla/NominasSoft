@@ -5,8 +5,8 @@
  */
 package Capa1_Presentacion.Controlador;
 
-import Utils.Constantes;
-import Utils.View;
+import Capa1_Presentacion.Utils.Constantes;
+import Capa1_Presentacion.Utils.View;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,7 +26,7 @@ public class FormMenuPrincipalController implements Initializable {
     private enum EViewMenu{
         
         GESTIONAR_CONTRATO(View.GESTIONAR_CONTRATO,null),
-        PROCESAR_PAGO("",null),
+        PROCESAR_PAGO(View.ANULAR_CONTRATO,null),
         REGISTRAR_EMPLEADO("",null),
         SALIR("",null);
         

@@ -1,5 +1,5 @@
 select * from empleados;
-
+select * from contratos;
 insert into empleados(
 	empleadocodigo,
 	empleadonombre,
@@ -16,7 +16,7 @@ values('TR-00000',
 	   '962823909',
 	   '05/06/1999',
 	   'S',
-	   'Profesional'
+	   'PROFESIONAL'
 );
 
 insert into empleados(

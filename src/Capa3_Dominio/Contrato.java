@@ -17,7 +17,7 @@ import java.util.Date;
  */
 public class Contrato {
 
-    private String contratoId;
+    private int contratoId;
     private Date fechaInicio;
     private Date fechaFin;
     private boolean asignacionFamiliar;
@@ -103,11 +103,11 @@ public class Contrato {
         this.empleado = empleado;
     }
 
-    public String getContratoId() {
+    public int getContratoId() {
         return contratoId;
     }
 
-    public void setContratoId(String contratoId) {
+    public void setContratoId(int contratoId) {
         this.contratoId = contratoId;
     }
 
@@ -144,7 +144,7 @@ public class Contrato {
             long monthsBetween = ChronoUnit.MONTHS.between(
             fechaInicio.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1),
             fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1));
-            if (monthsBetween >= 3) {
+            if (monthsBetween >= 3 && monthsBetween<=12) {
                 fechaValida = true;
             }
         }

@@ -5,6 +5,7 @@
  */
 package Capa1_Presentacion.Controlador;
 
+import Capa1_Presentacion.Controlador.interfaces.IOnClick;
 import Capa3_Dominio.Contrato;
 import Capa3_Dominio.Empleado;
 
@@ -15,15 +16,15 @@ import Capa3_Dominio.Empleado;
 public class GestionarContrato {
         
     //Data
-    protected IBtnAtras iBtnAtras;
+    protected IOnClick iBtnAtras;
     protected Empleado empleado;
     protected Contrato contratoAntiguo;
 
-    public IBtnAtras getiBtnAtras() {
+    public IOnClick getiBtnAtras() {
         return iBtnAtras;
     }
 
-    public void setiBtnAtras(IBtnAtras iBtnAtras) {
+    public void setiBtnAtras(IOnClick iBtnAtras) {
         this.iBtnAtras = iBtnAtras;
     }
 

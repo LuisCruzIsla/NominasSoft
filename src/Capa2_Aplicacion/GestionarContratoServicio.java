@@ -47,10 +47,13 @@ public class GestionarContratoServicio {
         return listAFP;
     }
     
-    public int crearContrato(Contrato contrato,Contrato contratoAnterior) throws Exception{
+    public int crearContrato(Contrato contrato) throws Exception{
         
-        if(!contrato.esVigente()){
-            throw new Exception("La fecha fin debe ser mayor a la fecha actual y el contrato debe estar vigente.");
+        gestorJDBC.abrirConexion();
+        Contrato contratoAnterior = contratoDAO.obtenerUltimoPorEmpleado(contrato.getEmpleado());
+        
+        if(contratoAnterior!=null && !contratoAnterior.esVigente()){
+            throw new Exception("El contrato anterior aun es vigente");
         }
         
         if(!contrato.esRenovable(contratoAnterior)){
@@ -69,8 +72,38 @@ public class GestionarContratoServicio {
             throw new Exception("El valor por hora no corresponde a su grado academico.");
         }
         
-        gestorJDBC.abrirConexion();
         int registros_afectados = contratoDAO.ingresar(contrato);
+        gestorJDBC.cerrarConexion();
+        return registros_afectados;
+        
+    }
+    
+    public int actualizarContrato(Contrato contrato) throws Exception{
+        
+        gestorJDBC.abrirConexion();
+        Contrato contratoAntepenultimo = contratoDAO.obtenerAntepenultimoPorEmpleado(contrato.getEmpleado());
+        
+        if(contratoAntepenultimo!=null && !contratoAntepenultimo.esVigente()){
+            throw new Exception("El contrato anterior aun es vigente");
+        }
+        
+        if(!contrato.esRenovable(contratoAntepenultimo)){
+            throw new Exception("Hay un contrato pendiente, no puedes crear un nuevo contrato.");
+        }
+        
+        if(!contrato.esFechaValida()){  
+            throw new Exception("Las fechas no son validas");
+        }
+        
+        if(!contrato.esHoraValidaPorSemana()){
+            throw new Exception("El total de horas contratadas no es valido.");
+        }
+        
+        if(!contrato.esValorizacionAceptada()){
+            throw new Exception("El valor por hora no corresponde a su grado academico.");
+        }
+        
+        int registros_afectados = contratoDAO.actualizar(contrato);
         gestorJDBC.cerrarConexion();
         return registros_afectados;
         
@@ -78,7 +111,7 @@ public class GestionarContratoServicio {
     
     public Contrato buscarContratoPorEmpleado(Empleado empleado) throws Exception{
         gestorJDBC.abrirConexion();        
-        Contrato contrato = contratoDAO.buscarPorEmpleado(empleado);
+        Contrato contrato = contratoDAO.obtenerUltimoPorEmpleado(empleado);
         gestorJDBC.cerrarConexion();
         return contrato;
     }

@@ -6,7 +6,7 @@
 package Capa4_PersistenciaPostgreSql;
 
 import Capa3_Dominio.Empleado;
-import Capa3_Dominio.Interfaces.IEmpleadoDAO;
+import Capa4_Persistencia.Interfaces.IEmpleadoDAO;
 import Capa4_Persistencia.GestorJDBC;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;

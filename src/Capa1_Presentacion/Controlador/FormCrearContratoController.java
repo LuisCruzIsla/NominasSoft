@@ -8,7 +8,7 @@ package Capa1_Presentacion.Controlador;
 import Capa2_Aplicacion.GestionarContratoServicio;
 import Capa3_Dominio.AFP;
 import Capa3_Dominio.Contrato;
-import Utils.AlertMaker;
+import Capa1_Presentacion.Utils.AlertMaker;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -84,7 +84,7 @@ public class FormCrearContratoController extends GestionarContrato implements In
         }
         
         int horasPorSemana = Integer.parseInt(horasPorSemanaTexto);
-        double valorPorHora = Integer.parseInt(valorPorHoraTexto);
+        double valorPorHora = Double.parseDouble(valorPorHoraTexto);
         
         Contrato contrato = new Contrato();
         contrato.setFechaInicio(Date.from(fechaInicio.atStartOfDay(ZoneId.systemDefault()).toInstant()));
@@ -99,7 +99,7 @@ public class FormCrearContratoController extends GestionarContrato implements In
         
         try{
             GestionarContratoServicio gestionarContratoServicio = new GestionarContratoServicio();
-            int registros_afectados = gestionarContratoServicio.crearContrato(contrato,contratoAntiguo);
+            int registros_afectados = gestionarContratoServicio.crearContrato(contrato);
             if(registros_afectados == 1){
                  AlertMaker.showOK(stackPane,"Se guardó el nuevo contrato.",iBtnAtras);
             }else{
@@ -112,7 +112,7 @@ public class FormCrearContratoController extends GestionarContrato implements In
     
     @FXML
     private void atras(ActionEvent event){
-        iBtnAtras.atras();
+        iBtnAtras.onAtras();
     }
     
     /**
@@ -144,10 +144,18 @@ public class FormCrearContratoController extends GestionarContrato implements In
             }
         });
         txtValorPorHora.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                txtValorPorHora.setText(newValue.replaceAll("[^\\d]", ""));
+            if(newValue.isEmpty()){
+                txtValorPorHora.setText(newValue);
+                return;
             }
-        }); 
+            newValue = newValue.trim().replaceAll("[dDfF]","");
+            txtValorPorHora.setText(newValue);
+            try {
+                double valor = Double.parseDouble(newValue);
+            } catch (Exception e) {
+                txtValorPorHora.setText(oldValue);
+            }
+        });
     }    
     
 }
