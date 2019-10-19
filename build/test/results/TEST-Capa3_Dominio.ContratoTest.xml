@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="3" failures="23" hostname="LuisCruzIsla-PC" name="Capa3_Dominio.ContratoTest" skipped="0" tests="26" time="0.194" timestamp="2019-10-18T22:57:04">
+<testsuite errors="0" failures="1" hostname="LuisCruzIsla-PC" name="Capa3_Dominio.ContratoTest" skipped="0" tests="6" time="0.093" timestamp="2019-10-19T01:17:16">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="PE" />
@@ -62,7 +62,7 @@
     <property name="libs.jsf12.javadoc" value="C:\Program Files\NetBeans-11.1\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Capa3_Dominio.ContratoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LuisCriz\Documents\NominasSoft\build\test\results\TEST-Capa3_Dominio.ContratoTest.xml crashfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junitvmwatcher835349732149495963.properties propsfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junit2734215076459690837.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Capa3_Dominio.ContratoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LuisCriz\Documents\NominasSoft\build\test\results\TEST-Capa3_Dominio.ContratoTest.xml crashfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junitvmwatcher5511139562468973561.properties propsfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junit153940347884537527.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="manifest.encoding" value="UTF-8" />
@@ -113,7 +113,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\Users\LuisCriz\Documents\NominasSoft\null2054108361" />
+    <property name="javac.includesfile.binary" value="C:\Users\LuisCriz\Documents\NominasSoft\null934495747" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -436,165 +436,22 @@
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans-11.1\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetContratoId" time="0.012">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetContratoId(ContratoTest.java:248)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetEmpleado" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetEmpleado(ContratoTest.java:234)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testCalcularAsignacionFamiliar" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testCalcularAsignacionFamiliar(ContratoTest.java:373)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetEmpleado" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetEmpleado(ContratoTest.java:221)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetCargo" time="0.001">
-    <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
-	at Capa3_Dominio.ContratoTest.testGetCargo(ContratoTest.java:192)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetContratoId" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetContratoId(ContratoTest.java:261)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsVigente" time="0.001">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Capa3_Dominio.Contrato.esVigente(Contrato.java:125)
-	at Capa3_Dominio.ContratoTest.testEsVigente(ContratoTest.java:299)
-</error>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsValorizacionAceptada" time="0.002">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Capa3_Dominio.Contrato.esValorizacionAceptada(Contrato.java:166)
-	at Capa3_Dominio.ContratoTest.testEsValorizacionAceptada(ContratoTest.java:356)
-</error>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetFechaInicio" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetFechaInicio(ContratoTest.java:72)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testIsAsignacionFamiliar" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testIsAsignacionFamiliar(ContratoTest.java:113)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetEstado" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetEstado(ContratoTest.java:45)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetValorPorHora" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetValorPorHora(ContratoTest.java:167)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetEstado" time="0.001">
-    <failure message="expected:&lt;32&gt; but was:&lt;0&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;32&gt; but was:&lt;0&gt;
-	at Capa3_Dominio.ContratoTest.testGetEstado(ContratoTest.java:30)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetFechaFin" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetFechaFin(ContratoTest.java:99)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsFechaValida" time="0.001">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at Capa3_Dominio.Contrato.esFechaValida(Contrato.java:143)
-	at Capa3_Dominio.ContratoTest.testEsFechaValida(ContratoTest.java:328)
-</error>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetFechaFin" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetFechaFin(ContratoTest.java:86)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsHoraValidaPorSemana" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testEsHoraValidaPorSemana(ContratoTest.java:345)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsRenovable" time="0.002">
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test1EsRenovable" time="0.003" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsRenovable" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsRenovable" time="0.007">
     <failure message="expected:&lt;false&gt; but was:&lt;true&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
-	at Capa3_Dominio.ContratoTest.testEsRenovable(ContratoTest.java:315)
+	at Capa3_Dominio.ContratoTest.test3EsRenovable(ContratoTest.java:116)
 </failure>
   </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetTotalHorasSemanal" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetTotalHorasSemanal(ContratoTest.java:153)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetAfp" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetAfp(ContratoTest.java:275)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetFechaInicio" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetFechaInicio(ContratoTest.java:59)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetAsignacionFamiliar" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetAsignacionFamiliar(ContratoTest.java:126)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetAfp" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetAfp(ContratoTest.java:288)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetValorPorHora" time="0.003">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetValorPorHora(ContratoTest.java:180)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testGetTotalHorasSemanal" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testGetTotalHorasSemanal(ContratoTest.java:140)
-</failure>
-  </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testSetCargo" time="0.005">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at Capa3_Dominio.ContratoTest.testSetCargo(ContratoTest.java:207)
-</failure>
-  </testcase>
-  <system-out><![CDATA[getContratoId
-setEmpleado
-calcularAsignacionFamiliar
-getEmpleado
-getCargo
-setContratoId
+  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsVigente" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsVigente" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsVigente" time="0.0" />
+  <system-out><![CDATA[esRenovable1
+esRenovable2
+esRenovable3
 esVigente
-esValorizacionAceptada
-setFechaInicio
-isAsignacionFamiliar
-setEstado
-getValorPorHora
-getEstado
-setFechaFin
-esFechaValida
-getFechaFin
-esHoraValidaPorSemana
-esRenovable
-setTotalHorasSemanal
-getAfp
-getFechaInicio
-setAsignacionFamiliar
-setAfp
-setValorPorHora
-getTotalHorasSemanal
-setCargo
+esVigente3
+esVigente2
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
