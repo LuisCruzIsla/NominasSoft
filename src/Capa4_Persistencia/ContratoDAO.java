@@ -53,7 +53,7 @@ public class ContratoDAO implements IContratoDAO{
     
     @Override
     public int actualizar(Contrato contrato) throws SQLException {
-        String sentenciaSQL = "UPDATE public.contratos "
+        String sentenciaSQL = "UPDATE contratos "
                 + "SET contratofechainicio=?, "
                 + "contratofechafin=?, "
                 + "contratoasignacionfamiliar=?, "
@@ -134,7 +134,7 @@ public class ContratoDAO implements IContratoDAO{
 
     @Override
     public int anular(Contrato contrato) throws SQLException  {
-        String sentenciaSQL = "UPDATE public.contratos "
+        String sentenciaSQL = "UPDATE contratos "
                 + "SET contratotipo = 'A' "
                 + "WHERE contratocodigo = ?";
         PreparedStatement sentencia = gestorJDBC.prepararSentencia(sentenciaSQL);
