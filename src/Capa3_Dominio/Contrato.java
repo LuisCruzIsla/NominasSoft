@@ -163,18 +163,19 @@ public class Contrato {
     
     //R5 -  Gestionar Contrato
     public boolean esValorizacionAceptada(){
+        boolean valoracion  = false;
         if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>=5 && valorPorHora<=10)){
-            return true;
+            valoracion = true;
         } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>=11 && valorPorHora<=20)){
-            return true;
+            valoracion = true;
         } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>=21 && valorPorHora<=30)){
-            return true;
+            valoracion = true;
         } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>=31 && valorPorHora<=40)){
-            return true;
+            valoracion = true;
         } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>=41 && valorPorHora<=60)){
-            return true;        
+            valoracion = true;      
         }
-        return false;
+        return valoracion;
     }
 
     //R3 - Procesar Pagos

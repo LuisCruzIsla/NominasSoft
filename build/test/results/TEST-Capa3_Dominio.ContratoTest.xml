@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="LuisCruzIsla-PC" name="Capa3_Dominio.ContratoTest" skipped="0" tests="6" time="0.093" timestamp="2019-10-19T01:17:16">
+<testsuite errors="0" failures="2" hostname="LuisCruzIsla-PC" name="Capa3_Dominio.ContratoTest" skipped="0" tests="13" time="0.098" timestamp="2019-10-24T02:41:57">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="PE" />
     <property name="javafx.binarycss" value="false" />
     <property name="javafx.signing.enabled" value="false" />
-    <property name="javac.test.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="javac.test.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="libs.jsf20.maven-pom" value="" />
     <property name="manifest.custom.codebase" value="*" />
     <property name="javafx.signing.blob" value="false" />
@@ -62,7 +62,7 @@
     <property name="libs.jsf12.javadoc" value="C:\Program Files\NetBeans-11.1\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Capa3_Dominio.ContratoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LuisCriz\Documents\NominasSoft\build\test\results\TEST-Capa3_Dominio.ContratoTest.xml crashfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junitvmwatcher5511139562468973561.properties propsfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junit153940347884537527.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Capa3_Dominio.ContratoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LuisCriz\Documents\NominasSoft\build\test\results\TEST-Capa3_Dominio.ContratoTest.xml crashfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junitvmwatcher6518506439100715735.properties propsfile=C:\Users\LuisCriz\Documents\NominasSoft\build\junit3818100517855247995.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="manifest.encoding" value="UTF-8" />
@@ -79,7 +79,7 @@
     <property name="libs.MyJF.src" value="" />
     <property name="manifest.file" value="manifest.mf" />
     <property name="javadoc.encoding" value="UTF-8" />
-    <property name="javac.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar" />
+    <property name="javac.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar" />
     <property name="libs.jsp-compilation-syscp.src" value="" />
     <property name="libs.spring-framework400.classpath" value="C:\Program Files\NetBeans-11.1\netbeans\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-aop-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-aspects-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-beans-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-build-src-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-context-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-context-support-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-core-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-expression-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-framework-bom-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-instrument-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-instrument-tomcat-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-jdbc-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-jms-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-messaging-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-orm-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-oxm-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-test-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-tx-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-web-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-webmvc-portlet-4.0.1.RELEASE.jar;C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\spring-4\spring-websocket-4.0.1.RELEASE.jar" />
     <property name="debug-transport" value="dt_shmem" />
@@ -90,6 +90,7 @@
     <property name="javac.modulepath" value="" />
     <property name="javafx.deploy.includeDT" value="true" />
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\endorsed" />
+    <property name="file.reference.sqlite-jdbc-3.27.2.1.jar" value="src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar" />
     <property name="libs.groovy-all.src" value="" />
     <property name="libs.junit_5.src" value="C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-jupiter-api-5.3.1-sources.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-jupiter-params-5.3.1-sources.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-jupiter-engine-5.3.1-sources.jar" />
     <property name="test.includes" value="Capa3_Dominio/ContratoTest.java" />
@@ -113,10 +114,10 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\Users\LuisCriz\Documents\NominasSoft\null934495747" />
+    <property name="javac.includesfile.binary" value="C:\Users\LuisCriz\Documents\NominasSoft\null1234231743" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
-    <property name="javac.test.processorpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="javac.test.processorpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="netbeans.buildnumber" value="netbeans-release-428-on-20190716" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
@@ -165,7 +166,7 @@
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.MyJF.classpath" value="C:\Users\LuisCriz\Documents\NetBeans Componentes\jar\jfoenix-8.0.8.jar" />
     <property name="libs.spring-framework300.maven-pom" value="" />
-    <property name="run.test.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="run.test.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
     <property name="ant.project.invoked-targets" value="test-single" />
     <property name="test.binaryexcludes" value="" />
     <property name="sun.java2d.dpiaware" value="true" />
@@ -186,7 +187,7 @@
     <property name="libs.jstl.src" value="" />
     <property name="empty.dir" value="C:\Users\LuisCriz\Documents\NominasSoft\build\empty" />
     <property name="javafx.deploy.backgroundupdate" value="false" />
-    <property name="&lt;&lt;&lt;&lt;&lt;&lt;&lt;" value="Updated upstream" />
+    <property name="&lt;&lt;&lt;&lt;&lt;&lt;&lt;" value="HEAD" />
     <property name="javafx.disable.concurrent.runs" value="false" />
     <property name="test.binarytestincludes" value="" />
     <property name="javafx.preloader.jar.path" value="" />
@@ -194,7 +195,7 @@
     <property name="libs.jpa20-persistence.javadoc" value="" />
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_181\jre" />
     <property name="libs.jsp-compilation.src" value="" />
-    <property name="debug.test.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="debug.test.classpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar:build/classes:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
     <property name="libs.javaee-api-6.0.src" value="" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="ant.project.default-target" value="default" />
@@ -208,7 +209,7 @@
     <property name="libs.junit_4.javadoc" value="C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-4.12-javadoc.jar" />
     <property name="javac.test.modulepath" value="" />
     <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
-    <property name="run.classpath" value="dist/NominaSoft.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes" />
+    <property name="run.classpath" value="dist/NominaSoft.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar:build/classes" />
     <property name="endorsed.javafx.ant.classpath" value="." />
     <property name="jna.boot.library.name" value="jnidispatch-440" />
     <property name="libs.javaee-api-7.0.classpath" value="C:\Program Files\NetBeans-11.1\netbeans\enterprise\modules\ext\javaee-api-7.0.jar" />
@@ -222,7 +223,7 @@
     <property name="javadoc.use" value="true" />
     <property name="sun.java2d.noddraw" value="true" />
     <property name="libs.jsp-compiler.classpath" value="C:\Program Files\NetBeans-11.1\netbeans\enterprise\ant\extra\jspcompile.jar" />
-    <property name="javac.processorpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar" />
+    <property name="javac.processorpath" value="C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar" />
     <property name="libs.hamcrest.maven-pom" value="" />
     <property name="libs.junit_5.classpath" value="C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-jupiter-api-5.3.1.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-jupiter-params-5.3.1.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-jupiter-engine-5.3.1.jar" />
     <property name="javac.compilerargs" value="" />
@@ -250,7 +251,7 @@
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin" />
     <property name="have.sources" value="true" />
     <property name="libs.hamcrest.javadoc" value="" />
-    <property name="debug.classpath" value="dist/NominaSoft.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:build/classes" />
+    <property name="debug.classpath" value="dist/NominaSoft.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_181\jre/lib/plugin.jar:src\NominaSoft\Librerias\jfoenix-8.0.8.jar:src\NominaSoft\Librerias\postgresql-42.2.8.jar:src\NominaSoft\Librerias\AnimateFX-1.2.1.jar:src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar:build/classes" />
     <property name="javac.external.vm" value="false" />
     <property name="javadoc.private" value="false" />
     <property name="test.src.dir" value="test" />
@@ -381,7 +382,7 @@
     <property name="libs.metro.classpath" value="C:\Program Files\NetBeans-11.1\netbeans\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans-11.1\netbeans\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans-11.1\netbeans\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans-11.1\netbeans\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans-11.1\netbeans\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans-11.1\netbeans\enterprise\modules\ext\metro\webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\jfoenix-8.0.8.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\postgresql-42.2.8.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\AnimateFX-1.2.1.jar;C:\Users\LuisCriz\Documents\NominasSoft\build\classes;C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar;C:\Users\LuisCriz\Documents\NominasSoft\build\test\classes;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant.jar;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant-junit4.jar" />
+    <property name="java.class.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\plugin.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\jfoenix-8.0.8.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\postgresql-42.2.8.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\AnimateFX-1.2.1.jar;C:\Users\LuisCriz\Documents\NominasSoft\src\NominaSoft\Librerias\sqlite-jdbc-3.27.2.1.jar;C:\Users\LuisCriz\Documents\NominasSoft\build\classes;C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\junit-4.12.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\modules\ext\hamcrest-core-1.3.jar;C:\Users\LuisCriz\Documents\NominasSoft\build\test\classes;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant.jar;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans-11.1\netbeans\extide\ant\lib\ant-junit4.jar" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="C:\Program Files\NetBeans-11.1\netbeans\java\modules\ext\eclipselink\javax.persistence-2.1.0.jar" />
     <property name="libs.junit_5.javadoc" value="C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-jupiter-api-5.3.1-javadoc.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-jupiter-params-5.3.1-javadoc.jar;C:\Program Files\NetBeans-11.1\netbeans\platform\docs\junit-jupiter-engine-5.3.1-javadoc.jar" />
@@ -437,21 +438,39 @@
     <property name="" value="======" />
   </properties>
   <testcase classname="Capa3_Dominio.ContratoTest" name="test1EsRenovable" time="0.003" />
-  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsRenovable" time="0.001" />
-  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsRenovable" time="0.007">
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsRenovable" time="0.0" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsRenovable" time="0.006">
     <failure message="expected:&lt;false&gt; but was:&lt;true&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;false&gt; but was:&lt;true&gt;
 	at Capa3_Dominio.ContratoTest.test3EsRenovable(ContratoTest.java:116)
 </failure>
   </testcase>
-  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsVigente" time="0.001" />
-  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsVigente" time="0.001" />
-  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsVigente" time="0.0" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsHoraValidaPorSemana" time="0.0" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="testEsVigente" time="0.0" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test4EsFechaValida" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsFechaValida" time="0.013" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsFechaValida" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsVigente" time="0.002">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at Capa3_Dominio.ContratoTest.test3EsVigente(ContratoTest.java:68)
+</failure>
+  </testcase>
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test1EsFechaValida" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test2EsVigente" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test1EsHoraValidaPorSemana" time="0.001" />
+  <testcase classname="Capa3_Dominio.ContratoTest" name="test3EsHoraValidaPorSemana" time="0.0" />
   <system-out><![CDATA[esRenovable1
 esRenovable2
 esRenovable3
+esHoraValidaPorSemana2
 esVigente
+esFechaValida4
+esFechaValida3
+esFechaValida2
 esVigente3
+esFechaValida1
 esVigente2
+esHoraValidaPorSemana1
+esHoraValidaPorSemana3
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
