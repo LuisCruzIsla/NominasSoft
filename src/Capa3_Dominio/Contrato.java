@@ -164,7 +164,9 @@ public class Contrato {
     //R5 -  Gestionar Contrato
     public boolean esValorizacionAceptada(){
         boolean valoracion  = false;
-        if(5<=valorPorHora && valorPorHora>=10){
+        if(valorPorHora<5){
+            valoracion = false;
+        }else if(valorPorHora<=10){
             if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA)){
                 valoracion = true;
             }
