@@ -164,16 +164,26 @@ public class Contrato {
     //R5 -  Gestionar Contrato
     public boolean esValorizacionAceptada(){
         boolean valoracion  = false;
-        if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>=5 && valorPorHora<=10)){
-            valoracion = true;
-        } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>=11 && valorPorHora<=20)){
-            valoracion = true;
-        } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>=21 && valorPorHora<=30)){
-            valoracion = true;
-        } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>=31 && valorPorHora<=40)){
-            valoracion = true;
-        } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>=41 && valorPorHora<=60)){
-            valoracion = true;      
+        if(5<=valorPorHora && valorPorHora>=10){
+            if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA)){
+                valoracion = true;
+            }
+        }else if(valorPorHora<=20){
+            if(empleado.getGradoAcademico().equals(GRADOBACHILLER)){
+                valoracion = true;
+            }
+        }else if(valorPorHora<=30){
+            if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL)){
+                valoracion = true;
+            }
+        }else if(valorPorHora<=40){
+            if(empleado.getGradoAcademico().equals(GRADOMAGISTER)){
+                valoracion = true;
+            }
+        }else if(valorPorHora<=60){
+            if(empleado.getGradoAcademico().equals(GRADODOCTOR)){
+                valoracion = true;
+            }
         }
         return valoracion;
     }
