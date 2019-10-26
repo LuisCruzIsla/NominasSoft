@@ -20,7 +20,7 @@ public class Empleado {
     private int telefono;
     private Date fechaNacimiento;
     private char estadoCivil;
-    private String gradoAcademico;
+    private EGrados gradoAcademico;
 
     public Empleado() {
     }
@@ -82,11 +82,11 @@ public class Empleado {
         this.estadoCivil = estadoCivil;
     }
 
-    public String getGradoAcademico() {
+    public EGrados getGradoAcademico() {
         return gradoAcademico;
     }
 
-    public void setGradoAcademico(String gradoAcademico) {
+    public void setGradoAcademico(EGrados gradoAcademico) {
         this.gradoAcademico = gradoAcademico;
     }
     

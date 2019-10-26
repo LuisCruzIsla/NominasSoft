@@ -5,6 +5,7 @@
  */
 package Capa4_Persistencia;
 
+import Capa3_Dominio.EGrados;
 import Capa3_Dominio.Empleado;
 import Capa4_Persistencia.Interfaces.IEmpleadoDAO;
 import Capa4_Persistencia.Gestores.GestorJDBC;
@@ -54,7 +55,7 @@ public class EmpleadoDAO implements IEmpleadoDAO{
             empleado.setTelefono(resultadoEmpleado.getInt("empleadotelefono"));
             empleado.setFechaNacimiento(resultadoEmpleado.getDate("empleadofechanacimiento"));
             empleado.setEstadoCivil(resultadoEmpleado.getString("empleadoestadocivil").charAt(0));
-            empleado.setGradoAcademico(resultadoEmpleado.getString("empleadogradoacademico"));
+            empleado.setGradoAcademico(EGrados.valueOf(resultadoEmpleado.getString("empleadogradoacademico")));
         }        
         resultadoEmpleado.close();
         return empleado; 

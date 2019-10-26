@@ -5,10 +5,8 @@
  */
 package Capa3_Dominio;
 
-import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -16,6 +14,7 @@ import java.util.Date;
  * @author Ronald Alva
  */
 public class Contrato {
+    
 
     private int contratoId;
     private Date fechaInicio;
@@ -27,12 +26,6 @@ public class Contrato {
     private char estado;
     private Empleado empleado;
     private AFP afp;
-    
-    public static final String GRADOPRIMARIA_SECUNDARIA = "PRIMARIA Y SECUNDARIA";
-    public static final String GRADOBACHILLER = "BACHILLER";
-    public static final String GRADOPROFESIONAL = "PROFESIONAL";
-    public static final String GRADOMAGISTER = "MAGISTER";
-    public static final String GRADODOCTOR = "DOCTOR";
     
     private static final double SUELDO_MINIMO = 930D;
 
@@ -163,31 +156,7 @@ public class Contrato {
     
     //R5 -  Gestionar Contrato
     public boolean esValorizacionAceptada(){
-        boolean valoracion  = false;
-        if(valorPorHora<5){
-            valoracion = false;
-        }else if(valorPorHora<=10){
-            if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA)){
-                valoracion = true;
-            }
-        }else if(valorPorHora<=20){
-            if(empleado.getGradoAcademico().equals(GRADOBACHILLER)){
-                valoracion = true;
-            }
-        }else if(valorPorHora<=30){
-            if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL)){
-                valoracion = true;
-            }
-        }else if(valorPorHora<=40){
-            if(empleado.getGradoAcademico().equals(GRADOMAGISTER)){
-                valoracion = true;
-            }
-        }else if(valorPorHora<=60){
-            if(empleado.getGradoAcademico().equals(GRADODOCTOR)){
-                valoracion = true;
-            }
-        }
-        return valoracion;
+        return empleado.getGradoAcademico().estaEnElRango(valorPorHora);
     }
 
     //R3 - Procesar Pagos
