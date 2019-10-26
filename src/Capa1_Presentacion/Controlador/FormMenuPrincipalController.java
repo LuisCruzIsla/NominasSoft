@@ -26,7 +26,7 @@ public class FormMenuPrincipalController implements Initializable {
     private enum EViewMenu{
         
         GESTIONAR_CONTRATO(View.GESTIONAR_CONTRATO,null),
-        PROCESAR_PAGO(View.ANULAR_CONTRATO,null),
+        PROCESAR_PAGO(View.PROCESAR_PAGO,null),
         REGISTRAR_EMPLEADO("",null),
         SALIR("",null);
         
