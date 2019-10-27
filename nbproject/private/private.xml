@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa3_Dominio/Contrato.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa1_Presentacion/Controlador/FormGestionarContratoController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/SistemaDePlanilla/src/Capa2_Aplicacion/GestionarContratoServicio.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa3_Dominio/Pago.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Controlador/FormMenuPrincipalController.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Utils/View.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/test/Capa3_Dominio/ContratoTest.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Vista/FormProcesarPago.fxml</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Controlador/FormProcesarPagoController.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa3_Dominio/Contrato.java</file>
+            <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Utils/Constantes.java</file>
         </group>
     </open-files>
 </project-private>

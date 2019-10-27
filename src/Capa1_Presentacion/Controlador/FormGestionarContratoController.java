@@ -84,7 +84,7 @@ public class FormGestionarContratoController implements Initializable {
                     lbTelefono.setText("+51" + empleado.getTelefono());
                     lbFechaDeNacimiento.setText("" + empleado.getFechaNacimiento());
                     lbEstadoCivil.setText(formatEstadoCivilEmpleado(empleado));
-                    lbGradoAcadameico.setText(empleado.getGradoAcademico());
+                    lbGradoAcadameico.setText(empleado.getGradoAcademico().getNombreGrado());
                     btnCrearContrato.setDisable(false);
                     btnEditarContrato.setDisable(false);
                     btnAnularContrato.setDisable(false);

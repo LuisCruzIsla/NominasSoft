@@ -15,6 +15,7 @@ public class View {
     public static final String CREAR_CONTRATO = "FormCrearContrato";
     public static final String EDITAR_CONTRATO = "FormEditarContrato";
     public static final String GESTIONAR_CONTRATO = "FormGestionarContrato";
+    public static final String PROCESAR_PAGO = "FormProcesarPago";
     public static final String MENU_PRINCIPAL = "FormMenuPrincipal";
     
 }

@@ -5,10 +5,8 @@
  */
 package Capa3_Dominio;
 
-import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -16,6 +14,7 @@ import java.util.Date;
  * @author Ronald Alva
  */
 public class Contrato {
+    
 
     private int contratoId;
     private Date fechaInicio;
@@ -27,12 +26,6 @@ public class Contrato {
     private char estado;
     private Empleado empleado;
     private AFP afp;
-    
-    public static final String GRADOPRIMARIA_SECUNDARIA = "PRIMARIA Y SECUNDARIA";
-    public static final String GRADOBACHILLER = "BACHILLER";
-    public static final String GRADOPROFESIONAL = "PROFESIONAL";
-    public static final String GRADOMAGISTER = "MAGISTER";
-    public static final String GRADODOCTOR = "DOCTOR";
     
     private static final double SUELDO_MINIMO = 930D;
 
@@ -163,18 +156,7 @@ public class Contrato {
     
     //R5 -  Gestionar Contrato
     public boolean esValorizacionAceptada(){
-        if(empleado.getGradoAcademico().equals(GRADOPRIMARIA_SECUNDARIA) && (valorPorHora>=5 && valorPorHora<=10)){
-            return true;
-        } else if(empleado.getGradoAcademico().equals(GRADOBACHILLER) && (valorPorHora>=11 && valorPorHora<=20)){
-            return true;
-        } else if(empleado.getGradoAcademico().equals(GRADOPROFESIONAL) && (valorPorHora>=21 && valorPorHora<=30)){
-            return true;
-        } else if(empleado.getGradoAcademico().equals(GRADOMAGISTER) && (valorPorHora>=31 && valorPorHora<=40)){
-            return true;
-        } else if(empleado.getGradoAcademico().equals(GRADODOCTOR) && (valorPorHora>=41 && valorPorHora<=60)){
-            return true;        
-        }
-        return false;
+        return empleado.getGradoAcademico().estaEnElRango(valorPorHora);
     }
 
     //R3 - Procesar Pagos

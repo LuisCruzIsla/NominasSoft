@@ -5,13 +5,14 @@
  */
 package Capa3_Dominio;
 
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import java.util.Date;
 
 /**
  *
  * @author Ronald Alva
  */
-public class Pago {
+public class Pago extends RecursiveTreeObject<Pago>{
 
     private Date fecha;
     private int totalHoras;
