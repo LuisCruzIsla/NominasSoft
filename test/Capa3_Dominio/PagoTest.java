@@ -14,20 +14,20 @@ import static org.junit.Assert.*;
  * @author LuisCriz
  */
 public class PagoTest {
-    
+
     public PagoTest() {
     }
 
-   
     @Test
     public void testCalcularSueldoBasico() {
         System.out.println("calcularSueldoBasico");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularSueldoBasico();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        double resultadoEsperado = 30.0;
+        double resultadoObtenido = pago.calcularSueldoBasico();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -36,12 +36,19 @@ public class PagoTest {
     @Test
     public void testCalcularTotalIngreso() {
         System.out.println("calcularTotalIngreso");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularTotalIngreso();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        Concepto concepto = new Concepto();
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        concepto.setMontoHoras(20);
+        concepto.setMontoReIngresos(10);
+        concepto.setMontoOtrosIngresos(10);
+        
+        double resultadoEsperado = 0.0;
+        double resultadoObtenido = pago.calcularTotalIngreso();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -99,5 +106,5 @@ public class PagoTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
