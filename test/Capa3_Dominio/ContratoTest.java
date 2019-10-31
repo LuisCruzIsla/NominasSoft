@@ -61,7 +61,8 @@ public class ContratoTest {
         Contrato contrato = new Contrato();
         contrato.setEstado('N');
         SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
-        Date fecha = f.parse("30-10-2019");// esta Fecha es superior al dia actual solo que se testeo dias antes, 22-10-2019
+        //Date fecha = f.parse("30-10-2019");// esta Fecha es superior al dia actual solo que se testeo dias antes, 22-10-2019
+        Date fecha = f.parse("22-11-2019");
         contrato.setFechaFin(fecha);
         boolean resultadoEsperado = true;
         boolean resultadoObtenido = contrato.esVigente();
@@ -105,7 +106,7 @@ public class ContratoTest {
         Contrato contrato = new Contrato();
         SimpleDateFormat f1 = new SimpleDateFormat("dd-MM-yyyy");
         SimpleDateFormat f2 = new SimpleDateFormat("dd-MM-yyyy");
-        Date fechaFin1 = f1.parse("24-09-2019");
+        Date fechaFin1 = f1.parse("24-10-2019");
         Date fechaFin2 = f2.parse("20-10-2019");
 
         contrato.setFechaFin(fechaFin1);
@@ -259,11 +260,11 @@ public class ContratoTest {
     }
 
     @Test
-    public void testCalcularAsignacionFamiliar() {
-        System.out.println("calcularAsignacionFamiliar2");
+    public void test1CalcularAsignacionFamiliar() {
+        System.out.println("calcularAsignacionFamiliar1");
         Contrato contrato = new Contrato();
         contrato.setAsignacionFamiliar(true);
-        double resultadoEsperado = 0.0;
+        double resultadoEsperado = 93.0;
         double resultadoObtenido = contrato.calcularAsignacionFamiliar();
         assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
