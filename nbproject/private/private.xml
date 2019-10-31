@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa3_Dominio/Pago.java</file>
             <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Controlador/FormMenuPrincipalController.java</file>
             <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Utils/View.java</file>
@@ -11,6 +12,9 @@
             <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Controlador/FormProcesarPagoController.java</file>
             <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa3_Dominio/Contrato.java</file>
             <file>file:/C:/Users/COMPUTO-INGENIERIA/Desktop/NominasSoft/src/Capa1_Presentacion/Utils/Constantes.java</file>
+=======
+            <file>file:/C:/Proyectos/NominasSoft/src/Capa3_Dominio/Contrato.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
