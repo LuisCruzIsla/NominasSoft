@@ -5,6 +5,8 @@
  */
 package Capa3_Dominio;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,20 +16,20 @@ import static org.junit.Assert.*;
  * @author LuisCriz
  */
 public class PagoTest {
-    
+
     public PagoTest() {
     }
 
-   
     @Test
     public void testCalcularSueldoBasico() {
         System.out.println("calcularSueldoBasico");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularSueldoBasico();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        double resultadoEsperado = 200.0;
+        double resultadoObtenido = pago.calcularSueldoBasico();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -36,12 +38,26 @@ public class PagoTest {
     @Test
     public void testCalcularTotalIngreso() {
         System.out.println("calcularTotalIngreso");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularTotalIngreso();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        Concepto concepto = new Concepto();
+        Contrato contrato = new Contrato();
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        //200
+        concepto.setMontoHoras(200);
+        concepto.setMontoReIngresos(100);
+        concepto.setMontoOtrosIngresos(58);
+        //358
+        contrato.setAsignacionFamiliar(true); //93
+        //
+        pago.setContrato(contrato);
+        pago.setConcepto(concepto);
+
+        double resultadoEsperado = 651.0;
+        double resultadoObtenido = pago.calcularTotalIngreso();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -50,12 +66,15 @@ public class PagoTest {
     @Test
     public void testCalcularDescuento() {
         System.out.println("calcularDescuento");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularDescuento();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        pago.setPorcentajeAFP(0.02);
+        double resultadoEsperado = 4.0;
+        double resultadoObtenido = pago.calcularDescuento();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -64,12 +83,19 @@ public class PagoTest {
     @Test
     public void testCalcularTotalDescuento() {
         System.out.println("calcularTotalDescuento");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularTotalDescuento();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        Concepto concepto = new Concepto();
+        concepto.setMontoHoraAusente(20);
+        concepto.setMontoAdelantado(100);
+        concepto.setMontoOtroDescuentos(80);
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        pago.setPorcentajeAFP(0.02);
+        pago.setConcepto(concepto);
+        double resultadoEsperado = 204.0;
+        double resultadoObtenido = pago.calcularTotalDescuento();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,26 +104,50 @@ public class PagoTest {
     @Test
     public void testCalcularSueldoNeto() {
         System.out.println("calcularSueldoNeto");
-        Pago instance = new Pago();
-        double expResult = 0.0;
-        double result = instance.calcularSueldoNeto();
-        assertEquals(expResult, result, 0.0);
+        Pago pago = new Pago();
+        Concepto concepto = new Concepto();
+        Contrato contrato = new Contrato();
+        concepto.setMontoHoraAusente(20);
+        concepto.setMontoAdelantado(100);
+        concepto.setMontoOtroDescuentos(80);
+        pago.setTotalHoras(20);
+        pago.setValorHoras(10);
+        pago.setPorcentajeAFP(0.02);
+        concepto.setMontoHoras(200);
+        concepto.setMontoReIngresos(100);
+        concepto.setMontoOtrosIngresos(58);
+        contrato.setAsignacionFamiliar(true);
+        pago.setContrato(contrato);
+        pago.setConcepto(concepto);
+        double resultadoEsperado = 855.0;
+        double resultadoObtenido = pago.calcularSueldoNeto();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of calcularTotalHoras method, of class Pago.
      */
     @Test
-    public void testCalcularTotalHoras() {
+    public void testCalcularTotalHoras() throws ParseException {
         System.out.println("calcularTotalHoras");
-        Pago instance = new Pago();
-        int expResult = 0;
-        int result = instance.calcularTotalHoras();
-        assertEquals(expResult, result);
+        Pago pago = new Pago();
+        Contrato contrato = new Contrato();
+        Periodo periodo = new Periodo();
+        SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+        Date fechaFin = f.parse("30-11-2019");
+        Date fechaInicio = f.parse("30-10-2019");
+        periodo.setFechaInicio(fechaInicio);
+        periodo.setFechaFin(fechaFin);
+        contrato.setTotalHorasSemanal(20);
+        pago.setPeriodo(periodo);
+        pago.setContrato(contrato);
+
+        int resultadoEsperado = 80;
+        int resultadoObtenido = pago.calcularTotalHoras();
+
+        assertEquals(resultadoEsperado, resultadoObtenido);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-    
+
 }

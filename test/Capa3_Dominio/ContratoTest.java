@@ -61,7 +61,8 @@ public class ContratoTest {
         Contrato contrato = new Contrato();
         contrato.setEstado('N');
         SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
-        Date fecha = f.parse("22-10-2019");// esta echa es superior al dia actual solo que se testeo dias antes,
+        //Date fecha = f.parse("30-10-2019");// esta Fecha es superior al dia actual solo que se testeo dias antes, 22-10-2019
+        Date fecha = f.parse("22-11-2019");
         contrato.setFechaFin(fecha);
         boolean resultadoEsperado = true;
         boolean resultadoObtenido = contrato.esVigente();
@@ -105,7 +106,7 @@ public class ContratoTest {
         Contrato contrato = new Contrato();
         SimpleDateFormat f1 = new SimpleDateFormat("dd-MM-yyyy");
         SimpleDateFormat f2 = new SimpleDateFormat("dd-MM-yyyy");
-        Date fechaFin1 = f1.parse("24-09-2019");
+        Date fechaFin1 = f1.parse("24-10-2019");
         Date fechaFin2 = f2.parse("20-10-2019");
 
         contrato.setFechaFin(fechaFin1);
@@ -219,28 +220,63 @@ public class ContratoTest {
     }
     
 
-    /*
+    
     @Test
-    public void testEsValorizacionAceptada() {
-        System.out.println("esValorizacionAceptada");
-        Contrato instance = new Contrato();
-        boolean expResult = false;
-        boolean result = instance.esValorizacionAceptada();
-        assertEquals(expResult, result);
+    public void test1EsValorizacionAceptada() {
+        System.out.println("esValorizacionAceptada1");
+        Contrato contrato = new Contrato();
+        contrato.setValorPorHora(0);
+        Empleado empleado = new Empleado();
+        empleado.setGradoAcademico(EGrados.GRADOBACHILLER);
+        contrato.setEmpleado(empleado);
+        boolean resultadoEsperado = false;
+        boolean resultadoObtenido = contrato.esValorizacionAceptada();
+        assertEquals(resultadoEsperado, resultadoObtenido);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    public void test2EsValorizacionAceptada() {
+        System.out.println("esValorizacionAceptada2");
+        Contrato contrato = new Contrato();
+        contrato.setValorPorHora(21);
+        Empleado empleado = new Empleado();
+        empleado.setGradoAcademico(EGrados.GRADOBACHILLER);
+        contrato.setEmpleado(empleado);
+        boolean resultadoEsperado = false;
+        boolean resultadoObtenido = contrato.esValorizacionAceptada();
+        assertEquals(resultadoEsperado, resultadoObtenido);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    public void test3EsValorizacionAceptada() {
+        System.out.println("esValorizacionAceptada3");
+        Contrato contrato = new Contrato();
+        contrato.setValorPorHora(21);
+        Empleado empleado = new Empleado();
+        empleado.setGradoAcademico(EGrados.GRADOPROFESIONAL);
+        contrato.setEmpleado(empleado);
+        boolean resultadoEsperado = false;
+        boolean resultadoObtenido = contrato.esValorizacionAceptada();
+        assertEquals(resultadoEsperado, resultadoObtenido);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
-
     @Test
-    public void testCalcularAsignacionFamiliar() {
-        System.out.println("calcularAsignacionFamiliar");
-        Contrato instance = new Contrato();
-        double expResult = 0.0;
-        double result = instance.calcularAsignacionFamiliar();
-        assertEquals(expResult, result, 0.0);
+    public void test1CalcularAsignacionFamiliar() {
+        System.out.println("calcularAsignacionFamiliar1");
+        Contrato contrato = new Contrato();
+        contrato.setAsignacionFamiliar(true);
+        double resultadoEsperado = 93.0;
+        double resultadoObtenido = contrato.calcularAsignacionFamiliar();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-     */
+    @Test
+    public void test2CalcularAsignacionFamiliar() {
+        System.out.println("calcularAsignacionFamiliar2");
+        Contrato contrato = new Contrato();
+        contrato.setAsignacionFamiliar(false);
+        double resultadoEsperado = 0.0;
+        double resultadoObtenido = contrato.calcularAsignacionFamiliar();
+        assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+    }
 }
