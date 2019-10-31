@@ -5,10 +5,13 @@
  */
 package Capa4_Persistencia.Interfaces;
 
+import Capa3_Dominio.Concepto;
+import java.sql.SQLException;
+
 /**
  *
  * @author LuisCriz
  */
 public interface IConceptoDAO {
-    
+    Concepto buscarConcepto(int contratoId, String periodoId) throws SQLException;
 }

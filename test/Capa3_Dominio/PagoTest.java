@@ -44,8 +44,8 @@ public class PagoTest {
         pago.setTotalHoras(20);
         pago.setValorHoras(10);
         //200
-        concepto.setMontoHoras(200);
-        concepto.setMontoReIngresos(100);
+        concepto.setMontoHorasExtras(200);
+        concepto.setMontoReintegros(100);
         concepto.setMontoOtrosIngresos(58);
         //358
         contrato.setAsignacionFamiliar(true); //93
@@ -113,8 +113,8 @@ public class PagoTest {
         pago.setTotalHoras(20);
         pago.setValorHoras(10);
         pago.setPorcentajeAFP(0.02);
-        concepto.setMontoHoras(200);
-        concepto.setMontoReIngresos(100);
+        concepto.setMontoHorasExtras(200);
+        concepto.setMontoReintegros(100);
         concepto.setMontoOtrosIngresos(58);
         contrato.setAsignacionFamiliar(true);
         pago.setContrato(contrato);

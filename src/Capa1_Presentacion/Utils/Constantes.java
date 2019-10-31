@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.TimeZone;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
@@ -38,7 +39,17 @@ public class Constantes {
     }
     
     public static final LocalDate DATE_TO_LOCALDATE (Date dateValue){
-        String date = new SimpleDateFormat("dd-MM-yyyy").format(dateValue);
+        SimpleDateFormat simple = new SimpleDateFormat("dd-MM-yyyy");
+        String date = simple.format(dateValue);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate localDate = LocalDate.parse(date , formatter);
+        return localDate;
+    }
+    
+    public static final LocalDate DATE_TO_LOCALDATE_UTC (Date dateValue){
+        SimpleDateFormat simple = new SimpleDateFormat("dd-MM-yyyy");
+        simple.setTimeZone(TimeZone.getTimeZone("UTC"));
+        String date = simple.format(dateValue);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate localDate = LocalDate.parse(date , formatter);
         return localDate;

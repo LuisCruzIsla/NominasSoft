@@ -15,7 +15,6 @@ import java.util.Date;
  */
 public class Contrato {
     
-
     private int contratoId;
     private Date fechaInicio;
     private Date fechaFin;

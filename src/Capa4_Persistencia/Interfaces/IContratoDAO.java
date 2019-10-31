@@ -8,6 +8,7 @@ package Capa4_Persistencia.Interfaces;
 import Capa3_Dominio.Contrato;
 import Capa3_Dominio.Empleado;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,8 @@ import java.sql.SQLException;
 public interface IContratoDAO {
     int ingresar(Contrato contrato) throws SQLException ;
     int actualizar(Contrato contrato) throws SQLException ;
-    Contrato obtenerUltimoPorEmpleado(Empleado empleado) throws SQLException;
-    Contrato obtenerAntepenultimoPorEmpleado(Empleado empleado) throws SQLException;
+    Contrato obtenerUltimoPorEmpleado(String empleadoID) throws SQLException;
+    Contrato obtenerAntepenultimoPorEmpleado(String empleadoID) throws SQLException;
     int anular(Contrato contrato) throws SQLException ;
+    List<Contrato> obtenerTodosLosContratos() throws SQLException;
 }

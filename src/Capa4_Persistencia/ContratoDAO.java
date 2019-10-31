@@ -14,6 +14,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -77,21 +79,23 @@ public class ContratoDAO implements IContratoDAO{
     }
     
     @Override
-    public Contrato obtenerUltimoPorEmpleado(Empleado empleado) throws SQLException {
-        return buscar(empleado, false);
+    public Contrato obtenerUltimoPorEmpleado(String empleadoID) throws SQLException {
+        return buscar(empleadoID, false);
     }
 
     @Override
-    public Contrato obtenerAntepenultimoPorEmpleado(Empleado empleado) throws SQLException {
-        return buscar(empleado, true);
+    public Contrato obtenerAntepenultimoPorEmpleado(String empleadoID) throws SQLException {
+        return buscar(empleadoID, true);
     }
     
-    private Contrato buscar(Empleado empleado, boolean antepenultimo) throws SQLException {
+    private Contrato buscar(String empleadoID, boolean antepenultimo) throws SQLException {
+        AFPDAO afpdao;
+        EmpleadoDAO empleadoDAO;
         Contrato contrato = null;
-        AFP afp = null;
+        AFP afp;
+        Empleado empleado;
         ResultSet resultadoContrato;
         String sentenciaSQL;
-        int afpid = -1;
 
         sentenciaSQL = "SELECT "
                 + "contratocodigo, "
@@ -102,9 +106,10 @@ public class ContratoDAO implements IContratoDAO{
                 + "contratovalorhoras, "
                 + "contratocargo, "
                 + "afpid, "
-                + "contratotipo "
+                + "contratotipo, "
+                + "empleadocodigo "
                 + "FROM contratos "
-                + "WHERE empleadocodigo = '"+empleado.getId()+"' "
+                + "WHERE empleadocodigo = '"+empleadoID+"' "
                 + "ORDER BY contratofechafin DESC LIMIT 1";
         
         resultadoContrato = gestorJDBC.ejecutarConsulta(sentenciaSQL);
@@ -119,13 +124,18 @@ public class ContratoDAO implements IContratoDAO{
             contrato.setValorPorHora(resultadoContrato.getDouble("contratovalorhoras"));
             contrato.setCargo(resultadoContrato.getString("contratocargo"));
             contrato.setEstado(resultadoContrato.getString("contratotipo").charAt(0));
-            afpid = resultadoContrato.getInt("afpid");
-        }
-        
-        if(contrato!=null){
-            AFPDAO afpdao = new AFPDAO(gestorJDBC);
+            
+            //Set AFP
+            afpdao = new AFPDAO(gestorJDBC);
+            int afpid = resultadoContrato.getInt("afpid");
             afp = afpdao.buscar(afpid);
             contrato.setAfp(afp);
+            
+            //Set Empleado
+            empleadoDAO = new EmpleadoDAO(gestorJDBC);
+            String empleadoid = resultadoContrato.getString("empleadocodigo");
+            empleado = empleadoDAO.buscarPorCodigo(empleadoid);
+            contrato.setEmpleado(empleado);
         }
         
         resultadoContrato.close();
@@ -141,5 +151,62 @@ public class ContratoDAO implements IContratoDAO{
         sentencia.setInt(1,contrato.getContratoId());
         return sentencia.executeUpdate();
     }
+
+    @Override
+    public List<Contrato> obtenerTodosLosContratos() throws SQLException {
+        List<Contrato> contratos = new ArrayList<>();
+        AFPDAO afpdao;
+        EmpleadoDAO empleadoDAO;
+        Contrato contrato;
+        AFP afp;
+        Empleado empleado;
+        ResultSet resultadoContrato;
+        String sentenciaSQL;
+
+        sentenciaSQL = "SELECT "
+                + "contratocodigo, "
+                + "contratofechainicio, "
+                + "contratofechafin, "
+                + "contratoasignacionfamiliar, "
+                + "contratototalhorassemanal, "
+                + "contratovalorhoras, "
+                + "contratocargo, "
+                + "afpid, "
+                + "contratotipo, "
+                + "empleadocodigo "
+                + "FROM Contratos "
+                + "WHERE ContratoTipo = 'N'";
+
+        resultadoContrato = gestorJDBC.ejecutarConsulta(sentenciaSQL);
+        while(resultadoContrato.next()){            
+            contrato = new Contrato();
+            contrato.setContratoId(resultadoContrato.getInt("contratocodigo"));
+            contrato.setFechaInicio(resultadoContrato.getDate("contratofechainicio"));
+            contrato.setFechaFin(resultadoContrato.getDate("contratofechafin"));
+            contrato.setAsignacionFamiliar(resultadoContrato.getString("contratoasignacionfamiliar").charAt(0)=='T');
+            contrato.setTotalHorasSemanal(resultadoContrato.getInt("contratototalhorassemanal"));
+            contrato.setValorPorHora(resultadoContrato.getDouble("contratovalorhoras"));
+            contrato.setCargo(resultadoContrato.getString("contratocargo"));
+            contrato.setEstado(resultadoContrato.getString("contratotipo").charAt(0));
+            
+            //Set AFP
+            afpdao = new AFPDAO(gestorJDBC);
+            int afpid = resultadoContrato.getInt("afpid");
+            afp = afpdao.buscar(afpid);
+            contrato.setAfp(afp);
+            
+            //Set Empleado
+            empleadoDAO = new EmpleadoDAO(gestorJDBC);
+            String empleadoid = resultadoContrato.getString("empleadocodigo");
+            empleado = empleadoDAO.buscarPorCodigo(empleadoid);
+            contrato.setEmpleado(empleado);
+            
+            contratos.add(contrato);
+        }
+        resultadoContrato.close();
+        return contratos;
+    }
+    
+    
     
 }

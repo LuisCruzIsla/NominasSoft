@@ -5,6 +5,7 @@
  */
 package Capa1_Presentacion.Controlador;
 
+import Capa1_Presentacion.Controlador.parent.GestionarContrato;
 import Capa1_Presentacion.Utils.AlertMaker;
 import Capa2_Aplicacion.GestionarContratoServicio;
 import Capa3_Dominio.AFP;

@@ -15,5 +15,6 @@ import java.sql.SQLException;
 public interface IEmpleadoDAO {
 
     public Empleado buscarPorDNI(int dni) throws SQLException;
+    public Empleado buscarPorCodigo(String empleadoID) throws SQLException;
 
 }

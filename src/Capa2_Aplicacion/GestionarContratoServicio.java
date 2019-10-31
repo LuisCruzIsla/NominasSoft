@@ -50,7 +50,7 @@ public class GestionarContratoServicio {
     public int crearContrato(Contrato contrato) throws Exception{
         
         gestorJDBC.abrirConexion();
-        Contrato contratoAnterior = contratoDAO.obtenerUltimoPorEmpleado(contrato.getEmpleado());
+        Contrato contratoAnterior = contratoDAO.obtenerUltimoPorEmpleado(contrato.getEmpleado().getId());
         
         if(contratoAnterior!=null && !contratoAnterior.esVigente()){
             throw new Exception("El contrato anterior aun es vigente");
@@ -81,7 +81,7 @@ public class GestionarContratoServicio {
     public int actualizarContrato(Contrato contrato) throws Exception{
         
         gestorJDBC.abrirConexion();
-        Contrato contratoAntepenultimo = contratoDAO.obtenerAntepenultimoPorEmpleado(contrato.getEmpleado());
+        Contrato contratoAntepenultimo = contratoDAO.obtenerAntepenultimoPorEmpleado(contrato.getEmpleado().getId());
         
         if(contratoAntepenultimo!=null && !contratoAntepenultimo.esVigente()){
             throw new Exception("El contrato anterior aun es vigente");
@@ -111,7 +111,7 @@ public class GestionarContratoServicio {
     
     public Contrato buscarContratoPorEmpleado(Empleado empleado) throws Exception{
         gestorJDBC.abrirConexion();        
-        Contrato contrato = contratoDAO.obtenerUltimoPorEmpleado(empleado);
+        Contrato contrato = contratoDAO.obtenerUltimoPorEmpleado(empleado.getId());
         gestorJDBC.cerrarConexion();
         return contrato;
     }

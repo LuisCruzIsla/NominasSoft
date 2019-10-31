@@ -60,5 +60,39 @@ public class EmpleadoDAO implements IEmpleadoDAO{
         resultadoEmpleado.close();
         return empleado; 
     }
+
+    @Override
+    public Empleado buscarPorCodigo(String empleadoID) throws SQLException {
+        Empleado empleado = null;
+        ResultSet resultadoEmpleado;
+        String sentenciaSQL;
+
+        sentenciaSQL = "SELECT "
+                + "empleadocodigo, "
+                + "empleadonombre, "
+                + "empleadodni, "
+                + "empleadodireccion, "
+                + "empleadotelefono, "
+                + "empleadofechanacimiento, "
+                + "empleadoestadocivil, "
+                + "empleadogradoacademico "
+                + "FROM empleados "
+                + "WHERE empleadocodigo = '"+empleadoID+"'";
+        
+        resultadoEmpleado = gestorJDBC.ejecutarConsulta(sentenciaSQL);
+        if(resultadoEmpleado.next()){            
+            empleado = new Empleado();
+            empleado.setId(resultadoEmpleado.getString("empleadocodigo"));
+            empleado.setNombre(resultadoEmpleado.getString("empleadonombre"));
+            empleado.setDni(resultadoEmpleado.getInt("empleadodni"));
+            empleado.setDireccion(resultadoEmpleado.getString("empleadodireccion"));
+            empleado.setTelefono(resultadoEmpleado.getInt("empleadotelefono"));
+            empleado.setFechaNacimiento(resultadoEmpleado.getDate("empleadofechanacimiento"));
+            empleado.setEstadoCivil(resultadoEmpleado.getString("empleadoestadocivil").charAt(0));
+            empleado.setGradoAcademico(EGrados.valueOf(resultadoEmpleado.getString("empleadogradoacademico")));
+        }        
+        resultadoEmpleado.close();
+        return empleado;
+    }
     
 }

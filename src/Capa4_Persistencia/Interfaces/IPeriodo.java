@@ -5,10 +5,14 @@
  */
 package Capa4_Persistencia.Interfaces;
 
+import Capa3_Dominio.Periodo;
+import java.sql.SQLException;
+
 /**
  *
  * @author LuisCriz
  */
 public interface IPeriodo {
-    
+    Periodo buscarPeriodoActivo() throws SQLException ;
+    int procesarPeriodo(String periodoID) throws SQLException;
 }

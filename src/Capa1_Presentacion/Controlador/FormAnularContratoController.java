@@ -5,6 +5,7 @@
  */
 package Capa1_Presentacion.Controlador;
 
+import Capa1_Presentacion.Controlador.parent.GestionarContrato;
 import Capa1_Presentacion.Utils.AlertMaker;
 import Capa1_Presentacion.Utils.Constantes;
 import Capa2_Aplicacion.GestionarContratoServicio;

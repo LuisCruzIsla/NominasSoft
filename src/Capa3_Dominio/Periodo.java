@@ -5,8 +5,13 @@
  */
 package Capa3_Dominio;
 
+import Capa1_Presentacion.Utils.Constantes;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  *
@@ -14,12 +19,21 @@ import java.util.Date;
  */
 public class Periodo {
 
+    private String idPeriodo;
     private String periodo;
     private Date fechaInicio;
     private Date fechaFin;
     private char estado;
 
     public Periodo() {
+    }
+
+    public String getIdPeriodo() {
+        return idPeriodo;
+    }
+
+    public void setIdPeriodo(String idPeriodo) {
+        this.idPeriodo = idPeriodo;
     }
 
     public String getPeriodo() {
@@ -57,20 +71,16 @@ public class Periodo {
     //R1 - Procesar Pagos
     public boolean esActivo() {
         boolean activo = false;
-        if (fechaFin.compareTo(new Date()) >= 0) {
+        if (new Date().compareTo(fechaFin) >= 0) {
             activo = true;
         }
         return activo;
     }
 
     public int calcularTotalSemanas() {
-        Calendar inicio = Calendar.getInstance();
-        Calendar fin = Calendar.getInstance();
-        inicio.setTime(fechaInicio);
-        fin.setTime(fechaFin);
-        int monthDiff = fin.get(Calendar.MONTH) - inicio.get(Calendar.MONTH);
-        return monthDiff * 4;
-
+        LocalDate startDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaInicio);
+        LocalDate endDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaFin);
+        return (int) ChronoUnit.WEEKS.between(startDate, endDate);
     }
 
 }

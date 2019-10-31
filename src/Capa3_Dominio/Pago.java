@@ -16,12 +16,13 @@ public class Pago extends RecursiveTreeObject<Pago>{
 
     private Date fecha;
     private int totalHoras;
-    private int valorHoras;
+    private double valorHoras;
     private double asignacionFamiliar;
     private double porcentajeAFP;
     private Contrato contrato;
     private Concepto concepto;
     private Periodo periodo;
+    public String nombre;
 
     public Pago() {
     }
@@ -42,11 +43,11 @@ public class Pago extends RecursiveTreeObject<Pago>{
         this.totalHoras = totalHoras;
     }
 
-    public int getValorHoras() {
+    public double getValorHoras() {
         return valorHoras;
     }
 
-    public void setValorHoras(int valorHoras) {
+    public void setValorHoras(double valorHoras) {
         this.valorHoras = valorHoras;
     }
 
@@ -97,12 +98,12 @@ public class Pago extends RecursiveTreeObject<Pago>{
 
     //R4 - Procesar Pagos
     public double calcularTotalIngreso() {
-        return calcularSueldoBasico() + contrato.calcularAsignacionFamiliar() + concepto.calcularIngreso();
+        return calcularSueldoBasico() + asignacionFamiliar + concepto.calcularIngreso();
     }
 
     //R5 - Procesar Pagos
     public double calcularDescuento() {
-        return calcularSueldoBasico() * porcentajeAFP;
+        return calcularSueldoBasico() * (porcentajeAFP/100D);
     }
 
     //R6 - Procesar Pagos

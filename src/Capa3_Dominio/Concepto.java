@@ -10,8 +10,10 @@ package Capa3_Dominio;
  * @author Ronald Alva
  */
 public class Concepto {
-    private double montoHoras;
-    private double montoReIngresos;
+    
+    private int conceptoId;
+    private double montoHorasExtras;
+    private double montoReintegros;
     private double montoOtrosIngresos;
     private double montoHoraAusente;
     private double montoAdelantado;
@@ -20,6 +22,14 @@ public class Concepto {
     private Periodo periodo;
 
     public Concepto() {
+    }
+
+    public int getConceptoId() {
+        return conceptoId;
+    }
+
+    public void setConceptoId(int conceptoId) {
+        this.conceptoId = conceptoId;
     }
 
     public Contrato getContrato() {
@@ -37,23 +47,21 @@ public class Concepto {
     public void setPeriodo(Periodo periodo) {
         this.periodo = periodo;
     }
-
     
-
-    public double getMontoHoras() {
-        return montoHoras;
+    public double getMontoHorasExtras() {
+        return montoHorasExtras;
     }
 
-    public void setMontoHoras(double montoHoras) {
-        this.montoHoras = montoHoras;
+    public void setMontoHorasExtras(double montoHorasExtras) {
+        this.montoHorasExtras = montoHorasExtras;
     }
 
-    public double getMontoReIngresos() {
-        return montoReIngresos;
+    public double getMontoReintegros() {
+        return montoReintegros;
     }
 
-    public void setMontoReIngresos(double montoReIngresos) {
-        this.montoReIngresos = montoReIngresos;
+    public void setMontoReintegros(double montoReintegros) {
+        this.montoReintegros = montoReintegros;
     }
 
     public double getMontoOtrosIngresos() {
@@ -90,7 +98,7 @@ public class Concepto {
     
     //R9 - Procesar Pagos
     public double calcularIngreso(){
-        return montoHoras+montoReIngresos+montoOtrosIngresos;
+        return montoHorasExtras+montoReintegros+montoOtrosIngresos;
     }
     
     //R10 - Procesar Pagos
