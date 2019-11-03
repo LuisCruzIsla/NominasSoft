@@ -55,7 +55,7 @@ public class EmpleadoDAO implements IEmpleadoDAO{
             empleado.setTelefono(resultadoEmpleado.getInt("empleadotelefono"));
             empleado.setFechaNacimiento(resultadoEmpleado.getDate("empleadofechanacimiento"));
             empleado.setEstadoCivil(resultadoEmpleado.getString("empleadoestadocivil").charAt(0));
-            empleado.setGradoAcademico(EGrados.valueOf(resultadoEmpleado.getString("empleadogradoacademico")));
+            empleado.setGradoAcademico(EGrados.fromString(resultadoEmpleado.getString("empleadogradoacademico")));
         }        
         resultadoEmpleado.close();
         return empleado; 
@@ -89,7 +89,7 @@ public class EmpleadoDAO implements IEmpleadoDAO{
             empleado.setTelefono(resultadoEmpleado.getInt("empleadotelefono"));
             empleado.setFechaNacimiento(resultadoEmpleado.getDate("empleadofechanacimiento"));
             empleado.setEstadoCivil(resultadoEmpleado.getString("empleadoestadocivil").charAt(0));
-            empleado.setGradoAcademico(EGrados.valueOf(resultadoEmpleado.getString("empleadogradoacademico")));
+            empleado.setGradoAcademico(EGrados.fromString(resultadoEmpleado.getString("empleadogradoacademico")));
         }        
         resultadoEmpleado.close();
         return empleado;

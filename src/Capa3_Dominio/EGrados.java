@@ -12,9 +12,9 @@ package Capa3_Dominio;
 public enum EGrados {
     GRADOPRIMARIA_SECUNDARIA("PRIMARIA Y SECUNDARIA",5,10),
     GRADOBACHILLER("BACHILLER",11,20),
-    GRADOPROFESIONAL("GRADO PROFESIONAL",21,30),
-    GRADOMAGISTER("GRADO MAGISTER",31,40),
-    GRADODOCTOR("GRADO DOCTOR",41,60);
+    GRADOPROFESIONAL("PROFESIONAL",21,30),
+    GRADOMAGISTER("MAGISTER",31,40),
+    GRADODOCTOR("DOCTOR",41,60);
     
     private final String nombreGrado;
     private final double rangoMinimo;
@@ -32,6 +32,14 @@ public enum EGrados {
             valoracion = true;
         }
         return valoracion;
+    }
+    public static EGrados fromString(String text) {
+        for (EGrados eGrados : EGrados.values()) {
+            if (eGrados.getNombreGrado().equalsIgnoreCase(text)) {
+                return eGrados;
+            }
+        }
+        return null;
     }
 
     public String getNombreGrado() {
