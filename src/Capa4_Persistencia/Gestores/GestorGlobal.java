@@ -20,7 +20,7 @@ public class GestorGlobal {
     }
     
     public GestorGlobal(){
-        gestorJDBC = new GestorJDBCSQLite();
+        gestorJDBC = new GestorJDBCPostgre();
     }
     
     public GestorJDBC getGestor(){
