@@ -113,7 +113,7 @@ public class Pago extends RecursiveTreeObject<Pago>{
 
     //R7 - Procesar Pagos
     public double calcularSueldoNeto() {
-        return calcularTotalIngreso() + calcularTotalDescuento();
+        return calcularTotalIngreso() - calcularTotalDescuento();
     }
     
     //R8 - Procesar Pagos

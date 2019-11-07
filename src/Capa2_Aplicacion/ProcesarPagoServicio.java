@@ -13,6 +13,7 @@ import Capa4_Persistencia.ConceptoDAO;
 import Capa4_Persistencia.ContratoDAO;
 import Capa4_Persistencia.Gestores.GestorGlobal;
 import Capa4_Persistencia.Gestores.GestorJDBC;
+import Capa4_Persistencia.PagoDAO;
 import Capa4_Persistencia.PeriodoDAO;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +28,14 @@ public class ProcesarPagoServicio {
     private ContratoDAO contratoDAO;
     private PeriodoDAO periodoDAO;
     private ConceptoDAO conceptoDAO;
+    private PagoDAO pagoDAO;
     
     public ProcesarPagoServicio(){
         gestorJDBC = GestorGlobal.getInstance().getGestor();
         contratoDAO = new ContratoDAO(gestorJDBC);
         periodoDAO = new PeriodoDAO(gestorJDBC);
         conceptoDAO = new ConceptoDAO(gestorJDBC);
+        pagoDAO = new PagoDAO(gestorJDBC);
     }
     
     public Periodo buscarPeriodoActivo() throws Exception{
@@ -77,9 +80,10 @@ public class ProcesarPagoServicio {
                 int totalHoras = pago.calcularTotalHoras();
                 pago.setTotalHoras(totalHoras);
                 pagos.add(pago);
+                pagoDAO.ingresar(pago);
             }
         }
-        //periodoDAO.procesarPeriodo(periodo.getPeriodo());
+        periodoDAO.procesarPeriodo(periodo.getPeriodo());
         gestorJDBC.cerrarConexion();
         return pagos;
     }

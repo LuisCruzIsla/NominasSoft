@@ -6,7 +6,6 @@
 package Capa4_Persistencia;
 
 import Capa3_Dominio.Concepto;
-import Capa3_Dominio.Periodo;
 import Capa4_Persistencia.Gestores.GestorJDBC;
 import Capa4_Persistencia.Interfaces.IConceptoDAO;
 import java.sql.ResultSet;

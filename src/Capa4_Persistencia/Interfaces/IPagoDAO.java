@@ -5,10 +5,13 @@
  */
 package Capa4_Persistencia.Interfaces;
 
+import Capa3_Dominio.Pago;
+import java.sql.SQLException;
+
 /**
  *
  * @author LuisCriz
  */
 public interface IPagoDAO {
-    
+     int ingresar(Pago pago) throws SQLException ;
 }

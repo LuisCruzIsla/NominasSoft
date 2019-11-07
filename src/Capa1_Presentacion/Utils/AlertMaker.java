@@ -70,6 +70,20 @@ public class AlertMaker {
         //dialog.setOverlayClose(false);
     }
     
+    public static void showOK(StackPane root, String mensaje){
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text("Respuesta"));
+        content.setBody(new Text(mensaje));
+        JFXDialog dialog = new JFXDialog(root,content,JFXDialog.DialogTransition.CENTER);
+        JFXButton btnOK = new JFXButton("OK");
+        btnOK.setOnAction((ActionEvent event1) -> {
+            dialog.close();
+        });
+        content.setActions(btnOK);
+        dialog.show();
+        //dialog.setOverlayClose(false);
+    }
+    
     public static void showAdvertencia(StackPane root, String mensaje){
         JFXDialogLayout content = new JFXDialogLayout();
         Label text = new Label("Advertencia");

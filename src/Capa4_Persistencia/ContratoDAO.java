@@ -207,6 +207,4 @@ public class ContratoDAO implements IContratoDAO{
         return contratos;
     }
     
-    
-    
 }

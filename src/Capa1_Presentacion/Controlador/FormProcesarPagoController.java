@@ -152,6 +152,7 @@ public class FormProcesarPagoController implements Initializable {
             treeView.getColumns().setAll(codigoEmpleado,nombreEmpleado,dniEmpleado,totalDeHoras,valorPorHora,sueldoBasico,totalDeIngresos,totalDeDescuentos,sueldoNeto);
             treeView.setRoot(root);
             treeView.setShowRoot(false);
+            AlertMaker.showOK(stackPane, "Se procesaron los pagos de todos los empleados");
         }catch (Exception e) {
             AlertMaker.showError(stackPane, "Error: " + e.getMessage());
         }

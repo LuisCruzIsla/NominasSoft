@@ -48,11 +48,12 @@ CREATE TABLE AFP
 CREATE TABLE Conceptos
 (
 	ConceptoCodigo integer NOT NULL   DEFAULT NEXTVAL(('"conceptos_conceptocodigo_seq"'::text)::regclass),
-	montoAdelantado numeric(10,2) NOT NULL,
-	montoHoras numeric(10,2) NOT NULL,
-	montoHorasAusente numeric(10,2) NOT NULL,
+	montoHorasExtras numeric(10,2) NOT NULL,
+	montoReintegros numeric(10,2) NOT NULL,
 	montoOtrosIngresos numeric(10,2) NOT NULL,
-	montoReintegro numeric(10,2) NOT NULL,
+	montoHorasAusentes numeric(10,2) NOT NULL,
+	montoAdelantos numeric(10,2) NOT NULL,
+	montoOtrosDescuentos numeric(10,2) NOT NULL,
 	ContratoCodigo integer NULL,
 	PeriodoCodigo char(8) NULL
 )
@@ -69,7 +70,7 @@ CREATE TABLE Contratos
 	ContratoCargo varchar(50) NOT NULL,
 	AFPId integer NULL,
 	EmpleadoCodigo char(8) NULL,
-	ContratoTipo char(1) NOT NULL   DEFAULT 'A'
+	ContratoTipo char(1) NOT NULL DEFAULT 'N'
 )
 ;
 
@@ -105,7 +106,7 @@ CREATE TABLE Periodos
 	PeriodoCodigo char(8) NOT NULL,
 	PeriodoFechaInicio date NOT NULL,
 	PeriodoFechaFin date NOT NULL,
-	PeriodoEstado char(1) NOT NULL   DEFAULT 'E'
+	PeriodoEstado char(1) NOT NULL DEFAULT 'E'
 )
 ;
 
@@ -196,11 +197,6 @@ VALUES
 (5,11.45,'ProVida'),
 (6,10.77,'Modelo');
 
-SELECT * FROM afp;
-
-
-select * from empleados;
-select * from contratos;
 insert into empleados(
 	empleadocodigo,
 	empleadonombre,
@@ -266,7 +262,7 @@ insert into empleados(
 	empleadoestadocivil,
 	empleadogradoacademico)
 values('TR-00003',
-	   'Ronald Segundo Alva Mariños',
+	   'Ronald Segundo Alva MariÃ±os',
 	   '74972186',
 	   'Cerro de Pasco 170 #6',
 	   '949901612',
@@ -293,7 +289,24 @@ values('TR-00004',
 	   'PROFESIONAL'
 );
 
-
+insert into empleados(
+	empleadocodigo,
+	empleadonombre,
+	empleadodni,
+	empleadodireccion,
+	empleadotelefono,
+	empleadofechanacimiento,
+	empleadoestadocivil,
+	empleadogradoacademico)
+values('TR-00005',
+	   'Elias Perez Kevin',
+	   '12345678',
+	   'Av. Larco Mz. 16 A LT 08',
+	   '945352373',
+	   '10/10/1990',
+	   'C',
+	   'DOCTOR'
+);
 
 SELECT empleadocodigo,
 	empleadonombre,
@@ -303,5 +316,380 @@ SELECT empleadocodigo,
 	empleadofechanacimiento,
 	empleadoestadocivil,
 	empleadogradoacademico
-FROM empleados
-WHERE empleadodni = '74061892';
+FROM empleados;
+
+INSERT INTO public.contratos(
+	contratocodigo, 
+	contratofechainicio, 
+	contratofechafin, 
+	contratoasignacionfamiliar, 
+	contratototalhorassemanal, 
+	contratovalorhoras, 
+	contratocargo, 
+	afpid, 
+	empleadocodigo
+)
+VALUES (
+	1, 
+	'01/01/2019', 
+	'01/12/2019', 
+	'F', 
+	40, 
+	30, 
+	'Administrador', 
+	1, 
+	'TR-00000'
+);
+
+INSERT INTO public.contratos(
+	contratocodigo, 
+	contratofechainicio, 
+	contratofechafin, 
+	contratoasignacionfamiliar, 
+	contratototalhorassemanal, 
+	contratovalorhoras, 
+	contratocargo, 
+	afpid, 
+	empleadocodigo
+)
+VALUES (
+	2, 
+	'01/01/2019', 
+	'01/12/2019', 
+	'T', 
+	8, 
+	20, 
+	'Gerente', 
+	2, 
+	'TR-00001'
+);
+
+INSERT INTO public.contratos(
+	contratocodigo, 
+	contratofechainicio, 
+	contratofechafin, 
+	contratoasignacionfamiliar, 
+	contratototalhorassemanal, 
+	contratovalorhoras, 
+	contratocargo, 
+	afpid, 
+	empleadocodigo
+)
+VALUES (
+	3, 
+	'01/01/2019', 
+	'01/12/2019', 
+	'F', 
+	40, 
+	11, 
+	'DBA', 
+	3, 
+	'TR-00002'
+);
+
+INSERT INTO public.contratos(
+	contratocodigo, 
+	contratofechainicio, 
+	contratofechafin, 
+	contratoasignacionfamiliar, 
+	contratototalhorassemanal, 
+	contratovalorhoras, 
+	contratocargo, 
+	afpid, 
+	empleadocodigo
+)
+VALUES (
+	4, 
+	'01/01/2019', 
+	'01/12/2019', 
+	'T', 
+	8, 
+	21, 
+	'Administrador de Redes', 
+	4, 
+	'TR-00003'
+);
+
+INSERT INTO public.contratos(
+	contratocodigo, 
+	contratofechainicio, 
+	contratofechafin, 
+	contratoasignacionfamiliar, 
+	contratototalhorassemanal, 
+	contratovalorhoras, 
+	contratocargo, 
+	afpid, 
+	empleadocodigo
+)
+VALUES (
+	5, 
+	'01/01/2019', 
+	'01/12/2019', 
+	'F', 
+	8, 
+	40, 
+	'Gerente de Software', 
+	5, 
+	'TR-00004'
+);
+
+select * from contratos;
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00001', 
+		'2019-01-01', 
+		'2019-01-31'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00002', 
+		'2019-02-01', 
+		'2019-02-28'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00003', 
+		'2019-03-01', 
+		'2019-03-31'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00004', 
+		'2019-04-01', 
+		'2019-04-30'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00005', 
+		'2019-05-01', 
+		'2019-05-31'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00006', 
+		'2019-06-01', 
+		'2019-06-30'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00007', 
+		'2019-07-01', 
+		'2019-07-31'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00008', 
+		'2019-08-01', 
+		'2019-08-31'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00009', 
+		'2019-09-01', 
+		'2019-09-30'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00010', 
+		'2019-10-01', 
+		'2019-10-31'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00011', 
+		'2019-11-01', 
+		'2019-11-30'
+);
+
+INSERT INTO public.periodos(
+	periodocodigo, 
+	periodofechainicio, 
+	periodofechafin
+)
+VALUES (
+		'PD-00012', 
+		'2019-12-01', 
+		'2019-12-31'
+);
+
+select * from periodos;
+
+INSERT INTO public.conceptos(
+	conceptocodigo, 
+	montohorasextras, 
+	montoreintegros, 
+	montootrosingresos, 
+	montohorasausentes, 
+	montoadelantos, 
+	montootrosdescuentos, 
+	contratocodigo, 
+	periodocodigo
+)
+VALUES (
+	1, 
+	10, 
+	10, 
+	15, 
+	10, 
+	15, 
+	10, 
+	1, 
+	'PD-00001'
+);
+
+INSERT INTO public.conceptos(
+	conceptocodigo, 
+	montohorasextras, 
+	montoreintegros, 
+	montootrosingresos, 
+	montohorasausentes, 
+	montoadelantos, 
+	montootrosdescuentos, 
+	contratocodigo, 
+	periodocodigo
+)
+VALUES (
+	2, 
+	10, 
+	0, 
+	15, 
+	0, 
+	15, 
+	0, 
+	2, 
+	'PD-00001'
+);
+
+INSERT INTO public.conceptos(
+	conceptocodigo, 
+	montohorasextras, 
+	montoreintegros, 
+	montootrosingresos, 
+	montohorasausentes, 
+	montoadelantos, 
+	montootrosdescuentos, 
+	contratocodigo, 
+	periodocodigo
+)
+VALUES (
+	3, 
+	10, 
+	13, 
+	15, 
+	12, 
+	15, 
+	14, 
+	3, 
+	'PD-00001'
+);
+
+INSERT INTO public.conceptos(
+	conceptocodigo, 
+	montohorasextras, 
+	montoreintegros, 
+	montootrosingresos, 
+	montohorasausentes, 
+	montoadelantos, 
+	montootrosdescuentos, 
+	contratocodigo, 
+	periodocodigo
+)
+VALUES (
+	4, 
+	8, 
+	14, 
+	15, 
+	10, 
+	15, 
+	7, 
+	4, 
+	'PD-00001'
+);
+
+INSERT INTO public.conceptos(
+	conceptocodigo, 
+	montohorasextras, 
+	montoreintegros, 
+	montootrosingresos, 
+	montohorasausentes, 
+	montoadelantos, 
+	montootrosdescuentos, 
+	contratocodigo, 
+	periodocodigo
+)
+VALUES (
+	5, 
+	0, 
+	0, 
+	20, 
+	0, 
+	0, 
+	0, 
+	5, 
+	'PD-00001'
+);
+
+select * from conceptos;
+
+
+
+
+
+
+
+
