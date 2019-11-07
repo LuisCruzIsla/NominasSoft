@@ -42,19 +42,29 @@ public class ProcesarPagoServicio {
         gestorJDBC.abrirConexion();        
         Periodo periodo = periodoDAO.buscarPeriodoActivo();
         gestorJDBC.cerrarConexion();
+        //Flujo alternativo 1
+        if(periodo==null){
+            throw new Exception("No se puede procesar porque no existe periodo de pago activo");
+        }
         return periodo;
     }
 
     public List<Pago> procesar(Periodo periodo) throws Exception {
         
+        //FLujo alternativo 2
         if(!periodo.esActivo()){
-            throw new Exception("El periodo no esta activo.");
+            throw new Exception("No se puede procesar porque la fecha actual no corresponde a la fecha admitida para procesar pagos");
         }
         
         gestorJDBC.abrirConexion();
         
         List<Contrato> contratos = new ArrayList<>();
         contratos = contratoDAO.obtenerTodosLosContratos();
+        
+        //Flujo alternativo 3
+        if(contratos.isEmpty()){
+            throw new Exception("“No se puede procesar porque no existen contratos vigentes.");
+        }
         
         List<Pago> pagos = new ArrayList<>();
         Pago pago;
@@ -83,7 +93,7 @@ public class ProcesarPagoServicio {
                 pagoDAO.ingresar(pago);
             }
         }
-        periodoDAO.procesarPeriodo(periodo.getPeriodo());
+        periodoDAO.procesarPeriodo(periodo.getIdPeriodo());
         gestorJDBC.cerrarConexion();
         return pagos;
     }

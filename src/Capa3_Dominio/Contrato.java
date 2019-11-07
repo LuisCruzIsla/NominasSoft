@@ -137,7 +137,8 @@ public class Contrato {
         if (fechaFin.compareTo(fechaInicio) > 0) {
             LocalDate startDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaInicio);
             LocalDate endDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaFin);
-            long meses = ChronoUnit.DAYS.between(startDate, endDate)/30;
+            long dias = ChronoUnit.DAYS.between(startDate, endDate);
+            int meses = (int) (dias/30);
             if (meses>= 3 && meses<=12) {
                 fechaValida = true;
             }

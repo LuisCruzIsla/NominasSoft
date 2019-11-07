@@ -319,7 +319,6 @@ SELECT empleadocodigo,
 FROM empleados;
 
 INSERT INTO public.contratos(
-	contratocodigo, 
 	contratofechainicio, 
 	contratofechafin, 
 	contratoasignacionfamiliar, 
@@ -329,8 +328,7 @@ INSERT INTO public.contratos(
 	afpid, 
 	empleadocodigo
 )
-VALUES (
-	1, 
+VALUES ( 
 	'01/01/2019', 
 	'01/12/2019', 
 	'F', 
@@ -342,7 +340,6 @@ VALUES (
 );
 
 INSERT INTO public.contratos(
-	contratocodigo, 
 	contratofechainicio, 
 	contratofechafin, 
 	contratoasignacionfamiliar, 
@@ -353,7 +350,6 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	2, 
 	'01/01/2019', 
 	'01/12/2019', 
 	'T', 
@@ -365,7 +361,6 @@ VALUES (
 );
 
 INSERT INTO public.contratos(
-	contratocodigo, 
 	contratofechainicio, 
 	contratofechafin, 
 	contratoasignacionfamiliar, 
@@ -376,7 +371,6 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	3, 
 	'01/01/2019', 
 	'01/12/2019', 
 	'F', 
@@ -388,7 +382,6 @@ VALUES (
 );
 
 INSERT INTO public.contratos(
-	contratocodigo, 
 	contratofechainicio, 
 	contratofechafin, 
 	contratoasignacionfamiliar, 
@@ -399,7 +392,6 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	4, 
 	'01/01/2019', 
 	'01/12/2019', 
 	'T', 
@@ -411,7 +403,6 @@ VALUES (
 );
 
 INSERT INTO public.contratos(
-	contratocodigo, 
 	contratofechainicio, 
 	contratofechafin, 
 	contratoasignacionfamiliar, 
@@ -422,7 +413,6 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	5, 
 	'01/01/2019', 
 	'01/12/2019', 
 	'F', 
@@ -438,89 +428,105 @@ select * from contratos;
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00001', 
 		'2019-01-01', 
-		'2019-01-31'
+		'2019-01-31',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00002', 
 		'2019-02-01', 
-		'2019-02-28'
+		'2019-02-28',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00003', 
 		'2019-03-01', 
-		'2019-03-31'
+		'2019-03-31',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00004', 
 		'2019-04-01', 
-		'2019-04-30'
+		'2019-04-30',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00005', 
 		'2019-05-01', 
-		'2019-05-31'
+		'2019-05-31',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00006', 
 		'2019-06-01', 
-		'2019-06-30'
+		'2019-06-30',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00007', 
 		'2019-07-01', 
-		'2019-07-31'
+		'2019-07-31',
+		'D'
 );
 
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00008', 
 		'2019-08-01', 
-		'2019-08-31'
+		'2019-08-31',
+		'D'
 );
 
 INSERT INTO public.periodos(
@@ -548,12 +554,14 @@ VALUES (
 INSERT INTO public.periodos(
 	periodocodigo, 
 	periodofechainicio, 
-	periodofechafin
+	periodofechafin,
+	periodoestado
 )
 VALUES (
 		'PD-00011', 
 		'2019-11-01', 
-		'2019-11-30'
+		'2019-11-30',
+		'D'
 );
 
 INSERT INTO public.periodos(
@@ -570,7 +578,6 @@ VALUES (
 select * from periodos;
 
 INSERT INTO public.conceptos(
-	conceptocodigo, 
 	montohorasextras, 
 	montoreintegros, 
 	montootrosingresos, 
@@ -580,109 +587,72 @@ INSERT INTO public.conceptos(
 	contratocodigo, 
 	periodocodigo
 )
-VALUES (
-	1, 
-	10, 
-	10, 
-	15, 
-	10, 
-	15, 
-	10, 
-	1, 
-	'PD-00001'
-);
+VALUES 
 
-INSERT INTO public.conceptos(
-	conceptocodigo, 
-	montohorasextras, 
-	montoreintegros, 
-	montootrosingresos, 
-	montohorasausentes, 
-	montoadelantos, 
-	montootrosdescuentos, 
-	contratocodigo, 
-	periodocodigo
-)
-VALUES (
-	2, 
-	10, 
-	0, 
-	15, 
-	0, 
-	15, 
-	0, 
-	2, 
-	'PD-00001'
-);
+(0, 20, 20, 0, 0, 0, 1, 'PD-00001'),
+(0, 10, 20, 0, 0, 10, 1, 'PD-00002'),
+(0, 0, 20, 0, 0, 0, 1, 'PD-00003'),
+(0, 0, 10, 0, 0, 20, 1, 'PD-00004'),
+(0, 10, 20, 0, 0, 0, 1, 'PD-00005'),
+(0, 0, 30, 10, 0, 10, 1, 'PD-00006'),
+(0, 0, 20, 0, 0, 0, 1, 'PD-00007'),
+(0, 10, 20, 0, 30, 0, 1, 'PD-00008'),
+(0, 0, 20, 10, 0, 20, 1, 'PD-00009'),
+(0, 0, 40, 0, 0, 0, 1, 'PD-00010'),
+(0, 0, 20, 0, 0, 0, 1, 'PD-00011'),
+(0, 0, 50, 10, 0, 20, 1, 'PD-00012'),
 
-INSERT INTO public.conceptos(
-	conceptocodigo, 
-	montohorasextras, 
-	montoreintegros, 
-	montootrosingresos, 
-	montohorasausentes, 
-	montoadelantos, 
-	montootrosdescuentos, 
-	contratocodigo, 
-	periodocodigo
-)
-VALUES (
-	3, 
-	10, 
-	13, 
-	15, 
-	12, 
-	15, 
-	14, 
-	3, 
-	'PD-00001'
-);
+(10, 0, 20, 0, 0, 0, 2, 'PD-00001'),
+(20, 0, 20, 0, 0, 0, 2, 'PD-00002'),
+(20, 0, 20, 0, 0, 0, 2, 'PD-00003'),
+(10, 0, 20, 0, 20, 0, 2, 'PD-00004'),
+(15, 0, 20, 10, 0, 0, 2, 'PD-00005'),
+(16, 0, 20, 10, 0, 0, 2, 'PD-00006'),
+(30, 0, 20, 0, 0, 0, 2, 'PD-00007'),
+(0, 0, 20, 0, 0, 0, 2, 'PD-00008'),
+(0, 0, 20, 0, 0, 0, 2, 'PD-00009'),
+(20, 0, 20, 0, 0, 10, 2, 'PD-00010'),
+(30, 0, 20, 0, 0, 0, 2, 'PD-00011'),
+(10, 0, 20, 0, 0, 20, 2, 'PD-00012'),
 
-INSERT INTO public.conceptos(
-	conceptocodigo, 
-	montohorasextras, 
-	montoreintegros, 
-	montootrosingresos, 
-	montohorasausentes, 
-	montoadelantos, 
-	montootrosdescuentos, 
-	contratocodigo, 
-	periodocodigo
-)
-VALUES (
-	4, 
-	8, 
-	14, 
-	15, 
-	10, 
-	15, 
-	7, 
-	4, 
-	'PD-00001'
-);
+(0, 0, 20, 0, 0, 0, 3, 'PD-00001'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00002'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00003'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00004'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00005'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00006'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00007'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00008'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00009'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00010'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00011'),
+(0, 0, 20, 0, 0, 0, 3, 'PD-00012'),
 
-INSERT INTO public.conceptos(
-	conceptocodigo, 
-	montohorasextras, 
-	montoreintegros, 
-	montootrosingresos, 
-	montohorasausentes, 
-	montoadelantos, 
-	montootrosdescuentos, 
-	contratocodigo, 
-	periodocodigo
-)
-VALUES (
-	5, 
-	0, 
-	0, 
-	20, 
-	0, 
-	0, 
-	0, 
-	5, 
-	'PD-00001'
-);
+(0, 10, 20, 0, 0, 0, 4, 'PD-00001'),
+(0, 0, 20, 0, 0, 0, 4, 'PD-00002'),
+(0, 0, 20, 0, 0, 10, 4, 'PD-00003'),
+(0, 10, 20, 0, 10, 0, 4, 'PD-00004'),
+(0, 0, 20, 0, 0, 10, 4, 'PD-00005'),
+(0, 10, 20, 0, 0, 0, 4, 'PD-00006'),
+(0, 0, 20, 0, 10, 0, 4, 'PD-00007'),
+(0, 0, 20, 0, 0, 0, 4, 'PD-00008'),
+(0, 0, 20, 0, 0, 0, 4, 'PD-00009'),
+(0, 10, 20, 0, 0, 0, 4, 'PD-00010'),
+(0, 0, 20, 0, 0, 0, 4, 'PD-00011'),
+(0, 0, 20, 0, 0, 10, 4, 'PD-00012'),
+
+(0, 0, 20, 0, 0, 10, 5, 'PD-00001'),
+(0, 0, 20, 0, 0, 0, 5, 'PD-00002'),
+(0, 10, 20, 0, 10, 0, 5, 'PD-00003'),
+(0, 0, 20, 10, 0, 0, 5, 'PD-00004'),
+(0, 10, 20, 10, 0, 0, 5, 'PD-00005'),
+(0, 10, 20, 0, 10, 0, 5, 'PD-00006'),
+(0, 0, 20, 0, 10, 0, 5, 'PD-00007'),
+(0, 0, 20, 0, 0, 10, 5, 'PD-00008'),
+(0, 10, 20, 0, 0, 0, 5, 'PD-00009'),
+(0, 0, 20, 10, 0, 10, 5, 'PD-00010'),
+(0, 10, 20, 0, 0, 0, 5, 'PD-00011'),
+(0, 0, 20, 0, 10, 0, 5, 'PD-00012');
 
 select * from conceptos;
 

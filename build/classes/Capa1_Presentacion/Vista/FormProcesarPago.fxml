@@ -26,9 +26,9 @@
                            <children>
                               <HBox alignment="CENTER" spacing="16.0">
                                  <children>
-                                    <DatePicker fx:id="dpFechaInicio"  editable="false" promptText="Fecha Inicio"/>
-                                    <DatePicker fx:id="dpFechaFin"  editable="false" promptText="Fecha Fin"/>
-                                    <JFXButton fx:id="btnProcesar" buttonType="RAISED" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Imagenes/search.png&quot;);" text="Procesar" textFill="WHITE"  onAction="#procesar">
+                                    <DatePicker fx:id="dpFechaInicio" disable="true" editable="false" promptText="Fecha Inicio" />
+                                    <DatePicker fx:id="dpFechaFin" disable="true" editable="false" promptText="Fecha Fin" />
+                                    <JFXButton fx:id="btnProcesar" buttonType="RAISED" onAction="#procesar" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Imagenes/search.png&quot;);" text="Procesar" textFill="WHITE">
                                       <font>
                                          <Font size="14.0" />
                                       </font>

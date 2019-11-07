@@ -35,7 +35,8 @@ public class PeriodoDAO implements IPeriodo{
                 + "PeriodoFechaInicio, "
                 + "PeriodoFechaFin, "
                 + "PeriodoEstado "
-                + "FROM Periodos WHERE PeriodoEstado = 'E' ORDER BY PeriodoFechaInicio LIMIT 1";
+                + "FROM Periodos "
+                + "WHERE PeriodoEstado = 'E' ORDER BY PeriodoFechaInicio LIMIT 1";
         
         resultadoPeriodo = gestorJDBC.ejecutarConsulta(sentenciaSQL);
         if(resultadoPeriodo.next()){            

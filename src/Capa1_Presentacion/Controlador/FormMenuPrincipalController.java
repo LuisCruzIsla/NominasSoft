@@ -86,7 +86,8 @@ public class FormMenuPrincipalController implements Initializable {
     
     @FXML
     private void salir(ActionEvent event) throws Exception{
-        openView(EViewMenu.SALIR);
+        System.exit(0);
+        //openView(EViewMenu.SALIR);
     }
     
     private void openView(EViewMenu viewMenu) throws Exception{

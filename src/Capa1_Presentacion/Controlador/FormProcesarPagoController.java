@@ -67,7 +67,7 @@ public class FormProcesarPagoController implements Initializable {
             List<Pago> pagos = procesarPagoServicio.procesar(periodo);
             ObservableList<Pago> pagosObservable = FXCollections.observableArrayList(pagos);
             JFXTreeTableColumn<Pago,String> codigoEmpleado = new JFXTreeTableColumn<>("Codigo del Empleado");
-            codigoEmpleado.setPrefWidth(50D);
+            codigoEmpleado.setPrefWidth(80D);
             codigoEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -75,7 +75,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> nombreEmpleado = new JFXTreeTableColumn<>("Nombre del Empleado");
-            nombreEmpleado.setPrefWidth(100D);
+            nombreEmpleado.setPrefWidth(200D);
             nombreEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -91,7 +91,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> totalDeHoras = new JFXTreeTableColumn<>("Total de Horas");
-            totalDeHoras.setPrefWidth(75D);
+            totalDeHoras.setPrefWidth(100D);
             totalDeHoras.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -99,7 +99,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> valorPorHora = new JFXTreeTableColumn<>("Valor por hora");
-            valorPorHora.setPrefWidth(75D);
+            valorPorHora.setPrefWidth(100D);
             valorPorHora.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -109,7 +109,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> sueldoBasico = new JFXTreeTableColumn<>("Sueldo Basico");
-            sueldoBasico.setPrefWidth(75D);
+            sueldoBasico.setPrefWidth(100D);
             sueldoBasico.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -119,7 +119,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> totalDeIngresos = new JFXTreeTableColumn<>("Total de Ingresos");
-            totalDeIngresos.setPrefWidth(75D);
+            totalDeIngresos.setPrefWidth(100D);
             totalDeIngresos.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -129,7 +129,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> totalDeDescuentos = new JFXTreeTableColumn<>("Total de Descuentos");
-            totalDeDescuentos.setPrefWidth(75D);
+            totalDeDescuentos.setPrefWidth(100D);
             totalDeDescuentos.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -139,7 +139,7 @@ public class FormProcesarPagoController implements Initializable {
                 }
             });
             JFXTreeTableColumn<Pago,String> sueldoNeto = new JFXTreeTableColumn<>("Sueldo Neto");
-            sueldoNeto.setPrefWidth(75D);
+            sueldoNeto.setPrefWidth(100D);
             sueldoNeto.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
                 @Override
                 public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
@@ -153,6 +153,7 @@ public class FormProcesarPagoController implements Initializable {
             treeView.setRoot(root);
             treeView.setShowRoot(false);
             AlertMaker.showOK(stackPane, "Se procesaron los pagos de todos los empleados");
+            actualizarPeriodo();
         }catch (Exception e) {
             AlertMaker.showError(stackPane, "Error: " + e.getMessage());
         }
@@ -163,14 +164,18 @@ public class FormProcesarPagoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        actualizarPeriodo();
+    }    
+    
+    private void actualizarPeriodo(){
         try{
             ProcesarPagoServicio procesarPagoServicio = new ProcesarPagoServicio();
             periodo = procesarPagoServicio.buscarPeriodoActivo();
             dpFechaInicio.setValue(Constantes.DATE_TO_LOCALDATE_UTC(periodo.getFechaInicio()));
             dpFechaFin.setValue(Constantes.DATE_TO_LOCALDATE_UTC(periodo.getFechaFin()));
         }catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
+            AlertMaker.showError(stackPane, "Error: " + e.getMessage());
         }
-    }    
+    }
     
 }
