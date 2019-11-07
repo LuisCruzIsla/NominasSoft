@@ -61,7 +61,7 @@ CREATE TABLE Conceptos
 
 CREATE TABLE Contratos
 (
-	ContratoCodigo integer NOT NULL   DEFAULT NEXTVAL(('"contratos_contratocodigo_seq"'::text)::regclass),
+	ContratoCodigo integer NOT NULL DEFAULT NEXTVAL(('"contratos_contratocodigo_seq"'::text)::regclass),
 	ContratoFechaInicio date NOT NULL,
 	ContratoFechaFin date NOT NULL,
 	ContratoAsignacionFamiliar char(1) NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE Empleados
 
 CREATE TABLE Pagos
 (
-	PagoCodigo char(8) NOT NULL,
+	PagoCodigo SERIAL NOT NULL,
 	PagoAsignacionFamiliar numeric(10,2) NOT NULL,
 	PagoFecha date NOT NULL,
 	PagoPorcentajeAFP numeric(10,2) NOT NULL,
@@ -686,8 +686,7 @@ VALUES (
 
 select * from conceptos;
 
-
-
+select * from pagos;
 
 
 
