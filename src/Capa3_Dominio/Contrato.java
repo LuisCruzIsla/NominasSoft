@@ -5,6 +5,8 @@
  */
 package Capa3_Dominio;
 
+import Capa1_Presentacion.Utils.Constantes;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -133,14 +135,13 @@ public class Contrato {
     public boolean esFechaValida() {
         boolean fechaValida = false;
         if (fechaFin.compareTo(fechaInicio) > 0) {
-            long monthsBetween = ChronoUnit.MONTHS.between(
-            fechaInicio.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1),
-            fechaFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().withDayOfMonth(1));
-            if (monthsBetween >= 3 && monthsBetween<=12) {
+            LocalDate startDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaInicio);
+            LocalDate endDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaFin);
+            long meses = ChronoUnit.DAYS.between(startDate, endDate)*30;
+            if (meses>= 3 && meses<=12) {
                 fechaValida = true;
             }
         }
-
         return fechaValida;
     }
 
