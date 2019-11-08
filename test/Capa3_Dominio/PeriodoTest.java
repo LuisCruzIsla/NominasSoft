@@ -27,7 +27,7 @@ public class PeriodoTest {
         SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         Date fecha = f.parse("28-11-2019");
         periodo.setFechaFin(fecha);
-        boolean resultadoEsperado = true;
+        boolean resultadoEsperado = false;
         boolean resuldadoObtenido = periodo.esActivo();
         assertEquals(resultadoEsperado, resuldadoObtenido);
         // TODO review the generated test code and remove the default call to fail.
@@ -40,7 +40,7 @@ public class PeriodoTest {
         SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         Date fecha = f.parse("28-01-2019");
         periodo.setFechaFin(fecha);
-        boolean resultadoEsperado = false;
+        boolean resultadoEsperado = true;
         boolean resultadoObtenido = periodo.esActivo();
         assertEquals(resultadoEsperado, resultadoObtenido);
         // TODO review the generated test code and remove the default call to fail.

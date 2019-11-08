@@ -53,7 +53,7 @@ public class PagoTest {
         pago.setContrato(contrato);
         pago.setConcepto(concepto);
 
-        double resultadoEsperado = 651.0;
+        double resultadoEsperado = 558.0;
         double resultadoObtenido = pago.calcularTotalIngreso();
         assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
@@ -69,7 +69,7 @@ public class PagoTest {
         Pago pago = new Pago();
         pago.setTotalHoras(20);
         pago.setValorHoras(10);
-        pago.setPorcentajeAFP(0.02);
+        pago.setPorcentajeAFP(2);
         double resultadoEsperado = 4.0;
         double resultadoObtenido = pago.calcularDescuento();
         assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
@@ -90,7 +90,7 @@ public class PagoTest {
         concepto.setMontoOtroDescuentos(80);
         pago.setTotalHoras(20);
         pago.setValorHoras(10);
-        pago.setPorcentajeAFP(0.02);
+        pago.setPorcentajeAFP(2);
         pago.setConcepto(concepto);
         double resultadoEsperado = 204.0;
         double resultadoObtenido = pago.calcularTotalDescuento();
@@ -112,14 +112,14 @@ public class PagoTest {
         concepto.setMontoOtroDescuentos(80);
         pago.setTotalHoras(20);
         pago.setValorHoras(10);
-        pago.setPorcentajeAFP(0.02);
+        pago.setPorcentajeAFP(2);
         concepto.setMontoHorasExtras(200);
         concepto.setMontoReintegros(100);
         concepto.setMontoOtrosIngresos(58);
         contrato.setAsignacionFamiliar(true);
         pago.setContrato(contrato);
         pago.setConcepto(concepto);
-        double resultadoEsperado = 855.0;
+        double resultadoEsperado = 354.0;
         double resultadoObtenido = pago.calcularSueldoNeto();
         assertEquals(resultadoEsperado, resultadoObtenido, 0.0);
         // TODO review the generated test code and remove the default call to fail.
