@@ -5,16 +5,18 @@
  */
 package Capa2_Aplicacion;
 
-import Capa3_Dominio.Concepto;
-import Capa3_Dominio.Contrato;
-import Capa3_Dominio.Pago;
-import Capa3_Dominio.Periodo;
-import Capa4_Persistencia.ConceptoDAO;
-import Capa4_Persistencia.ContratoDAO;
-import Capa4_Persistencia.Gestores.GestorGlobal;
-import Capa4_Persistencia.Gestores.GestorJDBC;
-import Capa4_Persistencia.PagoDAO;
-import Capa4_Persistencia.PeriodoDAO;
+import Capa3_Dominio.Contratos.*;
+import Capa3_Dominio.Entidades.Concepto;
+import Capa3_Dominio.Entidades.Contrato;
+import Capa3_Dominio.Entidades.Pago;
+import Capa3_Dominio.Entidades.Periodo;
+import Capa4_Persistencia.Gestor.Fabrica.FabricaAdstractaDAO;
+import Capa4_Persistencia.postgresql.ConceptoDAOPostgre;
+import Capa4_Persistencia.postgresql.ContratoDAOPostgre;
+import Capa4_Persistencia.Gestor.Gestores.GestorGlobal;
+import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.postgresql.PagoDAOPostgre;
+import Capa4_Persistencia.postgresql.PeriodoDAOPostgre;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,17 +27,24 @@ import java.util.List;
 public class ProcesarPagoServicio {
     
     private GestorJDBC gestorJDBC;
-    private ContratoDAO contratoDAO;
-    private PeriodoDAO periodoDAO;
-    private ConceptoDAO conceptoDAO;
-    private PagoDAO pagoDAO;
+    //private ContratoDAOPostgre contratoDAO;
+    //private PeriodoDAOPostgre periodoDAO;
+//    private ConceptoDAOPostgre conceptoDAO;
+//    private PagoDAOPostgre pagoDAO;
+    private IContratoDAO contratoDAO;
+    private IPeriodo periodoDAO;
+    private IConceptoDAO conceptoDAO;
+    private IPagoDAO pagoDAO;
+    
+    
     
     public ProcesarPagoServicio(){
-        gestorJDBC = GestorGlobal.getInstance().getGestor();
-        contratoDAO = new ContratoDAO(gestorJDBC);
-        periodoDAO = new PeriodoDAO(gestorJDBC);
-        conceptoDAO = new ConceptoDAO(gestorJDBC);
-        pagoDAO = new PagoDAO(gestorJDBC);
+        FabricaAdstractaDAO fabricaAdstractaDAO= FabricaAdstractaDAO.getInstancia();
+        gestorJDBC = fabricaAdstractaDAO.crearGestorJDBC();//GestorGlobal.getInstance().getGestor();
+        contratoDAO = fabricaAdstractaDAO.crearIContratoDAO(gestorJDBC);
+        periodoDAO = fabricaAdstractaDAO.crearIPeriodo(gestorJDBC);
+        conceptoDAO = fabricaAdstractaDAO.crearIConceptoDAO(gestorJDBC);
+        pagoDAO = fabricaAdstractaDAO.crearIPagoDAO(gestorJDBC);
     }
     
     public Periodo buscarPeriodoActivo() throws Exception{

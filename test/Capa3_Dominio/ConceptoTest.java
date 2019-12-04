@@ -5,6 +5,7 @@
  */
 package Capa3_Dominio;
 
+import Capa3_Dominio.Entidades.Concepto;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

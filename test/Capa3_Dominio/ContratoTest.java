@@ -5,6 +5,9 @@
  */
 package Capa3_Dominio;
 
+import Capa3_Dominio.Entidades.Empleado;
+import Capa3_Dominio.Entidades.Contrato;
+import Capa3_Dominio.Enumerables.EGrados;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

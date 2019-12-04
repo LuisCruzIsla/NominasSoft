@@ -18,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import Capa1_Presentacion.Controlador.interfaces.IOnClick;
+import Capa1_Presentacion.Formularios.Controlador.interfaces.IOnClick;
 
 /**
  *

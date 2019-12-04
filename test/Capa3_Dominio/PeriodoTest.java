@@ -5,6 +5,7 @@
  */
 package Capa3_Dominio;
 
+import Capa3_Dominio.Entidades.Periodo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
