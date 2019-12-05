@@ -7,13 +7,14 @@ import Capa3_Dominio.Contratos.IEmpleadoDAO;
 import Capa3_Dominio.Contratos.IPagoDAO;
 import Capa3_Dominio.Contratos.IPeriodo;
 import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa5_Infraestructura.parametros.IFileWatcher;
 import Capa5_Infraestructura.parametros.LectorDeParametros;
 
 /**
  *
  * @author LuisCriz
  */
-public abstract class FabricaAdstractaDAO {
+public abstract class FabricaAdstractaDAO{
 
     public static FabricaAdstractaDAO getInstancia() {
         String nombreClaseFabricaDAO;
@@ -21,8 +22,6 @@ public abstract class FabricaAdstractaDAO {
         try {
             LectorDeParametros lectorDeParametros = new LectorDeParametros();
             nombreClaseFabricaDAO = lectorDeParametros.getValorParametro("claseFabricaDAO","Parametros.properties");
-            //nombreClaseFabricaDAO = "Capa4_Persistencia.Gestor.Fabrica.FabricaPostgreSQL";
-
             FabricaDAO = (FabricaAdstractaDAO) Class.forName(nombreClaseFabricaDAO).newInstance();
             return FabricaDAO;
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {

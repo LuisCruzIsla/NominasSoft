@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="NominaSoft.jar" size="9580462" download="eager" />
+    <jar href="NominaSoft.jar" size="9585075" download="eager" />
     <jar href="lib\AnimateFX-1.2.1.jar" size="94267" download="eager" />
     <jar href="lib\jfoenix-8.0.8.jar" size="2708772" download="eager" />
     <jar href="lib\postgresql-42.2.8.jar" size="900064" download="eager" />
