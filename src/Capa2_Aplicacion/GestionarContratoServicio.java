@@ -5,14 +5,19 @@
  */
 package Capa2_Aplicacion;
 
-import Capa3_Dominio.AFP;
-import Capa3_Dominio.Contrato;
-import Capa3_Dominio.Empleado;
-import Capa4_Persistencia.Gestores.GestorJDBC;
-import Capa4_Persistencia.AFPDAO;
-import Capa4_Persistencia.ContratoDAO;
-import Capa4_Persistencia.EmpleadoDAO;
-import Capa4_Persistencia.Gestores.GestorGlobal;
+import Capa3_Dominio.Contratos.IAFPDAO;
+import Capa3_Dominio.Contratos.IContratoDAO;
+import Capa3_Dominio.Contratos.IEmpleadoDAO;
+import Capa3_Dominio.Entidades.AFP;
+import Capa3_Dominio.Entidades.Contrato;
+import Capa3_Dominio.Entidades.Empleado;
+import Capa3_Dominio.Servicios.ContratoServicio;
+import Capa4_Persistencia.Gestor.Fabrica.FabricaAdstractaDAO;
+import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.postgresql.AFPDAOPostgre;
+import Capa4_Persistencia.postgresql.ContratoDAOPostgre;
+import Capa4_Persistencia.postgresql.EmpleadoDAOPostgre;
+import Capa4_Persistencia.Gestor.Gestores.GestorGlobal;
 import java.util.List;
 
 /**
@@ -22,15 +27,20 @@ import java.util.List;
 public class GestionarContratoServicio {
     
     private GestorJDBC gestorJDBC;
-    private EmpleadoDAO empleadoDAO;
-    private ContratoDAO contratoDAO;
-    private AFPDAO afpDAO;
+    //private EmpleadoDAOPostgre empleadoDAO;
+    //private ContratoDAOPostgre contratoDAO;
+    //private AFPDAOPostgre afpDAO;
+    private IEmpleadoDAO empleadoDAO;
+    private IContratoDAO contratoDAO;
+    private IAFPDAO afpDAO;
+    
     
     public GestionarContratoServicio(){
-        gestorJDBC = GestorGlobal.getInstance().getGestor();
-        empleadoDAO = new EmpleadoDAO(gestorJDBC);
-        contratoDAO = new ContratoDAO(gestorJDBC);
-        afpDAO = new AFPDAO(gestorJDBC);
+        FabricaAdstractaDAO fabricaAdstractaDAO= FabricaAdstractaDAO.getInstancia();
+        gestorJDBC = fabricaAdstractaDAO.crearGestorJDBC();//GestorGlobal.getInstance().getGestor();
+        empleadoDAO = fabricaAdstractaDAO.crearIEmpleadoDAO(gestorJDBC);//new EmpleadoDAOPostgre(gestorJDBC);
+        contratoDAO = fabricaAdstractaDAO.crearIContratoDAO(gestorJDBC);//new ContratoDAOPostgre(gestorJDBC);
+        afpDAO = fabricaAdstractaDAO.crearIAFPDAO(gestorJDBC); //new AFPDAOPostgre(gestorJDBC);
     }
     
     public Empleado buscarEmpleadoPorDNI(int DNI) throws Exception{
@@ -51,27 +61,9 @@ public class GestionarContratoServicio {
         
         gestorJDBC.abrirConexion();
         Contrato contratoAnterior = contratoDAO.obtenerUltimoPorEmpleado(contrato.getEmpleado().getId());
-        
-        if(contratoAnterior!=null && !contratoAnterior.esVigente()){
-            throw new Exception("El contrato anterior aun es vigente");
-        }
-        
-        if(!contrato.esRenovable(contratoAnterior)){
-            throw new Exception("Hay un contrato pendiente, no puedes crear un nuevo contrato.");
-        }
-        
-        if(!contrato.esFechaValida()){
-            throw new Exception("Las fechas no son validas");
-        }
-        
-        if(!contrato.esHoraValidaPorSemana()){
-            throw new Exception("El total de horas contratadas no es valido.");
-        }
-        
-        if(!contrato.esValorizacionAceptada()){
-            throw new Exception("El valor por hora no corresponde a su grado academico.");
-        }
-        
+     
+        ContratoServicio contratoServicio = new ContratoServicio();
+        contratoServicio.validarDatos(contrato, contratoAnterior);
         int registros_afectados = contratoDAO.ingresar(contrato);
         gestorJDBC.cerrarConexion();
         return registros_afectados;
@@ -83,25 +75,8 @@ public class GestionarContratoServicio {
         gestorJDBC.abrirConexion();
         Contrato contratoAntepenultimo = contratoDAO.obtenerAntepenultimoPorEmpleado(contrato.getEmpleado().getId());
         
-        if(contratoAntepenultimo!=null && !contratoAntepenultimo.esVigente()){
-            throw new Exception("El contrato anterior aun es vigente");
-        }
-        
-        if(!contrato.esRenovable(contratoAntepenultimo)){
-            throw new Exception("Hay un contrato pendiente, no puedes crear un nuevo contrato.");
-        }
-        
-        if(!contrato.esFechaValida()){  
-            throw new Exception("Las fechas no son validas");
-        }
-        
-        if(!contrato.esHoraValidaPorSemana()){
-            throw new Exception("El total de horas contratadas no es valido.");
-        }
-        
-        if(!contrato.esValorizacionAceptada()){
-            throw new Exception("El valor por hora no corresponde a su grado academico.");
-        }
+       ContratoServicio contratoServicio = new ContratoServicio();
+        contratoServicio.validarDatos(contrato, contratoAntepenultimo);
         
         int registros_afectados = contratoDAO.actualizar(contrato);
         gestorJDBC.cerrarConexion();
