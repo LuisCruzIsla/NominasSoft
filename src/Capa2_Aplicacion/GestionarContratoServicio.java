@@ -13,11 +13,7 @@ import Capa3_Dominio.Entidades.Contrato;
 import Capa3_Dominio.Entidades.Empleado;
 import Capa3_Dominio.Servicios.ContratoServicio;
 import Capa4_Persistencia.Gestor.Fabrica.FabricaAdstractaDAO;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
-import Capa4_Persistencia.postgresql.AFPDAOPostgre;
-import Capa4_Persistencia.postgresql.ContratoDAOPostgre;
-import Capa4_Persistencia.postgresql.EmpleadoDAOPostgre;
-import Capa4_Persistencia.Gestor.Gestores.GestorGlobal;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import java.util.List;
 
 /**

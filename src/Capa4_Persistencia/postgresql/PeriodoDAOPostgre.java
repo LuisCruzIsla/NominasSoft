@@ -6,7 +6,7 @@
 package Capa4_Persistencia.postgresql;
 
 import Capa3_Dominio.Entidades.Periodo;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import Capa3_Dominio.Contratos.IPeriodo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

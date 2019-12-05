@@ -9,7 +9,7 @@ import Capa4_Persistencia.postgresql.*;
 import Capa3_Dominio.Enumerables.EGrados;
 import Capa3_Dominio.Entidades.Empleado;
 import Capa3_Dominio.Contratos.IEmpleadoDAO;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

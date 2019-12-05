@@ -5,8 +5,10 @@
  */
 package Capa3_Dominio.Entidades;
 
-import Capa1_Presentacion.Utils.Constantes;
+
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -125,9 +127,13 @@ public class Contrato {
     public boolean esFechaValida() {
         boolean fechaValida = false;
         if (fechaFin.compareTo(fechaInicio) > 0) {
-            LocalDate startDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaInicio);
-            LocalDate endDate = Constantes.DATE_TO_LOCALDATE_UTC(fechaFin);
-            long dias = ChronoUnit.DAYS.between(startDate, endDate);
+            SimpleDateFormat simple = new SimpleDateFormat("dd-MM-yyyy");
+            String dateStart = simple.format(fechaInicio);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            LocalDate localDateStart = LocalDate.parse(dateStart , formatter);
+            String dateFin = simple.format(fechaInicio);
+            LocalDate localDateFin = LocalDate.parse(dateFin , formatter);
+            long dias = ChronoUnit.DAYS.between(localDateStart, localDateFin);
             int meses = (int) (dias/30);
             if (meses>= 3 && meses<=12) {
                 fechaValida = true;

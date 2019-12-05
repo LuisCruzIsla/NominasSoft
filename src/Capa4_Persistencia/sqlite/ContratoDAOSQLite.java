@@ -10,7 +10,7 @@ import Capa3_Dominio.Entidades.AFP;
 import Capa3_Dominio.Entidades.Contrato;
 import Capa3_Dominio.Entidades.Empleado;
 import Capa3_Dominio.Contratos.IContratoDAO;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

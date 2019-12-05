@@ -6,7 +6,7 @@ import Capa3_Dominio.Contratos.IContratoDAO;
 import Capa3_Dominio.Contratos.IEmpleadoDAO;
 import Capa3_Dominio.Contratos.IPagoDAO;
 import Capa3_Dominio.Contratos.IPeriodo;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import Capa5_Infraestructura.parametros.LectorDeParametros;
 
 /**

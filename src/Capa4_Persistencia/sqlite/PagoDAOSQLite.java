@@ -7,7 +7,7 @@ package Capa4_Persistencia.sqlite;
 
 import Capa4_Persistencia.postgresql.*;
 import Capa3_Dominio.Entidades.Pago;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import Capa3_Dominio.Contratos.IPagoDAO;
 import java.sql.Date;
 import java.sql.PreparedStatement;

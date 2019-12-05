@@ -5,7 +5,7 @@
  */
 package Capa4_Persistencia.Gestor.Fabrica;
 
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
+import Capa4_Persistencia.Gestor.GestorJDBC;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
