@@ -93,7 +93,7 @@ public class ProcesarPagoServicio {
                 double asignacionFamiliar = contrato.calcularAsignacionFamiliar();
                 pago.setAsignacionFamiliar(asignacionFamiliar);
                 //Seteamos el porcentaje del AFP sacandolo del AFP del Contrato 
-                double porcentajeAFP = contrato.getAfp().getDescuento();
+                double porcentajeAFP = contrato.getAfp().getPorcentajeDescuento();
                 pago.setPorcentajeAFP(porcentajeAFP);
                 //Seteamos el total de horas al crear el pago
                 int totalHoras = pago.calcularTotalHoras();

@@ -11,6 +11,7 @@ import Capa4_Persistencia.Gestor.Fabrica.GestorJDBCPostgre;
  *
  * @author user
  */
+
 public class GestorGlobal {
     
     private GestorJDBC gestorJDBC;

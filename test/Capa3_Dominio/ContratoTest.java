@@ -74,52 +74,7 @@ public class ContratoTest {
         //fail("The test case is a prototype.");
     }
 
-    @Test
-    public void test1EsRenovable() throws ParseException {
-        System.out.println("esRenovable1");
-        Contrato contrato = new Contrato();
-        SimpleDateFormat f1 = new SimpleDateFormat("dd-MM-yyyy");
-        SimpleDateFormat f2 = new SimpleDateFormat("dd-MM-yyyy");
-        Date fechaFin1 = f1.parse("20-10-2019");
-        Date fechaFin2 = f2.parse("24-10-2019");
 
-        contrato.setFechaFin(fechaFin1);
-        Contrato instance = new Contrato();
-        instance.setFechaFin(fechaFin2);
-        boolean resultadoEsperado = true;
-        boolean resultadoObtenido = instance.esRenovable(contrato);
-        assertEquals(resultadoEsperado, resultadoObtenido);
-        // TODO review the generated test code and remove the default call to fail.
-    }
-
-    @Test
-    public void test2EsRenovable() {
-        System.out.println("esRenovable2");
-        Contrato contrato = null;
-        Contrato instance = new Contrato();
-        boolean resultadoEsperado = true;
-        boolean resultadoObtenido = instance.esRenovable(contrato);
-        assertEquals(resultadoEsperado, resultadoObtenido);
-        // TODO review the generated test code and remove the default call to fail.
-    }
-
-    @Test
-    public void test3EsRenovable() throws ParseException {
-        System.out.println("esRenovable3");
-        Contrato contrato = new Contrato();
-        SimpleDateFormat f1 = new SimpleDateFormat("dd-MM-yyyy");
-        SimpleDateFormat f2 = new SimpleDateFormat("dd-MM-yyyy");
-        Date fechaFin1 = f1.parse("24-10-2019");
-        Date fechaFin2 = f2.parse("20-10-2019");
-
-        contrato.setFechaFin(fechaFin1);
-        Contrato instance = new Contrato();
-        instance.setFechaFin(fechaFin2);
-        boolean resultadoEsperado = false;
-        boolean resultadoObtenido = instance.esRenovable(contrato);
-        assertEquals(resultadoEsperado, resultadoObtenido);
-        // TODO review the generated test code and remove the default call to fail.
-    }
 
     @Test
     public void test1EsFechaValida() throws ParseException {

@@ -13,7 +13,8 @@ public class AFP {
     
     private int id;
     private String nombre;
-    private double descuento;
+    private double porcentajeDescuento;
+
 
     public AFP() {
     }
@@ -34,12 +35,14 @@ public class AFP {
         this.nombre = nombre;
     }
 
-    public double getDescuento() {
-        return descuento;
+    public double getPorcentajeDescuento() {
+        return porcentajeDescuento;
     }
 
-    public void setDescuento(double descuento) {
-        this.descuento = descuento;
+    public void setPorcentajeDescuento(double porcentajeDescuento) {
+        this.porcentajeDescuento = porcentajeDescuento;
     }
+
+
 
 }

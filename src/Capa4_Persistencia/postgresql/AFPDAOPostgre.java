@@ -39,7 +39,7 @@ public class AFPDAOPostgre implements IAFPDAO{
             afp = new AFP();
             afp.setId(resultado.getInt("afpid"));
             afp.setNombre(resultado.getString("afpnombre"));
-            afp.setDescuento(resultado.getDouble("afpdescuento"));
+            afp.setPorcentajeDescuento(resultado.getDouble("afpdescuento"));
             listaAFP.add(afp);
         }
         resultado.close();
@@ -62,7 +62,7 @@ public class AFPDAOPostgre implements IAFPDAO{
             afp = new AFP();
             afp.setId(id);
             afp.setNombre(resultadoAFP.getString("afpnombre"));
-            afp.setDescuento(resultadoAFP.getDouble("afpdescuento"));
+            afp.setPorcentajeDescuento(resultadoAFP.getDouble("afpdescuento"));
         }
         
         return afp;
