@@ -11,9 +11,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Controlador.FormProcesarPagoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Formularios.Controlador.FormProcesarPagoController">
     <stylesheets>
-        <URL value="@/Capa1_Presentacion/Estilos/formprocesarpago.css" />
+        <URL value="@/Capa1_Presentacion/Formularios/Estilos/formprocesarpago.css" />
     </stylesheets>
    <children>
       <StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="600.0">
@@ -28,7 +28,7 @@
                                  <children>
                                     <DatePicker fx:id="dpFechaInicio" disable="true" editable="false" promptText="Fecha Inicio" />
                                     <DatePicker fx:id="dpFechaFin" disable="true" editable="false" promptText="Fecha Fin" />
-                                    <JFXButton fx:id="btnProcesar" buttonType="RAISED" onAction="#procesar" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Imagenes/search.png&quot;);" text="Procesar" textFill="WHITE">
+                                    <JFXButton fx:id="btnProcesar" buttonType="RAISED" onAction="#procesar" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Capa1_Presentacion/Utils/Imagenes/search.png&quot;);" text="Procesar" textFill="WHITE">
                                       <font>
                                          <Font size="14.0" />
                                       </font>

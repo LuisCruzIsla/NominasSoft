@@ -11,8 +11,9 @@ import java.util.Date;
 /**
  *
  * @author Ronald Alva
+ * Se elimino el "Extend" de la clase Pago
  */
-public class Pago extends RecursiveTreeObject<Pago>{
+public class Pago{
 
     private Date fecha;
     private int totalHoras;
@@ -22,7 +23,6 @@ public class Pago extends RecursiveTreeObject<Pago>{
     private Contrato contrato;
     private Concepto concepto;
     private Periodo periodo;
-    public String nombre;
 
     public Pago() {
     }

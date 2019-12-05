@@ -175,7 +175,7 @@ public class FormGestionarContratoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         RequiredFieldValidator validator = new RequiredFieldValidator();
         validator.setMessage("Por favor ingresa el DNI.");
-        validator.setIcon(new ImageView(getClass().getResource("/Imagenes/error.png").toString()));
+        validator.setIcon(new ImageView(getClass().getResource("/Capa1_Presentacion/Utils/Imagenes/error.png").toString()));
         txtDNI.getValidators().add(validator);
         //Cuando salga del focus validar que no este vacio
         txtDNI.focusedProperty().addListener((o, oldVal, newVal) -> {

@@ -10,6 +10,7 @@ import Capa1_Presentacion.Utils.Constantes;
 import Capa2_Aplicacion.ProcesarPagoServicio;
 import Capa3_Dominio.Entidades.Pago;
 import Capa3_Dominio.Entidades.Periodo;
+import Capa3_Dominio.Table.PagoTable;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -19,6 +20,7 @@ import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableObjectValue;
@@ -43,7 +45,7 @@ import javafx.util.Callback;
 public class FormProcesarPagoController implements Initializable {
     
     @FXML
-    private JFXTreeTableView<Pago> treeView;
+    private JFXTreeTableView<PagoTable> treeView;
     
     @FXML
     private StackPane stackPane;
@@ -64,91 +66,95 @@ public class FormProcesarPagoController implements Initializable {
     private void procesar(ActionEvent event) {
         try{
             ProcesarPagoServicio procesarPagoServicio = new ProcesarPagoServicio();
-            List<Pago> pagos = procesarPagoServicio.procesar(periodo);
-            ObservableList<Pago> pagosObservable = FXCollections.observableArrayList(pagos);
-            JFXTreeTableColumn<Pago,String> codigoEmpleado = new JFXTreeTableColumn<>("Codigo del Empleado");
+            List<Pago> pagosTemp = procesarPagoServicio.procesar(periodo);
+            List<PagoTable> pagos = new ArrayList<>();
+            for(Pago pago : pagosTemp){
+                pagos.add(new PagoTable(pago));
+            }
+            ObservableList<PagoTable> pagosObservable = FXCollections.observableArrayList(pagos);
+            JFXTreeTableColumn<PagoTable,String> codigoEmpleado = new JFXTreeTableColumn<>("Codigo del Empleado");
             codigoEmpleado.setPrefWidth(80D);
-            codigoEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            codigoEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
-                    return new SimpleStringProperty(param.getValue().getValue().getContrato().getEmpleado().getId());
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
+                    return new SimpleStringProperty(param.getValue().getValue().getPago().getContrato().getEmpleado().getId());
                 }
             });
-            JFXTreeTableColumn<Pago,String> nombreEmpleado = new JFXTreeTableColumn<>("Nombre del Empleado");
+            JFXTreeTableColumn<PagoTable,String> nombreEmpleado = new JFXTreeTableColumn<>("Nombre del Empleado");
             nombreEmpleado.setPrefWidth(200D);
-            nombreEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            nombreEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
-                    return new SimpleStringProperty(param.getValue().getValue().getContrato().getEmpleado().getNombre());
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
+                    return new SimpleStringProperty(param.getValue().getValue().getPago().getContrato().getEmpleado().getNombre());
                 }
             });
-            JFXTreeTableColumn<Pago,String> dniEmpleado = new JFXTreeTableColumn<>("DNI");
+            JFXTreeTableColumn<PagoTable,String> dniEmpleado = new JFXTreeTableColumn<>("DNI");
             dniEmpleado.setPrefWidth(75D);
-            dniEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            dniEmpleado.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
-                    return new SimpleStringProperty(""+param.getValue().getValue().getContrato().getEmpleado().getDni());
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
+                    return new SimpleStringProperty(""+param.getValue().getValue().getPago().getContrato().getEmpleado().getDni());
                 }
             });
-            JFXTreeTableColumn<Pago,String> totalDeHoras = new JFXTreeTableColumn<>("Total de Horas");
+            JFXTreeTableColumn<PagoTable,String> totalDeHoras = new JFXTreeTableColumn<>("Total de Horas");
             totalDeHoras.setPrefWidth(100D);
-            totalDeHoras.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            totalDeHoras.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
-                    return new SimpleStringProperty(""+param.getValue().getValue().getTotalHoras());
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
+                    return new SimpleStringProperty(""+param.getValue().getValue().getPago().getTotalHoras());
                 }
             });
-            JFXTreeTableColumn<Pago,String> valorPorHora = new JFXTreeTableColumn<>("Valor por hora");
+            JFXTreeTableColumn<PagoTable,String> valorPorHora = new JFXTreeTableColumn<>("Valor por hora");
             valorPorHora.setPrefWidth(100D);
-            valorPorHora.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            valorPorHora.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
                     DecimalFormat format = new DecimalFormat("0.00");
-                    String valor = format.format(param.getValue().getValue().getValorHoras());
+                    String valor = format.format(param.getValue().getValue().getPago().getValorHoras());
                     return new SimpleStringProperty("S/. "+valor);
                 }
             });
-            JFXTreeTableColumn<Pago,String> sueldoBasico = new JFXTreeTableColumn<>("Sueldo Basico");
+            JFXTreeTableColumn<PagoTable,String> sueldoBasico = new JFXTreeTableColumn<>("Sueldo Basico");
             sueldoBasico.setPrefWidth(100D);
-            sueldoBasico.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            sueldoBasico.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
                     DecimalFormat format = new DecimalFormat("0.00");
-                    String valor = format.format(param.getValue().getValue().calcularSueldoBasico());
+                    String valor = format.format(param.getValue().getValue().getPago().calcularSueldoBasico());
                     return new SimpleStringProperty("S/. "+valor);
                 }
             });
-            JFXTreeTableColumn<Pago,String> totalDeIngresos = new JFXTreeTableColumn<>("Total de Ingresos");
+            JFXTreeTableColumn<PagoTable,String> totalDeIngresos = new JFXTreeTableColumn<>("Total de Ingresos");
             totalDeIngresos.setPrefWidth(100D);
-            totalDeIngresos.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            totalDeIngresos.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
                     DecimalFormat format = new DecimalFormat("0.00");
-                    String valor = format.format(param.getValue().getValue().calcularTotalIngreso());
+                    String valor = format.format(param.getValue().getValue().getPago().calcularTotalIngreso());
                     return new SimpleStringProperty("S/. "+valor);
                 }
             });
-            JFXTreeTableColumn<Pago,String> totalDeDescuentos = new JFXTreeTableColumn<>("Total de Descuentos");
+            JFXTreeTableColumn<PagoTable,String> totalDeDescuentos = new JFXTreeTableColumn<>("Total de Descuentos");
             totalDeDescuentos.setPrefWidth(100D);
-            totalDeDescuentos.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            totalDeDescuentos.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
                     DecimalFormat format = new DecimalFormat("0.00");
-                    String valor = format.format(param.getValue().getValue().calcularTotalDescuento());
+                    String valor = format.format(param.getValue().getValue().getPago().calcularTotalDescuento());
                     return new SimpleStringProperty("S/. "+valor);
                 }
             });
-            JFXTreeTableColumn<Pago,String> sueldoNeto = new JFXTreeTableColumn<>("Sueldo Neto");
+            JFXTreeTableColumn<PagoTable,String> sueldoNeto = new JFXTreeTableColumn<>("Sueldo Neto");
             sueldoNeto.setPrefWidth(100D);
-            sueldoNeto.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<Pago, String>, ObservableValue<String>>() {
+            sueldoNeto.setCellValueFactory(new Callback<TreeTableColumn.CellDataFeatures<PagoTable, String>, ObservableValue<String>>() {
                 @Override
-                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<Pago, String> param) {
+                public ObservableValue<String> call(TreeTableColumn.CellDataFeatures<PagoTable, String> param) {
                     DecimalFormat format = new DecimalFormat("0.00");
-                    String valor = format.format(param.getValue().getValue().calcularSueldoNeto());
+                    String valor = format.format(param.getValue().getValue().getPago().calcularSueldoNeto());
                     return new SimpleStringProperty("S/. "+valor);
                 }
             });
-            TreeItem<Pago> root = new RecursiveTreeItem<Pago>(pagosObservable,RecursiveTreeObject::getChildren);
+            TreeItem<PagoTable> root = new RecursiveTreeItem<PagoTable>(pagosObservable,RecursiveTreeObject::getChildren);
             treeView.getColumns().setAll(codigoEmpleado,nombreEmpleado,dniEmpleado,totalDeHoras,valorPorHora,sueldoBasico,totalDeIngresos,totalDeDescuentos,sueldoNeto);
             treeView.setRoot(root);
             treeView.setShowRoot(false);

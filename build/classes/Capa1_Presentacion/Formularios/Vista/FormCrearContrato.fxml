@@ -11,9 +11,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Controlador.FormCrearContratoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Formularios.Controlador.FormCrearContratoController">
     <stylesheets>
-        <URL value="@/Capa1_Presentacion/Estilos/formcrearcontrato.css" />
+        <URL value="@/Capa1_Presentacion/Formularios/Estilos/formcrearcontrato.css" />
     </stylesheets>
     <children>
       <StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="600.0">
@@ -90,7 +90,7 @@
                                        <graphic>
                                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../Imagenes/back.png" />
+                                                <Image url="@../../Utils/Imagenes/back.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -102,7 +102,7 @@
                                        <graphic>
                                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../Imagenes/guardar.png" />
+                                                <Image url="@../../Utils/Imagenes/guardar.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>

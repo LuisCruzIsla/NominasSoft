@@ -6,7 +6,6 @@
 package Capa4_Persistencia.Gestor.Fabrica;
 
 import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
-import Capa4_Persistencia.Gestor.Gestores.GestorJDBC;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -20,8 +19,8 @@ public class GestorJDBCPostgre extends GestorJDBC {
     public void abrirConexion() {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/SistemaNominas";
-            conexion = DriverManager.getConnection(url, "postgres", "$$$pitocar1234");
+            String url = "jdbc:postgresql://localhost:5432/Nomina";
+            conexion = DriverManager.getConnection(url, "postgres", "godofwar1");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } 

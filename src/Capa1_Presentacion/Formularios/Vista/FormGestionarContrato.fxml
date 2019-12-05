@@ -11,9 +11,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="rootMain" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Controlador.FormGestionarContratoController">
+<AnchorPane id="AnchorPane" fx:id="rootMain" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Formularios.Controlador.FormGestionarContratoController">
     <stylesheets>
-        <URL value="@/Capa1_Presentacion/Estilos/formgestionarcontrato.css" />
+        <URL value="@/Capa1_Presentacion/Formularios/Estilos/formgestionarcontrato.css" />
     </stylesheets>
    <children>
       <StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="600.0">
@@ -50,7 +50,7 @@
                                  <children>
                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
-                                         <Image url="@../../Imagenes/empleado_card.png" />
+                                         <Image url="@../../Utils/Imagenes/empleado_card.png" />
                                       </image>
                                    </ImageView>
                                    <Label text="Información del empleado">
@@ -66,7 +66,7 @@
                                        <children>
                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                               <Image url="@../../Imagenes/nombre.png" />
+                                               <Image url="@../../Utils/Imagenes/nombre.png" />
                                             </image>
                                           </ImageView>
                                          <Label text="Nombre" />
@@ -84,7 +84,7 @@
                                        <children>
                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                               <Image url="@../../Imagenes/direccion.png" />
+                                               <Image url="@../../Utils/Imagenes/direccion.png" />
                                             </image>
                                          </ImageView>
                                          <Label text="Dirección" />
@@ -102,7 +102,7 @@
                                        <children>
                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                               <Image url="@../../Imagenes/telefono.png" />
+                                               <Image url="@../../Utils/Imagenes/telefono.png" />
                                             </image>
                                          </ImageView>
                                          <Label text="Teléfono" />
@@ -120,7 +120,7 @@
                                        <children>
                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                               <Image url="@../../Imagenes/fecha_de_nacimiento.png" />
+                                               <Image url="@../../Utils/Imagenes/fecha_de_nacimiento.png" />
                                             </image>
                                          </ImageView>
                                          <Label text="Fecha de nacimiento" />
@@ -138,7 +138,7 @@
                                        <children>
                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                               <Image url="@../../Imagenes/estado_civil.png" />
+                                               <Image url="@../../Utils/Imagenes/estado_civil.png" />
                                             </image>
                                          </ImageView>
                                          <Label text="Estado Civil" />
@@ -156,7 +156,7 @@
                                        <children>
                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                               <Image url="@../../Imagenes/grado_academico.png" />
+                                               <Image url="@../../Utils/Imagenes/grado_academico.png" />
                                             </image>
                                          </ImageView>
                                          <Label text="Grado Academico" />
@@ -184,7 +184,7 @@
                                        <graphic>
                                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../Imagenes/crear.png" />
+                                                <Image url="@../../Utils/Imagenes/crear.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -199,7 +199,7 @@
                                        <graphic>
                                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../Imagenes/actualizar.png" />
+                                                <Image url="@../../Utils/Imagenes/actualizar.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -214,7 +214,7 @@
                                        <graphic>
                                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../Imagenes/eliminar.png" />
+                                                <Image url="@../../Utils/Imagenes/eliminar.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>

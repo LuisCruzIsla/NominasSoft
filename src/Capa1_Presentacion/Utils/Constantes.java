@@ -21,7 +21,7 @@ public class Constantes {
     
     private static Constantes constantes;
     
-    private static final String PATH_VIEW = "/Capa1_Presentacion/Vista/";
+    private static final String PATH_VIEW = "/Capa1_Presentacion/Formularios/Vista/";
     
     public static Constantes getInstance(){
         if(constantes==null) constantes = new Constantes();

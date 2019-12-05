@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="bpMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Controlador.FormMenuPrincipalController">
+<BorderPane fx:id="bpMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Capa1_Presentacion.Formularios.Controlador.FormMenuPrincipalController">
    <left>
       <VBox prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #03A9F4; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
          <children>
@@ -19,7 +19,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="49.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Imagenes/logo.png" />
+                        <Image url="@../../Utils/Imagenes/logo.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="46.0" layoutY="150.0" text="NominaSoft">

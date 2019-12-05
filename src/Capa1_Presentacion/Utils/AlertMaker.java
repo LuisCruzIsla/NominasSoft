@@ -87,7 +87,7 @@ public class AlertMaker {
     public static void showAdvertencia(StackPane root, String mensaje){
         JFXDialogLayout content = new JFXDialogLayout();
         Label text = new Label("Advertencia");
-        text.setGraphic(new ImageView("/Imagenes/advertencia.png"));
+        text.setGraphic(new ImageView("/Capa1_Presentacion/Utils/Imagenes/advertencia.png"));
         content.setHeading(text);
         content.setBody(new Text(mensaje));
         JFXDialog dialog = new JFXDialog(root,content,JFXDialog.DialogTransition.CENTER);
@@ -102,7 +102,7 @@ public class AlertMaker {
     public static void showError(StackPane root, String mensaje){
         JFXDialogLayout content = new JFXDialogLayout();
         Label text = new Label("Error");
-        text.setGraphic(new ImageView("/Imagenes/error.png"));
+        text.setGraphic(new ImageView("/Capa1_Presentacion/Utils/Imagenes/error.png"));
         content.setHeading(text);
         content.setBody(new Text(mensaje));
         JFXDialog dialog = new JFXDialog(root,content,JFXDialog.DialogTransition.CENTER);
