@@ -5,7 +5,6 @@
  */
 package Capa3_Dominio.Entidades;
 
-import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import java.util.Date;
 
 /**

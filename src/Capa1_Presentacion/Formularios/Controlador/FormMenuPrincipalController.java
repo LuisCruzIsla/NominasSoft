@@ -5,6 +5,7 @@
  */
 package Capa1_Presentacion.Formularios.Controlador;
 
+import Capa1_Presentacion.Formularios.Controlador.Enumerables.EViewMenu;
 import Capa1_Presentacion.Utils.Constantes;
 import Capa1_Presentacion.Utils.View;
 import com.jfoenix.controls.JFXButton;
@@ -23,40 +24,9 @@ import javafx.scene.layout.BorderPane;
  */
 public class FormMenuPrincipalController implements Initializable {
     
-    private enum EViewMenu{
-        
-        GESTIONAR_CONTRATO(View.GESTIONAR_CONTRATO,null),
-        PROCESAR_PAGO(View.PROCESAR_PAGO,null),
-        REGISTRAR_EMPLEADO("",null),
-        SALIR("",null);
-        
-        private final String view;
-        private Parent root;
-        
-        private EViewMenu(String view,Parent root) {
-            this.view = view;
-            this.root = root;
-        }
-        
-        public String getView() {
-            return view;
-        }
-
-        public Parent getRoot() {
-            return root;
-        }
-
-        public void setRoot(Parent root) {
-            this.root = root;
-        }  
-        
-    }
-    
     private static final String COLOR_NORMAL_BUTTON = "#03A9F4"; //Light Blue 500
     private static final String COLOR_SELECT_BUTTON = "#0277BD"; //Light Blue 800
-    
-    private EViewMenu viewActual;
-    
+        
     @FXML
     private BorderPane bpMain;
     
@@ -68,6 +38,9 @@ public class FormMenuPrincipalController implements Initializable {
     private JFXButton btnRegistrarEmpleado;
     @FXML
     private JFXButton btnSalir;
+    
+    //Data
+    private EViewMenu viewActual;
     
     @FXML
     private void gestionarContrato(ActionEvent event) throws Exception{

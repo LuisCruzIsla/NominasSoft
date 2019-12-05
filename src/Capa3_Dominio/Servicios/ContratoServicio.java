@@ -12,13 +12,23 @@ import Capa3_Dominio.Entidades.Contrato;
  * @author LuisCriz
  */
 public class ContratoServicio {
-    public void validarDatos(Contrato contrato, Contrato contratoAnterior) throws Exception{
     
-    if(contratoAnterior!=null && !contratoAnterior.esVigente()){
+    //R2 -  Gestionar Contrato
+    public boolean esRenovable(Contrato contratoAntiguo, Contrato contrato) {
+        boolean renovable = false;
+        if (contratoAntiguo==null || contrato.getFechaFin().compareTo(contratoAntiguo.getFechaFin()) > 0) {
+            renovable = true;
+        }
+        return renovable;
+    }
+    
+    public void validarDatos(Contrato contrato, Contrato contratoAnterior) throws Exception{
+        
+        if(contratoAnterior!=null && !contratoAnterior.esVigente()){
             throw new Exception("El contrato anterior aun es vigente");
         }
         
-        if(!contrato.esRenovable(contratoAnterior)){
+        if(!esRenovable(contratoAnterior,contrato)){
             throw new Exception("Hay un contrato pendiente, no puedes crear un nuevo contrato.");
         }
         
@@ -33,7 +43,8 @@ public class ContratoServicio {
         if(!contrato.esValorizacionAceptada()){
             throw new Exception("El valor por hora no corresponde a su grado academico.");
         }
-        
     }
+    
+    
     
 }

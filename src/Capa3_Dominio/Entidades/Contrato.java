@@ -7,7 +7,6 @@ package Capa3_Dominio.Entidades;
 
 import Capa1_Presentacion.Utils.Constantes;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -120,15 +119,6 @@ public class Contrato {
             vigencia = true;
         }
         return vigencia;
-    }
-
-    //R2 -  Gestionar Contrato
-    public boolean esRenovable(Contrato contrato) {
-        boolean renovable = false;
-        if (contrato==null || fechaFin.compareTo(contrato.getFechaFin()) > 0) {
-            renovable = true;
-        }
-        return renovable;
     }
 
     //R3 -  Gestionar Contrato

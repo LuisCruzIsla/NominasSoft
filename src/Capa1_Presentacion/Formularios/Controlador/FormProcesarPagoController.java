@@ -10,7 +10,7 @@ import Capa1_Presentacion.Utils.Constantes;
 import Capa2_Aplicacion.ProcesarPagoServicio;
 import Capa3_Dominio.Entidades.Pago;
 import Capa3_Dominio.Entidades.Periodo;
-import Capa3_Dominio.Table.PagoTable;
+import Capa1_Presentacion.Formularios.Controlador.parent.PagoTable;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -31,9 +31,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableCell;
 import javafx.scene.control.TreeTableColumn;
-import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
 

@@ -13,6 +13,7 @@ import Capa3_Dominio.Entidades.Empleado;
 import Capa1_Presentacion.Utils.AlertMaker;
 import Capa1_Presentacion.Utils.Constantes;
 import Capa1_Presentacion.Utils.View;
+import Capa3_Dominio.Servicios.EmpleadoServicio;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
@@ -84,7 +85,8 @@ public class FormGestionarContratoController implements Initializable {
                     lbDireccion.setText(empleado.getDireccion());
                     lbTelefono.setText("+51" + empleado.getTelefono());
                     lbFechaDeNacimiento.setText("" + empleado.getFechaNacimiento());
-                    lbEstadoCivil.setText(formatEstadoCivilEmpleado(empleado));
+                    EmpleadoServicio empleadoServicio = new EmpleadoServicio();
+                    lbEstadoCivil.setText(empleadoServicio.formatEstadoCivilEmpleado(empleado));
                     lbGradoAcadameico.setText(empleado.getGradoAcademico().getNombreGrado());
                     btnCrearContrato.setDisable(false);
                     btnEditarContrato.setDisable(false);
@@ -150,22 +152,6 @@ public class FormGestionarContratoController implements Initializable {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-    }
-
-    private String formatEstadoCivilEmpleado(Empleado empleado) {
-        switch (empleado.getEstadoCivil()) {
-            case 'C':
-                return "Casado";
-            case 'S':
-                return "Soltero";
-            case 'D':
-                return "divorciado";
-            case 'V':
-                return "Viudo";
-            default:
-                break;
-        }
-        return "";
     }
 
     /**

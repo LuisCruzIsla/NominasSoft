@@ -19,7 +19,7 @@ public class GestorJDBCSQLite extends GestorJDBC {
     public void abrirConexion() {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:sqlite:src/NominaSoft/Database/NominaSoft.db";
+            String url = "jdbc:sqlite:src/Capa4_Persistencia/sqlite/Database/NominaSoft.db";
             conexion = DriverManager.getConnection(url);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
