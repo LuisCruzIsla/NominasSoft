@@ -36,7 +36,7 @@
                                           <Insets right="25.0" />
                                        </padding>
                                     </JFXTextField>
-                                   <JFXButton fx:id="btnBuscar" buttonType="RAISED" onAction="#buscarEmpleado" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Imagenes/search.png&quot;);" text="Buscar" textFill="WHITE">
+                                   <JFXButton fx:id="btnBuscar" buttonType="RAISED" onAction="#buscarEmpleado" style="-fx-background-color: #00BCD4; -fx-graphic: url(&quot;Capa1_Presentacion/Utils/Imagenes/search.png&quot;);" text="Buscar" textFill="WHITE">
                                       <font>
                                          <Font size="14.0" />
                                       </font>
@@ -189,7 +189,7 @@
                                           </ImageView>
                                        </graphic>
                                    </JFXButton>
-                                   <JFXButton fx:id="btnEditarContrato" buttonType="RAISED" disable="true" onAction="#editarContrato" style="-fx-background-color: #FFC107; -fx-graphic: url(&quot;Imagenes/actualizar.png&quot;);" text="Editar Contrato" textFill="WHITE">
+                                   <JFXButton fx:id="btnEditarContrato" buttonType="RAISED" disable="true" onAction="#editarContrato" style="-fx-background-color: #FFC107; -fx-graphic: url(&quot;Capa1_Presentacion/Utils/Imagenes/actualizar.png&quot;);" text="Editar Contrato" textFill="WHITE">
                                       <font>
                                          <Font size="14.0" />
                                       </font>
@@ -204,7 +204,7 @@
                                           </ImageView>
                                        </graphic>
                                    </JFXButton>
-                                   <JFXButton fx:id="btnAnularContrato" buttonType="RAISED" disable="true" onAction="#anularContrato" style="-fx-background-color: #F44336; -fx-graphic: url(&quot;Imagenes/cancelar.png&quot;);" text="Anular Contrato" textFill="WHITE">
+                                   <JFXButton fx:id="btnAnularContrato" buttonType="RAISED" disable="true" onAction="#anularContrato" style="-fx-background-color: #F44336; -fx-graphic: url(&quot;Capa1_Presentacion/Utils/Imagenes/cancelar.png&quot;);" text="Anular Contrato" textFill="WHITE">
                                       <font>
                                          <Font size="14.0" />
                                       </font>

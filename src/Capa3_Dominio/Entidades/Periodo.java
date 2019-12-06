@@ -6,13 +6,10 @@
 package Capa3_Dominio.Entidades;
 
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
 /**
  *
@@ -83,7 +80,7 @@ public class Periodo {
         String dateStart = simple.format(fechaInicio);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate localDateStart = LocalDate.parse(dateStart, formatter);
-        String dateFin = simple.format(fechaInicio);
+        String dateFin = simple.format(fechaFin);
         LocalDate localDateFin = LocalDate.parse(dateFin, formatter);
         return (int) ChronoUnit.WEEKS.between(localDateStart, localDateFin);
     }

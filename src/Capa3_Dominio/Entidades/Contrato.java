@@ -131,7 +131,7 @@ public class Contrato {
             String dateStart = simple.format(fechaInicio);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             LocalDate localDateStart = LocalDate.parse(dateStart , formatter);
-            String dateFin = simple.format(fechaInicio);
+            String dateFin = simple.format(fechaFin);
             LocalDate localDateFin = LocalDate.parse(dateFin , formatter);
             long dias = ChronoUnit.DAYS.between(localDateStart, localDateFin);
             int meses = (int) (dias/30);

@@ -23,7 +23,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableObjectValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

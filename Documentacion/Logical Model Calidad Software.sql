@@ -329,8 +329,8 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES ( 
-	'01/01/2019', 
-	'01/12/2019', 
+	'01/02/2019', 
+	'31/12/2019', 
 	'F', 
 	40, 
 	30, 
@@ -350,8 +350,8 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	'01/01/2019', 
-	'01/12/2019', 
+	'01/02/2019', 
+	'31/12/2019', 
 	'T', 
 	8, 
 	20, 
@@ -371,8 +371,8 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	'01/01/2019', 
-	'01/12/2019', 
+	'01/02/2019', 
+	'31/12/2019', 
 	'F', 
 	40, 
 	11, 
@@ -392,8 +392,8 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	'01/01/2019', 
-	'01/12/2019', 
+	'01/02/2019', 
+	'31/12/2019', 
 	'T', 
 	8, 
 	21, 
@@ -413,8 +413,8 @@ INSERT INTO public.contratos(
 	empleadocodigo
 )
 VALUES (
-	'01/01/2019', 
-	'01/12/2019', 
+	'01/02/2019', 
+	'31/12/2019', 
 	'F', 
 	8, 
 	40, 
